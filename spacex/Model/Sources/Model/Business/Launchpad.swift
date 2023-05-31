@@ -31,7 +31,7 @@ public struct Launchpad: Decodable {
 private extension Launchpad {
     enum CodingKeys: String, CodingKey {
         case name
-        case date = "date_utc"
+        case date = "date_local"
         case success
         case links
         case details

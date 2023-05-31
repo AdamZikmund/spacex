@@ -12,6 +12,7 @@
 		BC6896C02A27427700C16E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */; };
 		BC6896D02A27480000C16E52 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = BC6896CF2A27480000C16E52 /* Swinject */; };
 		BC6896E12A2757D000C16E52 /* Model in Frameworks */ = {isa = PBXBuildFile; productRef = BC6896E02A2757D000C16E52 /* Model */; };
+		BC6896E42A278E6E00C16E52 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = BC6896E32A278E6E00C16E52 /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		BC6896BF2A27427700C16E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC6896C12A27427700C16E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC6896DF2A2757C400C16E52 /* Model */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Model; path = spacex/Model; sourceTree = "<group>"; };
+		BC6896E22A27624200C16E52 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = spacex/Networking; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6896E42A278E6E00C16E52 /* Networking in Frameworks */,
 				BC6896E12A2757D000C16E52 /* Model in Frameworks */,
 				BC6896D02A27480000C16E52 /* Swinject in Frameworks */,
 			);
@@ -39,6 +42,7 @@
 		BC6896A72A27427600C16E52 = {
 			isa = PBXGroup;
 			children = (
+				BC6896E22A27624200C16E52 /* Networking */,
 				BC6896DF2A2757C400C16E52 /* Model */,
 				BC6896B22A27427600C16E52 /* spacex */,
 				BC6896B12A27427600C16E52 /* Products */,
@@ -100,6 +104,7 @@
 			packageProductDependencies = (
 				BC6896CF2A27480000C16E52 /* Swinject */,
 				BC6896E02A2757D000C16E52 /* Model */,
+				BC6896E32A278E6E00C16E52 /* Networking */,
 			);
 			productName = spacex;
 			productReference = BC6896B02A27427600C16E52 /* spacex.app */;
@@ -418,6 +423,10 @@
 		BC6896E02A2757D000C16E52 /* Model */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Model;
+		};
+		BC6896E32A278E6E00C16E52 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
