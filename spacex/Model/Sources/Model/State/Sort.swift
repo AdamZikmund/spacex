@@ -13,6 +13,23 @@ public struct Sort: Codable {
         self.key = key
         self.direction = direction
     }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        if let key = container.allKeys.first {
+            self.key = key.stringValue
+            self.direction = try container.decode(Direction.self, forKey: key)
+        }
+        throw CodableError.decodingFailed
+    }
+
+    // MARK: - Codable
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        if let key = CodingKeys(stringValue: key) {
+            try container.encodeIfPresent(direction.rawValue, forKey: key)
+        }
+    }
 }
 
 // MARK: - Direction
@@ -20,5 +37,21 @@ public extension Sort {
     enum Direction: String, Codable {
         case asc
         case desc
+    }
+}
+
+// MARK: - CodingKeys
+private extension Sort {
+    struct CodingKeys: CodingKey {
+        var stringValue: String
+        var intValue: Int?
+
+        init?(stringValue: String) {
+            self.stringValue = stringValue
+        }
+
+        init?(intValue: Int) {
+            nil
+        }
     }
 }

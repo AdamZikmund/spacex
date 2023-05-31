@@ -6,18 +6,21 @@ public class EndpointProvider: NetworkingProvider {
     private let decoder: JSONDecoder
     private let encoder: JSONEncoder
     private let baseURL: String
+    private let headers: [String: String]
 
     // MARK: - Lifecycle
     public init(
         networking: Networking,
         decoder: JSONDecoder,
         encoder: JSONEncoder,
-        baseURL: String
+        baseURL: String,
+        headers: [String: String]
     ) {
         self.networking = networking
         self.decoder = decoder
         self.encoder = encoder
         self.baseURL = baseURL
+        self.headers = headers
     }
 }
 
@@ -26,7 +29,7 @@ public extension EndpointProvider {
     func sendRequest<T>(
         to endpoint: Endpoint
     ) async throws -> T where T : Decodable {
-        guard let request = try endpoint.buildURLRequest(baseURL: baseURL, encoder: encoder) else {
+        guard let request = try endpoint.buildURLRequest(encoder: encoder, baseURL: baseURL, headers: headers) else {
             throw NetworkingError.invalidEndpoint
         }
         let (data, _) = try await networking.request(request: request)
@@ -37,8 +40,9 @@ public extension EndpointProvider {
 // MARK: - Endpoint
 private extension Endpoint {
     func buildURLRequest(
+        encoder: JSONEncoder,
         baseURL: String,
-        encoder: JSONEncoder
+        headers globalHeaders: [String: String]
     ) throws -> URLRequest? {
         guard var components = URLComponents(string: baseURL) else { return nil }
         components.path += path
@@ -48,7 +52,9 @@ private extension Endpoint {
         guard let url = components.url else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-        request.allHTTPHeaderFields = headers
+        request.allHTTPHeaderFields = headers.merging(globalHeaders) { old, _ in
+            old
+        }
         if let body {
             request.httpBody = try encoder.encode(body)
         }
