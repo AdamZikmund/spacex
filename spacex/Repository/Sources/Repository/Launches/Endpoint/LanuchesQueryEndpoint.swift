@@ -1,4 +1,5 @@
 import Foundation
+import Networking
 import Model
 
 public struct LanuchesQueryEndpoint: Endpoint {
