@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Launchpad: Decodable {
+public struct Launch: Decodable {
     // MARK: - Properties
     public let name: String
     public let date: Date
@@ -28,7 +28,7 @@ public struct Launchpad: Decodable {
 }
 
 // MARK: - CodingKeys
-private extension Launchpad {
+private extension Launch {
     enum CodingKeys: String, CodingKey {
         case name
         case date = "date_local"

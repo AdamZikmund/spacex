@@ -14,7 +14,7 @@ public class LiveLaunchesRepository: LaunchesRepository {
 
 // MARK: - LaunchesRepository
 extension LiveLaunchesRepository {
-    public func getLaunchpads(queryBody: QueryBody) async throws -> Query<Launchpad> {
+    public func getLaunches(queryBody: QueryBody) async throws -> Query<Launch> {
         try await provider.sendRequest(to: LanuchesQueryEndpoint(queryBody: queryBody))
     }
 }

@@ -2,5 +2,5 @@ import Networking
 import Model
 
 public protocol LaunchesRepository {
-    func getLaunchpads(queryBody: QueryBody) async throws -> Query<Launchpad>
+    func getLaunches(queryBody: QueryBody) async throws -> Query<Launch>
 }

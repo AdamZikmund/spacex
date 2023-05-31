@@ -8,7 +8,7 @@ public class MockLaunchesRepository: LaunchesRepository {
 
 // MARK: - LaunchesRepository
 extension MockLaunchesRepository {
-    public func getLaunchpads(queryBody: QueryBody) async throws -> Query<Launchpad> {
+    public func getLaunches(queryBody: QueryBody) async throws -> Query<Launch> {
         try await Task.sleep(for: .seconds(1))
         return Query(
             docs: [
