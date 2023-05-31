@@ -1,6 +1,6 @@
 import Foundation
 
-public class EndpointProvider: Provider {
+public class EndpointProvider: NetworkingProvider {
     // MARK: - Properties
     private let networking: Networking
     private let decoder: JSONDecoder

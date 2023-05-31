@@ -4,10 +4,10 @@ import Model
 
 public class LiveLaunchesRepository: LaunchesRepository {
     // MARK: - Properties
-    private let provider: Provider
+    private let provider: NetworkingProvider
 
     // MARK: - Lifecycle
-    public init(provider: Provider) {
+    public init(provider: NetworkingProvider) {
         self.provider = provider
     }
 }
