@@ -10,6 +10,7 @@
 		BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896B32A27427600C16E52 /* AppDelegate.swift */; };
 		BC6896BD2A27427700C16E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BC2A27427700C16E52 /* Assets.xcassets */; };
 		BC6896C02A27427700C16E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */; };
+		BC6896D02A27480000C16E52 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = BC6896CF2A27480000C16E52 /* Swinject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6896D02A27480000C16E52 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +38,7 @@
 			children = (
 				BC6896B22A27427600C16E52 /* spacex */,
 				BC6896B12A27427600C16E52 /* Products */,
+				BC6896D82A2749E500C16E52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +69,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BC6896D82A2749E500C16E52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,8 +90,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				BC6896DE2A274B0400C16E52 /* PBXTargetDependency */,
 			);
 			name = spacex;
+			packageProductDependencies = (
+				BC6896CF2A27480000C16E52 /* Swinject */,
+			);
 			productName = spacex;
 			productReference = BC6896B02A27427600C16E52 /* spacex.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +124,10 @@
 				Base,
 			);
 			mainGroup = BC6896A72A27427600C16E52;
+			packageReferences = (
+				BC6896CE2A27480000C16E52 /* XCRemoteSwiftPackageReference "Swinject" */,
+				BC6896D32A27489600C16E52 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = BC6896B12A27427600C16E52 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,6 +159,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC6896DE2A274B0400C16E52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = BC6896DD2A274B0400C16E52 /* SwiftLintPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */ = {
@@ -204,7 +229,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -258,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -354,6 +379,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BC6896CE2A27480000C16E52 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.3;
+			};
+		};
+		BC6896D32A27489600C16E52 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.52.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BC6896CF2A27480000C16E52 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC6896CE2A27480000C16E52 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		BC6896DD2A274B0400C16E52 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC6896D32A27489600C16E52 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BC6896A82A27427600C16E52 /* Project object */;
 }
