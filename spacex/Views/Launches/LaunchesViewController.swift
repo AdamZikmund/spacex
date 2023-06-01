@@ -58,7 +58,6 @@ class LaunchesViewController: UITableViewController {
         viewModel
             .updatePublisher
             .receive(on: RunLoop.main)
-            .dropFirst()
             .sink { [weak self] in
                 self?.update()
             }

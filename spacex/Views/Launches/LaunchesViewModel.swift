@@ -8,14 +8,19 @@ class LaunchesViewModel: NSObject {
     private let service: Service
     private let flow: LaunchesFlow
     private var store = Set<AnyCancellable>()
-    private var offset = 0
-    private var hasNextPage = true
-    private var isLoading = false
-    private let launchesSubject = CurrentValueSubject<[Launch], Never>([])
+    private let launchesSubject = PassthroughSubject<[Launch], Never>()
     private let searchTextSubject = CurrentValueSubject<String?, Never>(nil)
 
+    private var launchesPaginable: Paginable<Launch> = .init() {
+        didSet {
+            if case .ready = launchesPaginable.state {
+                launchesSubject.send(launches)
+            }
+        }
+    }
+
     private var launches: [Launch] {
-        launchesSubject.value
+        launchesPaginable.values
     }
 
     private var searchText: String? {
@@ -45,7 +50,7 @@ class LaunchesViewModel: NSObject {
     }
 
     var isLoadMoreButtonHidden: Bool {
-        !hasNextPage || isLoading
+        !launchesPaginable.canStart
     }
 
     // MARK: - Lifecycle
@@ -61,9 +66,7 @@ class LaunchesViewModel: NSObject {
 
     // MARK: - Internal
     func reload() {
-        launchesSubject.send([])
-        offset = .zero
-        hasNextPage = true
+        launchesPaginable.reset()
         getLaunches()
     }
 
@@ -107,15 +110,15 @@ class LaunchesViewModel: NSObject {
 
     // MARK: - Networking
     func getLaunches() {
-        if !hasNextPage || isLoading { return }
-        isLoading = true
+        guard launchesPaginable.canStart else { return }
+        launchesPaginable.start()
         Task(priority: .userInitiated) {
             let result: Result<Query<Launch>, Error>
             do {
                 let query = try await service.launchesService.getLaunches(
                     search: searchText,
-                    limit: 20,
-                    offset: offset,
+                    limit: launchesPaginable.limit,
+                    offset: launchesPaginable.offset,
                     sort: sort
                 )
                 result = .success(query)
@@ -123,21 +126,15 @@ class LaunchesViewModel: NSObject {
                 result = .failure(error)
             }
             await MainActor.run { [weak self] in
-                self?.update(result)
-            }
-        }
-    }
-
-    private func update(_ result: Result<Query<Launch>, Error>) {
-        switch result {
-        case .success(let query):
-            launchesSubject.send(launches + query.docs)
-            offset = launches.count
-            hasNextPage = query.hasNextPage
-            isLoading = false
-        case .failure(let error):
-            self.openError(error: error) { [weak self] in
-                self?.reload()
+                switch result {
+                case .success(let query):
+                    self?.launchesPaginable.loaded(query.docs, hasNext: query.hasNextPage)
+                case .failure(let error):
+                    self?.launchesPaginable.failed(error)
+                    self?.openError(error: error) {
+                        self?.getLaunches()
+                    }
+                }
             }
         }
     }
