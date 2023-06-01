@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC19D0732A28A9AD0073199B /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0722A28A9AD0073199B /* LaunchDetailViewController.swift */; };
 		BC19D0752A28B0860073199B /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0742A28B0860073199B /* ColorPallete.swift */; };
 		BC19D0772A28BC600073199B /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0762A28BC600073199B /* Spacing.swift */; };
 		BC19D0792A28BCBE0073199B /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0782A28BCBE0073199B /* View+Extension.swift */; };
@@ -35,9 +36,12 @@
 		BC68970E2A27DF7500C16E52 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */; };
 		BC6897132A27EBBE00C16E52 /* SortActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6897122A27EBBE00C16E52 /* SortActionSheet.swift */; };
 		BC6897162A27EF9000C16E52 /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6897152A27EF9000C16E52 /* ErrorAlert.swift */; };
+		BC6897192A2892F900C16E52 /* LaunchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6897182A2892F900C16E52 /* LaunchDetailView.swift */; };
+		BC68971B2A28930500C16E52 /* LaunchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68971A2A28930500C16E52 /* LaunchDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC19D0722A28A9AD0073199B /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		BC19D0742A28B0860073199B /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		BC19D0762A28BC600073199B /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		BC19D0782A28BCBE0073199B /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
 		BC6897122A27EBBE00C16E52 /* SortActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortActionSheet.swift; sourceTree = "<group>"; };
 		BC6897152A27EF9000C16E52 /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
+		BC6897182A2892F900C16E52 /* LaunchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailView.swift; sourceTree = "<group>"; };
+		BC68971A2A28930500C16E52 /* LaunchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +210,7 @@
 		BC6897042A27DA5300C16E52 /* Launches */ = {
 			isa = PBXGroup;
 			children = (
+				BC6897172A2892EF00C16E52 /* Detail */,
 				BC6897142A27EF8600C16E52 /* Error */,
 				BC68970F2A27E72F00C16E52 /* Sort */,
 				BC6897092A27DD8A00C16E52 /* LaunchCell */,
@@ -343,15 +350,18 @@
 				BC6896F22A27CC3E00C16E52 /* MockConfiguration.swift in Sources */,
 				BC68970E2A27DF7500C16E52 /* Collection+Safe.swift in Sources */,
 				BC19D0772A28BC600073199B /* Spacing.swift in Sources */,
+				BC19D0732A28A9AD0073199B /* LaunchDetailViewController.swift in Sources */,
 				BC68970B2A27DD9C00C16E52 /* LaunchCell.swift in Sources */,
 				BC6897002A27D77900C16E52 /* RootFlow.swift in Sources */,
 				BC19D0822A28D5840073199B /* CircleImageView.swift in Sources */,
 				BC6896ED2A27CBB000C16E52 /* Configuration.swift in Sources */,
 				BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */,
+				BC68971B2A28930500C16E52 /* LaunchDetailViewModel.swift in Sources */,
 				BC6896F62A27CEBF00C16E52 /* AppStateService.swift in Sources */,
 				BC19D0752A28B0860073199B /* ColorPallete.swift in Sources */,
 				BC19D0802A28D47F0073199B /* CrewCellView.swift in Sources */,
 				BC6896F02A27CC2600C16E52 /* LiveConfiguration.swift in Sources */,
+				BC6897192A2892F900C16E52 /* LaunchDetailView.swift in Sources */,
 				BC6897082A27DA9600C16E52 /* LaunchesViewModel.swift in Sources */,
 				BC6897062A27DA7000C16E52 /* LaunchesViewController.swift in Sources */,
 				BC6897132A27EBBE00C16E52 /* SortActionSheet.swift in Sources */,

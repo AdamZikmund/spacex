@@ -5,7 +5,7 @@ import Model
 class LaunchesFlow {
     // MARK: - Properties
     private let service: Service
-    private var rootController: UIViewController?
+    private var rootController: UINavigationController?
 
     // MARK: - Lifecycle
     init(service: Service) {
@@ -71,6 +71,11 @@ class LaunchesFlow {
     }
 
     private func showDetail(launch: Launch) {
-        // TODO: Add navigation to detail
+        let controller = LaunchDetailViewController(
+            service: service,
+            launch: nil,
+            launchId: launch.id
+        )
+        rootController?.pushViewController(controller, animated: true)
     }
 }
