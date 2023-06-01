@@ -1,6 +1,5 @@
 import XCTest
 @testable import Networking
-@testable import Repository
 @testable import Model
 
 private struct TestEndpoint: Endpoint {

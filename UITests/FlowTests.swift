@@ -20,5 +20,8 @@ final class UITestsLaunchTests: XCTestCase {
 
     func testLaunch() throws {
         app.launch()
+        let table = app.tables["table"]
+        table.descendants(matching: .cell).firstMatch.tap()
+        XCTAssertEqual(app.scrollViews.otherElements.staticTexts["Crew"].label, "Crew")
     }
 }

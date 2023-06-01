@@ -51,6 +51,7 @@ class LaunchesViewController: UITableViewController {
         button.sizeToFit()
         button.setTitleColor(.tintColor, for: .normal)
         tableView.tableFooterView = button
+        tableView.accessibilityIdentifier = "table"
         loadMoreButton = button
     }
 
@@ -72,6 +73,7 @@ class LaunchesViewController: UITableViewController {
             target: self,
             action: #selector(onSortTap)
         )
+        navigationItem.rightBarButtonItem?.accessibilityIdentifier = "sort"
     }
 
     private func update() {
