@@ -20,7 +20,7 @@ struct Service {
     static func buildLiveService() -> Service {
         let container = Container()
         container.register(Configuration.self) { _ in
-            LiveConfiguration()
+            ConfigurationBuilder.build()
         }
         container.register(Networking.self) { _ in
             let session = URLSession(configuration: .default)
@@ -54,7 +54,7 @@ struct Service {
     static func buildMockService() -> Service {
         let container = Container()
         container.register(Configuration.self) { _ in
-            MockConfiguration()
+            ConfigurationBuilder.build()
         }
         container.register(Networking.self) { _ in
             let session = URLSession(configuration: .default)
