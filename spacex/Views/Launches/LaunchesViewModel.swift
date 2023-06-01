@@ -4,22 +4,15 @@ import Model
 import Combine
 
 class LaunchesViewModel: NSObject {
-    typealias ShowSort = () -> Void
-    typealias ShowDetail = (Launch) -> Void
-    typealias ShowError = (Error, @escaping () -> Void) -> Void
-
     // MARK: - Properties
     private let service: Service
+    private let flow: LaunchesFlowProtocol
     private var store = Set<AnyCancellable>()
     private var offset = 0
     private var hasNextPage = true
     private var isLoading = false
     private let launchesSubject = CurrentValueSubject<[Launch], Never>([])
     private let searchTextSubject = CurrentValueSubject<String?, Never>(nil)
-
-    private let showSort: ShowSort
-    private let showDetail: ShowDetail
-    private let showError: ShowError
 
     private var launches: [Launch] {
         launchesSubject.value
@@ -58,14 +51,10 @@ class LaunchesViewModel: NSObject {
     // MARK: - Lifecycle
     init(
         service: Service,
-        showSort: @escaping ShowSort,
-        showDetail: @escaping ShowDetail,
-        showError: @escaping ShowError
+        flow: LaunchesFlowProtocol
     ) {
         self.service = service
-        self.showSort = showSort
-        self.showDetail = showDetail
-        self.showError = showError
+        self.flow = flow
         super.init()
         self.setupBidings()
     }
@@ -80,18 +69,18 @@ class LaunchesViewModel: NSObject {
 
     // MARK: - Navigation
     func openSort() {
-        showSort()
+        flow.showSortSheet()
     }
 
     func openDetail(launch: Launch) {
-        showDetail(launch)
+        flow.showDetail(launch: launch)
     }
 
     func openError(
         error: Error,
         tryAgain: @escaping () -> Void
     ) {
-        showError(error, tryAgain)
+        flow.showErrorAlert(error: error, tryAgain: tryAgain)
     }
 
     // MARK: - Private

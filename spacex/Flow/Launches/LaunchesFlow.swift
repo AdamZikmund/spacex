@@ -2,49 +2,35 @@ import Foundation
 import UIKit
 import Model
 
-class LaunchesFlow {
+struct LaunchesFlow: LaunchesFlowProtocol {
     // MARK: - Properties
     private let service: Service
-    private var rootController: UINavigationController?
+    private(set) var navigationController: UINavigationController
 
     // MARK: - Lifecycle
-    init(service: Service) {
+    init(service: Service, navigationController: UINavigationController) {
         self.service = service
+        self.navigationController = navigationController
     }
 
-    // MARK: - Internal
-    func buildRootController() -> UIViewController {
-        if let rootController {
-            return rootController
-        } else {
-            let launchesListController = launchesListController()
-            let navigationController = UINavigationController(rootViewController: launchesListController)
-            rootController = navigationController
-            return navigationController
-        }
+    // MARK: - Flow
+    func start() {
+        let viewModel = LaunchesViewModel(service: service, flow: self)
+        let controller =  LaunchesViewController(viewModel: viewModel)
+        navigationController.pushViewController(controller, animated: true)
     }
+}
 
-    // MARK: - Private
-    private func launchesListController() -> UIViewController {
-        let viewModel = LaunchesViewModel(service: service) { [weak self] in
-            self?.showSortSheet()
-        } showDetail: { [weak self] launch in
-            self?.showDetail(launch: launch)
-        } showError: { [weak self] error, tryAgain in
-            self?.showErrorAlert(error: error, tryAgain: tryAgain)
-        }
-        let controller = LaunchesViewController(viewModel: viewModel)
-        return controller
-    }
-
-    private func showSortSheet() {
+// MARK: - LaunchesFlowProtocol
+extension LaunchesFlow {
+    func showSortSheet() {
         let controller = SortActionSheet.build(
             title: "LaunchesViewController.Sort.Title".localized(),
             message: "LaunchesViewController.Sort.Message".localized(),
             options: Sort.Direction.allCases.map(\.rawValue)
-        ) { [weak self] option in
+        ) { option in
             guard let direction = Sort.Direction(rawValue: option) else { return }
-            self?.service.appStateService.set(
+            service.appStateService.set(
                 .init(
                     sort: .init(
                         key: "date_local",
@@ -52,30 +38,30 @@ class LaunchesFlow {
                     )
                 )
             )
-            self?.rootController?.dismiss(animated: true)
+            navigationController.dismiss(animated: true)
         }
-        rootController?.present(controller, animated: true)
+        navigationController.present(controller, animated: true)
     }
 
-    private func showErrorAlert(
+    func showErrorAlert(
         error: Error,
         tryAgain: @escaping () -> Void
     ) {
-        let controller = ErrorAlert.build(error: error) { [weak self] in
+        let controller = ErrorAlert.build(error: error) {
             tryAgain()
-            self?.rootController?.dismiss(animated: true)
-        } onCancel: { [weak self] in
-            self?.rootController?.dismiss(animated: true)
+            navigationController.dismiss(animated: true)
+        } onCancel: {
+            navigationController.dismiss(animated: true)
         }
-        rootController?.present(controller, animated: true)
+        navigationController.present(controller, animated: true)
     }
 
-    private func showDetail(launch: Launch) {
+    func showDetail(launch: Launch) {
         let controller = LaunchDetailViewController(
             service: service,
             launch: nil,
             launchId: launch.id
         )
-        rootController?.pushViewController(controller, animated: true)
+        navigationController.pushViewController(controller, animated: true)
     }
 }

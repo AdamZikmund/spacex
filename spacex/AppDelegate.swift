@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        setupAppearance()
         let service = buildService()
         rootFlow = RootFlow(window: window, service: service)
         rootFlow?.start()
+        setupAppearance()
         return true
     }
 

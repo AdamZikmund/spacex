@@ -1,11 +1,12 @@
 import Foundation
 import UIKit
+import Model
 
-class RootFlow {
+struct RootFlow: RootFlowProtocol {
     // MARK: - Properties
     private let window: UIWindow
     private let service: Service
-    private var launchesFlow: LaunchesFlow?
+    private(set) var navigationController: UINavigationController
 
     // MARK: - Lifecycle
     init(
@@ -14,12 +15,17 @@ class RootFlow {
     ) {
         self.window = window
         self.service = service
+        self.navigationController = UINavigationController()
     }
 
     // MARK: - Internal
     func start() {
-        launchesFlow = LaunchesFlow(service: service)
-        window.rootViewController = launchesFlow?.buildRootController()
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        LaunchesFlow(
+            service: service,
+            navigationController: navigationController
+        )
+        .start()
     }
 }

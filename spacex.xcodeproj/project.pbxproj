@@ -80,6 +80,10 @@
 		BCB787782A290FE200A4C747 /* MockLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB787772A290FE200A4C747 /* MockLaunchesService.swift */; };
 		BCB787792A290FE200A4C747 /* MockLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB787772A290FE200A4C747 /* MockLaunchesService.swift */; };
 		BCB787892A29194300A4C747 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB787882A29194300A4C747 /* FlowTests.swift */; };
+		BCC8612A2A29346E00DB6B56 /* RootFlowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC861292A29346E00DB6B56 /* RootFlowProtocol.swift */; };
+		BCC8612B2A29346E00DB6B56 /* RootFlowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC861292A29346E00DB6B56 /* RootFlowProtocol.swift */; };
+		BCC8612D2A29348700DB6B56 /* LaunchesFlowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC8612C2A29348700DB6B56 /* LaunchesFlowProtocol.swift */; };
+		BCC8612E2A29348700DB6B56 /* LaunchesFlowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC8612C2A29348700DB6B56 /* LaunchesFlowProtocol.swift */; };
 		BCE6D79E2A28E9D600399595 /* MockConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896F12A27CC3E00C16E52 /* MockConfiguration.swift */; };
 		BCE6D79F2A28E9D800399595 /* LiveConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896EF2A27CC2600C16E52 /* LiveConfiguration.swift */; };
 		BCE6D7A22A28EA6400399595 /* LiveConfiguration+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE6D7A02A28EA6400399595 /* LiveConfiguration+Builder.swift */; };
@@ -167,6 +171,8 @@
 		BCB787772A290FE200A4C747 /* MockLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchesService.swift; sourceTree = "<group>"; };
 		BCB787842A29194300A4C747 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB787882A29194300A4C747 /* FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
+		BCC861292A29346E00DB6B56 /* RootFlowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFlowProtocol.swift; sourceTree = "<group>"; };
+		BCC8612C2A29348700DB6B56 /* LaunchesFlowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesFlowProtocol.swift; sourceTree = "<group>"; };
 		BCE6D7A02A28EA6400399595 /* LiveConfiguration+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiveConfiguration+Builder.swift"; sourceTree = "<group>"; };
 		BCE6D7A32A28EA7200399595 /* MockConfiguration+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MockConfiguration+Builder.swift"; sourceTree = "<group>"; };
 		BCE6D7AB2A28ED8200399595 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -327,6 +333,7 @@
 		BC6896FB2A27D74A00C16E52 /* Launches */ = {
 			isa = PBXGroup;
 			children = (
+				BCC8612C2A29348700DB6B56 /* LaunchesFlowProtocol.swift */,
 				BC6896FC2A27D75C00C16E52 /* LaunchesFlow.swift */,
 			);
 			path = Launches;
@@ -335,6 +342,7 @@
 		BC6896FE2A27D76F00C16E52 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				BCC861292A29346E00DB6B56 /* RootFlowProtocol.swift */,
 				BC6896FF2A27D77900C16E52 /* RootFlow.swift */,
 			);
 			path = Root;
@@ -652,10 +660,12 @@
 				BC19D0A32A28E6310073199B /* LaunchesViewController.swift in Sources */,
 				BC19D0A42A28E6310073199B /* SortActionSheet.swift in Sources */,
 				BC19D0A52A28E6310073199B /* LiveLaunchesService.swift in Sources */,
+				BCC8612E2A29348700DB6B56 /* LaunchesFlowProtocol.swift in Sources */,
 				BC19D0A62A28E6310073199B /* View+Extension.swift in Sources */,
 				BC19D0A72A28E6310073199B /* LaunchSuccessView.swift in Sources */,
 				BC19D0A82A28E6310073199B /* Service.swift in Sources */,
 				BC19D0A92A28E6310073199B /* ErrorView.swift in Sources */,
+				BCC8612B2A29346E00DB6B56 /* RootFlowProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,10 +700,12 @@
 				BC6897062A27DA7000C16E52 /* LaunchesViewController.swift in Sources */,
 				BC6897132A27EBBE00C16E52 /* SortActionSheet.swift in Sources */,
 				BC6896F42A27CEAD00C16E52 /* LiveLaunchesService.swift in Sources */,
+				BCC8612D2A29348700DB6B56 /* LaunchesFlowProtocol.swift in Sources */,
 				BC19D0792A28BCBE0073199B /* View+Extension.swift in Sources */,
 				BC19D07E2A28D3C80073199B /* LaunchSuccessView.swift in Sources */,
 				BC6896EB2A27CA2600C16E52 /* Service.swift in Sources */,
 				BC19D07C2A28D24A0073199B /* ErrorView.swift in Sources */,
+				BCC8612A2A29346E00DB6B56 /* RootFlowProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
