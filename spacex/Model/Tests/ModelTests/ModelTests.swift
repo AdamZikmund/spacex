@@ -19,4 +19,30 @@ final class ModelTests: XCTestCase {
         XCTAssertNil(loadable.value)
         XCTAssertEqual(loadable, .failure(error))
     }
+
+    func testPaginable() throws {
+        var paginable = Paginable<Int>(limit: 20, state: .ready)
+        XCTAssertTrue(paginable.canStart)
+        XCTAssertEqual(paginable.offset, 0)
+        XCTAssertEqual(paginable.limit, 20)
+        paginable.start()
+        XCTAssertFalse(paginable.canStart)
+        paginable.loaded((0..<20).compactMap { $0 }, hasNext: true)
+        XCTAssertTrue(paginable.canStart)
+        XCTAssertEqual(paginable.offset, 20)
+        XCTAssertEqual(paginable.limit, 20)
+        paginable.start()
+        paginable.loaded((0..<10).compactMap { $0 }, hasNext: false)
+        XCTAssertFalse(paginable.canStart)
+        XCTAssertEqual(paginable.offset, 30)
+        XCTAssertEqual(paginable.limit, 20)
+        paginable.reset()
+        XCTAssertTrue(paginable.canStart)
+        XCTAssertEqual(paginable.offset, 0)
+        XCTAssertEqual(paginable.limit, 20)
+        paginable.failed(CodableError.decodingFailed)
+        XCTAssertTrue(paginable.canStart)
+        XCTAssertEqual(paginable.offset, 0)
+        XCTAssertEqual(paginable.limit, 20)
+    }
 }
