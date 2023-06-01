@@ -10,10 +10,17 @@ struct Service {
     let launchesService: LaunchesService
 
     // MARK: - Static
-    private static func buildService(resolver: Resolver) -> Service {
+    private static func buildLiveService(resolver: Resolver) -> Service {
         Service(
-            appStateService: AppStateService(resolver: resolver),
-            launchesService: LaunchesService(resolver: resolver)
+            appStateService: LiveAppStateService(resolver: resolver),
+            launchesService: LiveLaunchesService(resolver: resolver)
+        )
+    }
+
+    private static func buildMockService(resolver: Resolver) -> Service {
+        Service(
+            appStateService: MockAppStateService(),
+            launchesService: MockLaunchesService()
         )
     }
 
@@ -48,7 +55,7 @@ struct Service {
         container.register(AppStateRepository.self) { resolver in
             LiveAppStateRepository(store: resolver.resolve(Store.self), state: nil)
         }
-        return buildService(resolver: container.resolver)
+        return buildLiveService(resolver: container.resolver)
     }
 
     static func buildMockService() -> Service {
@@ -82,6 +89,6 @@ struct Service {
         container.register(AppStateRepository.self) { _ in
             MockAppStateRepository()
         }
-        return buildService(resolver: container.resolver)
+        return buildMockService(resolver: container.resolver)
     }
 }

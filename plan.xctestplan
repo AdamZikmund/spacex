@@ -1,0 +1,63 @@
+{
+  "configurations" : [
+    {
+      "id" : "7A26D2A3-5880-4B40-84EC-78A8B9A86FB2",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:spacex.xcodeproj",
+      "identifier" : "BC19D0892A28E6310073199B",
+      "name" : "live"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:spacex\/DependencyInjection",
+        "identifier" : "DependencyInjectionTests",
+        "name" : "DependencyInjectionTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:spacex\/Model",
+        "identifier" : "ModelTests",
+        "name" : "ModelTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:spacex\/Networking",
+        "identifier" : "NetworkingTests",
+        "name" : "NetworkingTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:spacex\/Repository",
+        "identifier" : "RepositoryTests",
+        "name" : "RepositoryTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:spacex\/Store",
+        "identifier" : "StoreTests",
+        "name" : "StoreTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:spacex.xcodeproj",
+        "identifier" : "BCE6D7C02A2901B900399595",
+        "name" : "Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

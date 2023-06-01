@@ -16,6 +16,10 @@ public class Container {
         dependencies[String(describing: type)] = resolve(.init(container: self))
     }
 
+    public func resolve<T>(_ type: T.Type) -> T {
+        resolver.resolve(type)
+    }
+
     // MARK: - Internal
     func find<T>(_ type: T.Type) -> T? {
         dependencies[String(describing: type)] as? T

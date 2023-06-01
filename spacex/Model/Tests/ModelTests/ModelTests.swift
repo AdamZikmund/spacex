@@ -2,10 +2,21 @@ import XCTest
 @testable import Model
 
 final class ModelTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(Model().text, "Hello, World!")
+    func testLoadable() throws {
+        var loadable = Loadable<Int>.loading
+        XCTAssertNil(loadable.error)
+        XCTAssertNil(loadable.value)
+        XCTAssertEqual(loadable, .loading)
+
+        loadable = .success(10)
+        XCTAssertNil(loadable.error)
+        XCTAssertEqual(loadable.value, 10)
+        XCTAssertEqual(loadable, .success(10))
+
+        let error = CodableError.decodingFailed
+        loadable = .failure(error)
+        XCTAssertNotNil(loadable.error)
+        XCTAssertNil(loadable.value)
+        XCTAssertEqual(loadable, .failure(error))
     }
 }

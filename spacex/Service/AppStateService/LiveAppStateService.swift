@@ -4,7 +4,7 @@ import DependencyInjection
 import Model
 import Combine
 
-class AppStateService {
+class LiveAppStateService: AppStateService {
     // MARK: - Properties
     private let repository: AppStateRepository
     private let appStateSubject: CurrentValueSubject<AppState, Never>

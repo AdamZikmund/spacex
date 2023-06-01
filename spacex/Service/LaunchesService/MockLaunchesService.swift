@@ -3,15 +3,11 @@ import Repository
 import DependencyInjection
 import Model
 
-class LaunchesService {
+class MockLaunchesService: LaunchesService {
     // MARK: - Properties
-    private let repository: LaunchesRepository
+    private let repository = MockLaunchesRepository()
 
-    // MARK: - Lifecycle
-    init(resolver: Resolver) {
-        self.repository = resolver.resolve(LaunchesRepository.self)
-    }
-
+    // MARK: - LaunchesService
     func getLaunches(
         search: String? = nil,
         limit: Int? = nil,

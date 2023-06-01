@@ -17,18 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         setupAppearance()
-        let service = Service.buildLiveService()
+        let service = buildService()
         rootFlow = RootFlow(window: window, service: service)
         rootFlow?.start()
         return true
     }
 
     // MARK: - Private
-    func setupAppearance() {
+    private func setupAppearance() {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithDefaultBackground()
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+    }
+
+    private func buildService() -> Service {
+#if LIVE
+        return Service.buildLiveService()
+#else
+        return Service.buildMockService()
+#endif
     }
 }

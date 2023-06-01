@@ -148,7 +148,7 @@ class LaunchesViewModel: NSObject {
             isLoading = false
         case .failure(let error):
             self.openError(error: error) { [weak self] in
-                self?.getLaunches()
+                self?.reload()
             }
         }
     }
