@@ -4,6 +4,7 @@ import SwiftUI
 struct ErrorView: View {
     // MARK: - Properties
     let text: String
+    let tryAgainText: String
     let tryAgain: () -> Void
 
     // MARK: - Body
@@ -18,7 +19,7 @@ struct ErrorView: View {
             Button {
                 tryAgain()
             } label: {
-                Text("Try again")
+                Text(tryAgainText)
             }
             .padding(Spacing.padding1)
         }
@@ -28,7 +29,10 @@ struct ErrorView: View {
 // MARK: - Preview
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(text: "Something went wrong!") {
+        ErrorView(
+            text: "Something went wrong!",
+            tryAgainText: "Try again"
+        ) {
             print("Try again")
         }
     }

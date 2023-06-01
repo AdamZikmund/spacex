@@ -40,7 +40,15 @@ class LaunchesViewModel: NSObject {
     }
 
     var title: String {
-        "Launches"
+        "LaunchesViewController.Title".localized()
+    }
+
+    var placeholder: String {
+        "Common.Search".localized()
+    }
+
+    var loadMore: String {
+        "Common.LoadMore".localized()
     }
 
     var isLoadMoreButtonHidden: Bool {

@@ -39,8 +39,8 @@ class LaunchesFlow {
 
     private func showSortSheet() {
         let controller = SortActionSheet.build(
-            title: "Sort",
-            message: "Sort launches by date",
+            title: "LaunchesViewController.Sort.Title".localized(),
+            message: "LaunchesViewController.Sort.Message".localized(),
             options: Sort.Direction.allCases.map(\.rawValue)
         ) { [weak self] option in
             guard let direction = Sort.Direction(rawValue: option) else { return }

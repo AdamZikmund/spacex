@@ -49,6 +49,14 @@ class LaunchDetailViewModel: ObservableObject {
         launch?.links.patch.smallURL
     }
 
+    var errorTitle: String {
+        "Common.SomethingWentWrong".localized()
+    }
+
+    var tryAgain: String {
+        "Common.TryAgain".localized()
+    }
+
     // MARK: - Lifecycle
     init(
         service: Service,

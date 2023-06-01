@@ -48,7 +48,10 @@ struct LaunchDetailView: View {
     }
 
     private var error: some View {
-        ErrorView(text: "Something went wrong!") {
+        ErrorView(
+            text: viewModel.errorTitle,
+            tryAgainText: viewModel.tryAgain
+        ) {
             viewModel.getLaunch()
         }
         .frame(maxWidth: .infinity)

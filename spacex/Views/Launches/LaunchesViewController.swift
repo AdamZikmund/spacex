@@ -43,10 +43,10 @@ class LaunchesViewController: UITableViewController {
         tableView.refreshControl = refreshControl
         let searchBar = UISearchBar(frame: .init(x: 0, y: 0, width: 0, height: 50))
         searchBar.delegate = viewModel
-        searchBar.placeholder = "Enter text"
+        searchBar.placeholder = viewModel.placeholder
         tableView.tableHeaderView = searchBar
         let button = UIButton(frame: .zero)
-        button.setTitle("Load more", for: .normal)
+        button.setTitle(viewModel.loadMore, for: .normal)
         button.addTarget(self, action: #selector(onLoadMore), for: .touchUpInside)
         button.sizeToFit()
         button.setTitleColor(.tintColor, for: .normal)
