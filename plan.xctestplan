@@ -2,17 +2,32 @@
   "configurations" : [
     {
       "id" : "7A26D2A3-5880-4B40-84EC-78A8B9A86FB2",
-      "name" : "Test Scheme Action",
+      "name" : "Mock",
       "options" : {
-
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:spacex.xcodeproj",
+          "identifier" : "BC6896AF2A27427600C16E52",
+          "name" : "mock"
+        }
+      }
+    },
+    {
+      "id" : "31995924-FBAF-4645-8118-9D6D6F0C6E34",
+      "name" : "Live",
+      "options" : {
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:spacex.xcodeproj",
+          "identifier" : "BC19D0892A28E6310073199B",
+          "name" : "live"
+        }
       }
     }
   ],
   "defaultOptions" : {
     "targetForVariableExpansion" : {
       "containerPath" : "container:spacex.xcodeproj",
-      "identifier" : "BC19D0892A28E6310073199B",
-      "name" : "live"
+      "identifier" : "BC6896AF2A27427600C16E52",
+      "name" : "mock"
     }
   },
   "testTargets" : [
@@ -56,6 +71,13 @@
         "containerPath" : "container:spacex.xcodeproj",
         "identifier" : "BCE6D7C02A2901B900399595",
         "name" : "Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:spacex.xcodeproj",
+        "identifier" : "BCB787832A29194300A4C747",
+        "name" : "UITests"
       }
     }
   ],

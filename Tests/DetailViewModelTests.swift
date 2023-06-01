@@ -1,5 +1,5 @@
 import XCTest
-@testable import live
+@testable import mock
 @testable import Model
 
 final class DetailViewModelTests: XCTestCase {

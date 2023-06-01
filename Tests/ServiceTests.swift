@@ -1,5 +1,5 @@
 import XCTest
-@testable import live
+@testable import mock
 
 final class ServiceTests: XCTestCase {
     func testService() throws {
