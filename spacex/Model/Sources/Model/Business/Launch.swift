@@ -2,6 +2,7 @@ import Foundation
 
 public struct Launch: Decodable {
     // MARK: - Properties
+    public let id: String
     public let name: String
     public let date: Date
     public let success: Bool?
@@ -11,6 +12,7 @@ public struct Launch: Decodable {
 
     // MARK: - Lifecycle
     public init(
+        id: String,
         name: String,
         date: Date,
         success: Bool?,
@@ -18,6 +20,7 @@ public struct Launch: Decodable {
         details: String?,
         crew: [Crew]
     ) {
+        self.id = id
         self.name = name
         self.date = date
         self.success = success
@@ -30,6 +33,7 @@ public struct Launch: Decodable {
 // MARK: - CodingKeys
 private extension Launch {
     enum CodingKeys: String, CodingKey {
+        case id
         case name
         case date = "date_local"
         case success

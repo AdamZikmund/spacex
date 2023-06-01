@@ -2,12 +2,12 @@ import Foundation
 
 public struct Crew: Decodable {
     // MARK: - Properties
-    public let crew: UUID?
+    public let crew: String?
     public let role: String?
 
     // MARK: - Lifecycle
     public init(
-        crew: UUID?,
+        crew: String?,
         role: String?
     ) {
         self.crew = crew

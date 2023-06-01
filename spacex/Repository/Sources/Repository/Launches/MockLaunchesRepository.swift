@@ -13,6 +13,7 @@ extension MockLaunchesRepository {
         return Query(
             docs: [
                 .init(
+                    id: UUID().uuidString,
                     name: "Launchpad",
                     date: .now,
                     success: true,
@@ -25,7 +26,7 @@ extension MockLaunchesRepository {
                     details: "Elon Musk is GOAT",
                     crew: [
                         .init(
-                            crew: UUID(),
+                            crew: UUID().uuidString,
                             role: "CEO"
                         )
                     ]

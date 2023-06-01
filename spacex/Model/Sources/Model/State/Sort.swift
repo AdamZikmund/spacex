@@ -19,8 +19,9 @@ public struct Sort: Codable {
         if let key = container.allKeys.first {
             self.key = key.stringValue
             self.direction = try container.decode(Direction.self, forKey: key)
+        } else {
+            throw CodableError.decodingFailed
         }
-        throw CodableError.decodingFailed
     }
 
     // MARK: - Codable
@@ -34,7 +35,7 @@ public struct Sort: Codable {
 
 // MARK: - Direction
 public extension Sort {
-    enum Direction: String, Codable {
+    enum Direction: String, Codable, CaseIterable {
         case asc
         case desc
     }
