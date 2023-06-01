@@ -15,6 +15,7 @@
 		BC19D07E2A28D3C80073199B /* LaunchSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D07D2A28D3C80073199B /* LaunchSuccessView.swift */; };
 		BC19D0802A28D47F0073199B /* CrewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D07F2A28D47F0073199B /* CrewCellView.swift */; };
 		BC19D0822A28D5840073199B /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0812A28D5840073199B /* CircleImageView.swift */; };
+		BC19D0852A28DCD70073199B /* Store in Frameworks */ = {isa = PBXBuildFile; productRef = BC19D0842A28DCD70073199B /* Store */; };
 		BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896B32A27427600C16E52 /* AppDelegate.swift */; };
 		BC6896BD2A27427700C16E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BC2A27427700C16E52 /* Assets.xcassets */; };
 		BC6896C02A27427700C16E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 		BC19D07D2A28D3C80073199B /* LaunchSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSuccessView.swift; sourceTree = "<group>"; };
 		BC19D07F2A28D47F0073199B /* CrewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCellView.swift; sourceTree = "<group>"; };
 		BC19D0812A28D5840073199B /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		BC19D0832A28DC5F0073199B /* Store */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Store; path = spacex/Store; sourceTree = "<group>"; };
 		BC6896B02A27427600C16E52 /* spacex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spacex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6896B32A27427600C16E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC6896BC2A27427700C16E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			files = (
 				BC6896E42A278E6E00C16E52 /* Networking in Frameworks */,
 				BC6896E12A2757D000C16E52 /* Model in Frameworks */,
+				BC19D0852A28DCD70073199B /* Store in Frameworks */,
 				BC6896E72A27982600C16E52 /* Repository in Frameworks */,
 				BC6896D02A27480000C16E52 /* Swinject in Frameworks */,
 			);
@@ -104,6 +107,7 @@
 		BC6896A72A27427600C16E52 = {
 			isa = PBXGroup;
 			children = (
+				BC19D0832A28DC5F0073199B /* Store */,
 				BC6896E52A27981F00C16E52 /* Repository */,
 				BC6896E22A27624200C16E52 /* Networking */,
 				BC6896DF2A2757C400C16E52 /* Model */,
@@ -286,6 +290,7 @@
 				BC6896E02A2757D000C16E52 /* Model */,
 				BC6896E32A278E6E00C16E52 /* Networking */,
 				BC6896E62A27982600C16E52 /* Repository */,
+				BC19D0842A28DCD70073199B /* Store */,
 			);
 			productName = spacex;
 			productReference = BC6896B02A27427600C16E52 /* spacex.app */;
@@ -615,6 +620,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BC19D0842A28DCD70073199B /* Store */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Store;
+		};
 		BC6896CF2A27480000C16E52 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BC6896CE2A27480000C16E52 /* XCRemoteSwiftPackageReference "Swinject" */;

@@ -1,6 +1,7 @@
 import Foundation
 import Networking
 import Repository
+import Store
 import Swinject
 
 struct Service {
@@ -38,11 +39,14 @@ struct Service {
                 headers: resolver.resolve(Configuration.self)!.headers
             )
         }
+        container.register(Store.self) { _ in
+            UserDefaultsStore(userDefaults: .standard)
+        }
         container.register(LaunchesRepository.self) { resolver in
             LiveLaunchesRepository(provider: resolver.resolve(NetworkingProvider.self)!)
         }
-        container.register(AppStateRepository.self) { _ in
-            LiveAppStateRepository(userDefaults: .standard, state: nil)
+        container.register(AppStateRepository.self) { resolver in
+            LiveAppStateRepository(store: resolver.resolve(UserDefaultsStore.self)!, state: nil)
         }
         return buildService(container: container)
     }
@@ -68,6 +72,9 @@ struct Service {
                 baseURL: resolver.resolve(Configuration.self)!.baseURL,
                 headers: resolver.resolve(Configuration.self)!.headers
             )
+        }
+        container.register(Store.self) { _ in
+            UserDefaultsStore(userDefaults: .standard)
         }
         container.register(LaunchesRepository.self) { _ in
             MockLaunchesRepository()

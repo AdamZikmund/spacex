@@ -1,27 +1,27 @@
 import Foundation
 import Model
+import Store
 
 public class LiveAppStateRepository: AppStateRepository {
     private static let StateKey = "state"
 
     // MARK: - Properties
-    // Should be handled same as networking provider, but for demo purpose it is ok :o)
-    private let userDefaults: UserDefaults
+    private let store: Store
 
     private var state: AppState {
         didSet {
-            try? userDefaults.setEncodable(state, forKey: Self.StateKey)
+            try? store.store(state, forKey: Self.StateKey)
         }
     }
 
     // MARK: - Lifecycle
-    public init(userDefaults: UserDefaults, state: AppState?) {
-        self.userDefaults = userDefaults
-        if let savedState: AppState = try? userDefaults.getDecodable(forKey: Self.StateKey) {
-            self.state = state ?? savedState
+    public init(store: Store, state: AppState?) {
+        self.store = store
+        if let stored: AppState = try? store.pick(forKey: Self.StateKey) {
+            self.state = state ?? stored
         } else {
             self.state = state ?? .init()
-            try? userDefaults.setEncodable(state, forKey: Self.StateKey)
+            try? store.store(self.state, forKey: Self.StateKey)
         }
     }
 }
