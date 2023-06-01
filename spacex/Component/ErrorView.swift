@@ -21,7 +21,7 @@ struct ErrorView: View {
             } label: {
                 Text(tryAgainText)
             }
-            .padding(Spacing.padding1)
+            .padding(Space.padding1)
         }
     }
 }

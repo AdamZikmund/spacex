@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC19D0732A28A9AD0073199B /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0722A28A9AD0073199B /* LaunchDetailViewController.swift */; };
 		BC19D0752A28B0860073199B /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0742A28B0860073199B /* ColorPallete.swift */; };
-		BC19D0772A28BC600073199B /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0762A28BC600073199B /* Spacing.swift */; };
+		BC19D0772A28BC600073199B /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0762A28BC600073199B /* Space.swift */; };
 		BC19D0792A28BCBE0073199B /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0782A28BCBE0073199B /* View+Extension.swift */; };
 		BC19D07C2A28D24A0073199B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D07B2A28D24A0073199B /* ErrorView.swift */; };
 		BC19D07E2A28D3C80073199B /* LaunchSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D07D2A28D3C80073199B /* LaunchSuccessView.swift */; };
@@ -20,7 +20,7 @@
 		BC19D0912A28E6310073199B /* LaunchesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896FC2A27D75C00C16E52 /* LaunchesFlow.swift */; };
 		BC19D0922A28E6310073199B /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6897152A27EF9000C16E52 /* ErrorAlert.swift */; };
 		BC19D0942A28E6310073199B /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */; };
-		BC19D0952A28E6310073199B /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0762A28BC600073199B /* Spacing.swift */; };
+		BC19D0952A28E6310073199B /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0762A28BC600073199B /* Space.swift */; };
 		BC19D0962A28E6310073199B /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0722A28A9AD0073199B /* LaunchDetailViewController.swift */; };
 		BC19D0972A28E6310073199B /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68970A2A27DD9C00C16E52 /* LaunchCell.swift */; };
 		BC19D0982A28E6310073199B /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896FF2A27D77900C16E52 /* RootFlow.swift */; };
@@ -103,7 +103,7 @@
 /* Begin PBXFileReference section */
 		BC19D0722A28A9AD0073199B /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		BC19D0742A28B0860073199B /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
-		BC19D0762A28BC600073199B /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		BC19D0762A28BC600073199B /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		BC19D0782A28BCBE0073199B /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		BC19D07B2A28D24A0073199B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		BC19D07D2A28D3C80073199B /* LaunchSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSuccessView.swift; sourceTree = "<group>"; };
@@ -340,7 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */,
-				BC19D0762A28BC600073199B /* Spacing.swift */,
+				BC19D0762A28BC600073199B /* Space.swift */,
 				BC19D0782A28BCBE0073199B /* View+Extension.swift */,
 				BCE6D7B12A28EFC400399595 /* String+Localize.swift */,
 			);
@@ -559,7 +559,7 @@
 				BCB787762A290FDC00A4C747 /* LaunchesService.swift in Sources */,
 				BCB787702A290E8600A4C747 /* AppStateService.swift in Sources */,
 				BC19D0942A28E6310073199B /* Collection+Safe.swift in Sources */,
-				BC19D0952A28E6310073199B /* Spacing.swift in Sources */,
+				BC19D0952A28E6310073199B /* Space.swift in Sources */,
 				BCE6D7B32A28EFC400399595 /* String+Localize.swift in Sources */,
 				BC19D0962A28E6310073199B /* LaunchDetailViewController.swift in Sources */,
 				BCE6D7A22A28EA6400399595 /* LiveConfiguration+Builder.swift in Sources */,
@@ -597,7 +597,7 @@
 				BCB787752A290FDC00A4C747 /* LaunchesService.swift in Sources */,
 				BCB7876F2A290E8600A4C747 /* AppStateService.swift in Sources */,
 				BC68970E2A27DF7500C16E52 /* Collection+Safe.swift in Sources */,
-				BC19D0772A28BC600073199B /* Spacing.swift in Sources */,
+				BC19D0772A28BC600073199B /* Space.swift in Sources */,
 				BCE6D7B22A28EFC400399595 /* String+Localize.swift in Sources */,
 				BC19D0732A28A9AD0073199B /* LaunchDetailViewController.swift in Sources */,
 				BC68970B2A27DD9C00C16E52 /* LaunchCell.swift in Sources */,

@@ -28,7 +28,7 @@ struct LaunchDetailView: View {
     }
 
     private var content: some View {
-        VStack(alignment: .leading, spacing: Spacing.padding2) {
+        VStack(alignment: .leading, spacing: Space.padding2) {
             header
             details
             crew
@@ -43,8 +43,8 @@ struct LaunchDetailView: View {
             }
             Spacer()
         }
-        .padding(.vertical, Spacing.padding2)
-        .padding(.horizontal, Spacing.padding1)
+        .padding(.vertical, Space.padding2)
+        .padding(.horizontal, Space.padding1)
     }
 
     private var error: some View {
