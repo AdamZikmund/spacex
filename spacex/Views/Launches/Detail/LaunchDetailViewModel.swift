@@ -6,6 +6,7 @@ class LaunchDetailViewModel: ObservableObject {
     @Published private(set) var launchLoadable: Loadable<Launch>
 
     private let service: Service
+    private let flow: LaunchesFlow
     private let launchId: String?
 
     private var launch: Launch? {
@@ -60,10 +61,12 @@ class LaunchDetailViewModel: ObservableObject {
     // MARK: - Lifecycle
     init(
         service: Service,
+        flow: LaunchesFlow,
         launch: Launch?,
         launchId: String?
     ) {
         self.service = service
+        self.flow = flow
         self.launchLoadable = .init(value: launch)
         self.launchId = launchId
     }

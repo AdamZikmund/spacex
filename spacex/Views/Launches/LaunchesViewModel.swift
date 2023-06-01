@@ -6,7 +6,7 @@ import Combine
 class LaunchesViewModel: NSObject {
     // MARK: - Properties
     private let service: Service
-    private let flow: LaunchesFlowProtocol
+    private let flow: LaunchesFlow
     private var store = Set<AnyCancellable>()
     private var offset = 0
     private var hasNextPage = true
@@ -51,7 +51,7 @@ class LaunchesViewModel: NSObject {
     // MARK: - Lifecycle
     init(
         service: Service,
-        flow: LaunchesFlowProtocol
+        flow: LaunchesFlow
     ) {
         self.service = service
         self.flow = flow

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         let service = buildService()
-        rootFlow = RootFlow(window: window, service: service)
+        rootFlow = LiveRootFlow(window: window, service: service)
         rootFlow?.start()
         setupAppearance()
         return true

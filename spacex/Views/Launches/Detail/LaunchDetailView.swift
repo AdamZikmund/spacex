@@ -114,6 +114,7 @@ struct LaunchDetailView_Previews: PreviewProvider {
             LaunchDetailView(
                 viewModel: .init(
                     service: .buildMockService(),
+                    flow: MockLaunchesFlow(),
                     launch: nil,
                     launchId: ""
                 )
