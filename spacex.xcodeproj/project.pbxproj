@@ -20,6 +20,14 @@
 		BC6896F22A27CC3E00C16E52 /* MockConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896F12A27CC3E00C16E52 /* MockConfiguration.swift */; };
 		BC6896F42A27CEAD00C16E52 /* LaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896F32A27CEAD00C16E52 /* LaunchesService.swift */; };
 		BC6896F62A27CEBF00C16E52 /* AppStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896F52A27CEBF00C16E52 /* AppStateService.swift */; };
+		BC6896FD2A27D75C00C16E52 /* LaunchesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896FC2A27D75C00C16E52 /* LaunchesFlow.swift */; };
+		BC6897002A27D77900C16E52 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896FF2A27D77900C16E52 /* RootFlow.swift */; };
+		BC6897062A27DA7000C16E52 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6897052A27DA7000C16E52 /* LaunchesViewController.swift */; };
+		BC6897082A27DA9600C16E52 /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6897072A27DA9600C16E52 /* LaunchesViewModel.swift */; };
+		BC68970B2A27DD9C00C16E52 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68970A2A27DD9C00C16E52 /* LaunchCell.swift */; };
+		BC68970E2A27DF7500C16E52 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */; };
+		BC6897132A27EBBE00C16E52 /* SortActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6897122A27EBBE00C16E52 /* SortActionSheet.swift */; };
+		BC6897162A27EF9000C16E52 /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6897152A27EF9000C16E52 /* ErrorAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +45,14 @@
 		BC6896F12A27CC3E00C16E52 /* MockConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockConfiguration.swift; sourceTree = "<group>"; };
 		BC6896F32A27CEAD00C16E52 /* LaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesService.swift; sourceTree = "<group>"; };
 		BC6896F52A27CEBF00C16E52 /* AppStateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateService.swift; sourceTree = "<group>"; };
+		BC6896FC2A27D75C00C16E52 /* LaunchesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesFlow.swift; sourceTree = "<group>"; };
+		BC6896FF2A27D77900C16E52 /* RootFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
+		BC6897052A27DA7000C16E52 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
+		BC6897072A27DA9600C16E52 /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
+		BC68970A2A27DD9C00C16E52 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
+		BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
+		BC6897122A27EBBE00C16E52 /* SortActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortActionSheet.swift; sourceTree = "<group>"; };
+		BC6897152A27EF9000C16E52 /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,9 @@
 		BC6896B22A27427600C16E52 /* spacex */ = {
 			isa = PBXGroup;
 			children = (
+				BC68970C2A27DF6600C16E52 /* Util */,
+				BC6897032A27DA4B00C16E52 /* Views */,
+				BC6896FA2A27D74300C16E52 /* Flow */,
 				BC6896EE2A27CC0E00C16E52 /* Configuration */,
 				BC6896E92A27CA1700C16E52 /* Service */,
 				BC6896CD2A27450700C16E52 /* Resources */,
@@ -120,6 +139,83 @@
 				BC6896F12A27CC3E00C16E52 /* MockConfiguration.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		BC6896FA2A27D74300C16E52 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				BC6896FE2A27D76F00C16E52 /* Root */,
+				BC6896FB2A27D74A00C16E52 /* Launches */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		BC6896FB2A27D74A00C16E52 /* Launches */ = {
+			isa = PBXGroup;
+			children = (
+				BC6896FC2A27D75C00C16E52 /* LaunchesFlow.swift */,
+			);
+			path = Launches;
+			sourceTree = "<group>";
+		};
+		BC6896FE2A27D76F00C16E52 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				BC6896FF2A27D77900C16E52 /* RootFlow.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		BC6897032A27DA4B00C16E52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC6897042A27DA5300C16E52 /* Launches */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC6897042A27DA5300C16E52 /* Launches */ = {
+			isa = PBXGroup;
+			children = (
+				BC6897142A27EF8600C16E52 /* Error */,
+				BC68970F2A27E72F00C16E52 /* Sort */,
+				BC6897092A27DD8A00C16E52 /* LaunchCell */,
+				BC6897052A27DA7000C16E52 /* LaunchesViewController.swift */,
+				BC6897072A27DA9600C16E52 /* LaunchesViewModel.swift */,
+			);
+			path = Launches;
+			sourceTree = "<group>";
+		};
+		BC6897092A27DD8A00C16E52 /* LaunchCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC68970A2A27DD9C00C16E52 /* LaunchCell.swift */,
+			);
+			path = LaunchCell;
+			sourceTree = "<group>";
+		};
+		BC68970C2A27DF6600C16E52 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		BC68970F2A27E72F00C16E52 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				BC6897122A27EBBE00C16E52 /* SortActionSheet.swift */,
+			);
+			path = Sort;
+			sourceTree = "<group>";
+		};
+		BC6897142A27EF8600C16E52 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				BC6897152A27EF9000C16E52 /* ErrorAlert.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,11 +299,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6896FD2A27D75C00C16E52 /* LaunchesFlow.swift in Sources */,
+				BC6897162A27EF9000C16E52 /* ErrorAlert.swift in Sources */,
 				BC6896F22A27CC3E00C16E52 /* MockConfiguration.swift in Sources */,
+				BC68970E2A27DF7500C16E52 /* Collection+Safe.swift in Sources */,
+				BC68970B2A27DD9C00C16E52 /* LaunchCell.swift in Sources */,
+				BC6897002A27D77900C16E52 /* RootFlow.swift in Sources */,
 				BC6896ED2A27CBB000C16E52 /* Configuration.swift in Sources */,
 				BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */,
 				BC6896F62A27CEBF00C16E52 /* AppStateService.swift in Sources */,
 				BC6896F02A27CC2600C16E52 /* LiveConfiguration.swift in Sources */,
+				BC6897082A27DA9600C16E52 /* LaunchesViewModel.swift in Sources */,
+				BC6897062A27DA7000C16E52 /* LaunchesViewController.swift in Sources */,
+				BC6897132A27EBBE00C16E52 /* SortActionSheet.swift in Sources */,
 				BC6896F42A27CEAD00C16E52 /* LaunchesService.swift in Sources */,
 				BC6896EB2A27CA2600C16E52 /* Service.swift in Sources */,
 			);
