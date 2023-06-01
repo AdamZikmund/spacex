@@ -1,36 +1,42 @@
-//
-//  AppDelegate.swift
-//  spacex
-//
-//  Created by Adam Zikmund on 31.05.2023.
-//
-
 import UIKit
+import Networking
+import Model
+import Repository
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    // MARK: - Properties
+    var window: UIWindow?
+    private var rootFlow: RootFlow?
 
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    // MARK: - UIApplicationDelegate
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        let service = buildService()
+        rootFlow = LiveRootFlow(window: window, service: service)
+        rootFlow?.start()
+        setupAppearance()
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    // MARK: - Private
+    private func setupAppearance() {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithDefaultBackground()
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
     }
 
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    private func buildService() -> Service {
+#if LIVE
+        return Service.buildLiveService()
+#else
+        return Service.buildMockService()
+#endif
     }
-
-
 }
-
