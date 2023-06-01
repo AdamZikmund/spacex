@@ -1,6 +1,6 @@
 import Foundation
 import Repository
-import Swinject
+import DependencyInjection
 import Model
 import Combine
 
@@ -14,8 +14,8 @@ class AppStateService {
     }
 
     // MARK: - Lifecycle
-    init(container: Container) {
-        let repository = container.resolve(AppStateRepository.self)!
+    init(resolver: Resolver) {
+        let repository = resolver.resolve(AppStateRepository.self)
         self.repository = repository
         self.appStateSubject = .init(repository.getState())
     }

@@ -2,7 +2,7 @@ import Foundation
 import Networking
 import Repository
 import Store
-import Swinject
+import DependencyInjection
 
 struct Service {
     // MARK: - Properties
@@ -10,10 +10,10 @@ struct Service {
     let launchesService: LaunchesService
 
     // MARK: - Static
-    private static func buildService(container: Container) -> Service {
+    private static func buildService(resolver: Resolver) -> Service {
         Service(
-            appStateService: AppStateService(container: container),
-            launchesService: LaunchesService(container: container)
+            appStateService: AppStateService(resolver: resolver),
+            launchesService: LaunchesService(resolver: resolver)
         )
     }
 
@@ -32,23 +32,23 @@ struct Service {
             let encoder = JSONEncoder()
             encoder.dateEncodingStrategy = .iso8601
             return EndpointProvider(
-                networking: resolver.resolve(Networking.self)!,
+                networking: resolver.resolve(Networking.self),
                 decoder: decoder,
                 encoder: encoder,
-                baseURL: resolver.resolve(Configuration.self)!.baseURL,
-                headers: resolver.resolve(Configuration.self)!.headers
+                baseURL: resolver.resolve(Configuration.self).baseURL,
+                headers: resolver.resolve(Configuration.self).headers
             )
         }
         container.register(Store.self) { _ in
             UserDefaultsStore(userDefaults: .standard)
         }
         container.register(LaunchesRepository.self) { resolver in
-            LiveLaunchesRepository(provider: resolver.resolve(NetworkingProvider.self)!)
+            LiveLaunchesRepository(provider: resolver.resolve(NetworkingProvider.self))
         }
         container.register(AppStateRepository.self) { resolver in
-            LiveAppStateRepository(store: resolver.resolve(UserDefaultsStore.self)!, state: nil)
+            LiveAppStateRepository(store: resolver.resolve(Store.self), state: nil)
         }
-        return buildService(container: container)
+        return buildService(resolver: container.resolver)
     }
 
     static func buildMockService() -> Service {
@@ -66,11 +66,11 @@ struct Service {
             let encoder = JSONEncoder()
             encoder.dateEncodingStrategy = .iso8601
             return EndpointProvider(
-                networking: resolver.resolve(Networking.self)!,
+                networking: resolver.resolve(Networking.self),
                 decoder: decoder,
                 encoder: encoder,
-                baseURL: resolver.resolve(Configuration.self)!.baseURL,
-                headers: resolver.resolve(Configuration.self)!.headers
+                baseURL: resolver.resolve(Configuration.self).baseURL,
+                headers: resolver.resolve(Configuration.self).headers
             )
         }
         container.register(Store.self) { _ in
@@ -82,6 +82,6 @@ struct Service {
         container.register(AppStateRepository.self) { _ in
             MockAppStateRepository()
         }
-        return buildService(container: container)
+        return buildService(resolver: container.resolver)
     }
 }

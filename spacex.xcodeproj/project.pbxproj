@@ -16,10 +16,10 @@
 		BC19D0802A28D47F0073199B /* CrewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D07F2A28D47F0073199B /* CrewCellView.swift */; };
 		BC19D0822A28D5840073199B /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19D0812A28D5840073199B /* CircleImageView.swift */; };
 		BC19D0852A28DCD70073199B /* Store in Frameworks */ = {isa = PBXBuildFile; productRef = BC19D0842A28DCD70073199B /* Store */; };
+		BC19D0882A28E47F0073199B /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = BC19D0872A28E47F0073199B /* DependencyInjection */; };
 		BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896B32A27427600C16E52 /* AppDelegate.swift */; };
 		BC6896BD2A27427700C16E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BC2A27427700C16E52 /* Assets.xcassets */; };
 		BC6896C02A27427700C16E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */; };
-		BC6896D02A27480000C16E52 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = BC6896CF2A27480000C16E52 /* Swinject */; };
 		BC6896E12A2757D000C16E52 /* Model in Frameworks */ = {isa = PBXBuildFile; productRef = BC6896E02A2757D000C16E52 /* Model */; };
 		BC6896E42A278E6E00C16E52 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = BC6896E32A278E6E00C16E52 /* Networking */; };
 		BC6896E72A27982600C16E52 /* Repository in Frameworks */ = {isa = PBXBuildFile; productRef = BC6896E62A27982600C16E52 /* Repository */; };
@@ -51,6 +51,7 @@
 		BC19D07F2A28D47F0073199B /* CrewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCellView.swift; sourceTree = "<group>"; };
 		BC19D0812A28D5840073199B /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		BC19D0832A28DC5F0073199B /* Store */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Store; path = spacex/Store; sourceTree = "<group>"; };
+		BC19D0862A28E0A60073199B /* DependencyInjection */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DependencyInjection; path = spacex/DependencyInjection; sourceTree = "<group>"; };
 		BC6896B02A27427600C16E52 /* spacex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spacex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6896B32A27427600C16E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC6896BC2A27427700C16E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,8 +86,8 @@
 				BC6896E42A278E6E00C16E52 /* Networking in Frameworks */,
 				BC6896E12A2757D000C16E52 /* Model in Frameworks */,
 				BC19D0852A28DCD70073199B /* Store in Frameworks */,
+				BC19D0882A28E47F0073199B /* DependencyInjection in Frameworks */,
 				BC6896E72A27982600C16E52 /* Repository in Frameworks */,
-				BC6896D02A27480000C16E52 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +108,7 @@
 		BC6896A72A27427600C16E52 = {
 			isa = PBXGroup;
 			children = (
+				BC19D0862A28E0A60073199B /* DependencyInjection */,
 				BC19D0832A28DC5F0073199B /* Store */,
 				BC6896E52A27981F00C16E52 /* Repository */,
 				BC6896E22A27624200C16E52 /* Networking */,
@@ -286,11 +288,11 @@
 			);
 			name = spacex;
 			packageProductDependencies = (
-				BC6896CF2A27480000C16E52 /* Swinject */,
 				BC6896E02A2757D000C16E52 /* Model */,
 				BC6896E32A278E6E00C16E52 /* Networking */,
 				BC6896E62A27982600C16E52 /* Repository */,
 				BC19D0842A28DCD70073199B /* Store */,
+				BC19D0872A28E47F0073199B /* DependencyInjection */,
 			);
 			productName = spacex;
 			productReference = BC6896B02A27427600C16E52 /* spacex.app */;
@@ -321,7 +323,6 @@
 			);
 			mainGroup = BC6896A72A27427600C16E52;
 			packageReferences = (
-				BC6896CE2A27480000C16E52 /* XCRemoteSwiftPackageReference "Swinject" */,
 				BC6896D32A27489600C16E52 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = BC6896B12A27427600C16E52 /* Products */;
@@ -601,14 +602,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BC6896CE2A27480000C16E52 /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
-			requirement = {
-				kind = exactVersion;
-				version = 2.8.3;
-			};
-		};
 		BC6896D32A27489600C16E52 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint.git";
@@ -624,10 +617,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Store;
 		};
-		BC6896CF2A27480000C16E52 /* Swinject */ = {
+		BC19D0872A28E47F0073199B /* DependencyInjection */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BC6896CE2A27480000C16E52 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
+			productName = DependencyInjection;
 		};
 		BC6896DD2A274B0400C16E52 /* SwiftLintPlugin */ = {
 			isa = XCSwiftPackageProductDependency;

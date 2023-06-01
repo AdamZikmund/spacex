@@ -1,6 +1,6 @@
 import Foundation
 import Repository
-import Swinject
+import DependencyInjection
 import Model
 
 class LaunchesService {
@@ -8,8 +8,8 @@ class LaunchesService {
     private let repository: LaunchesRepository
 
     // MARK: - Lifecycle
-    init(container: Container) {
-        self.repository = container.resolve(LaunchesRepository.self)!
+    init(resolver: Resolver) {
+        self.repository = resolver.resolve(LaunchesRepository.self)
     }
 
     func getLaunches(
