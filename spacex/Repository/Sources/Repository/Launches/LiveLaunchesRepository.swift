@@ -17,4 +17,8 @@ extension LiveLaunchesRepository {
     public func getLaunches(queryBody: QueryBody) async throws -> Query<Launch> {
         try await provider.sendRequest(to: LanuchesQueryEndpoint(queryBody: queryBody))
     }
+
+    public func getLaunch(id: String) async throws -> Launch {
+        try await provider.sendRequest(to: LaunchEndpoint(id: id))
+    }
 }

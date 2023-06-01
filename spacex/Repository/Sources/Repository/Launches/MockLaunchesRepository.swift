@@ -37,4 +37,41 @@ extension MockLaunchesRepository {
             hasNextPage: false
         )
     }
+
+    public func getLaunch(id: String) async throws -> Launch {
+        try await Task.sleep(for: .seconds(1))
+        return .init(
+            id: UUID().uuidString,
+            name: "Space X - Launchpad",
+            date: .now,
+            success: true,
+            links: .init(
+                patch: .init(
+                    small: "https://shorturl.at/yISUY",
+                    large: "https://shorturl.at/yISUY"
+                )
+            ),
+            details: """
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+""",
+            crew: [
+                .init(
+                    crew: UUID().uuidString,
+                    role: "CEO"
+                ),
+                .init(
+                    crew: UUID().uuidString,
+                    role: "CTO"
+                ),
+                .init(
+                    crew: UUID().uuidString,
+                    role: "CFO"
+                ),
+                .init(
+                    crew: UUID().uuidString,
+                    role: "Mechanic"
+                )
+            ]
+        )
+    }
 }

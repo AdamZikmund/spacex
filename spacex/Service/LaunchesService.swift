@@ -37,4 +37,8 @@ class LaunchesService {
                 )
             )
     }
+
+    func getLaunch(id: String) async throws -> Launch {
+        return try await repository.getLaunch(id: id)
+    }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Crew: Decodable {
+public struct Crew: Decodable, Hashable {
     // MARK: - Properties
     public let crew: String?
     public let role: String?
