@@ -1,13 +1,17 @@
 import Foundation
 import SwiftUI
-import Model
 
-struct CircleImageView: View {
+public struct CircleImageView: View {
     // MARK: - Properties
     let imageURL: URL?
 
+    // MARK: - Lifecycle
+    public init(imageURL: URL?) {
+        self.imageURL = imageURL
+    }
+
     // MARK: - Body
-    var body: some View {
+    public var body: some View {
         AsyncImage(url: imageURL) { content in
             content
                 .resizable()

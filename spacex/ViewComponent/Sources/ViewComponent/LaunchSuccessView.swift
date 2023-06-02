@@ -1,12 +1,17 @@
 import Foundation
 import SwiftUI
 
-struct LaunchSuccessView: View {
+public struct LaunchSuccessView: View {
     // MARK: - Properties
     let success: Bool
 
+    // MARK: - Lifecycle
+    public init(success: Bool) {
+        self.success = success
+    }
+
     // MARK: - Body
-    var body: some View {
+    public var body: some View {
         if success {
             Text("🚀")
                 .font(.system(size: 100))

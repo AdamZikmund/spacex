@@ -1,21 +1,27 @@
 import Foundation
 import SwiftUI
-import Model
 
-struct CrewCellView: View {
+public struct CrewCellView: View {
     // MARK: - Properties
-    let crew: Crew
+    let title: String?
+    let text: String?
+
+    // MARK: - Lifecycle
+    public init(title: String?, text: String?) {
+        self.title = title
+        self.text = text
+    }
 
     // MARK: - Body
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading) {
-            if let role = crew.role {
-                Text(role)
+            if let title {
+                Text(title)
                     .font(.body)
                     .foregroundColor(ColorPallete.primary.color)
             }
-            if let crew = crew.crew {
-                Text(crew)
+            if let text {
+                Text(text)
                     .font(.caption)
                     .foregroundColor(ColorPallete.secondary.color)
             }
@@ -27,6 +33,6 @@ struct CrewCellView: View {
 // MARK: - Preview
 struct CrewView_Previews: PreviewProvider {
     static var previews: some View {
-        CrewCellView(crew: .init(crew: UUID().uuidString, role: "Mechanic"))
+        CrewCellView(title: UUID().uuidString, text: "Mechanic")
     }
 }

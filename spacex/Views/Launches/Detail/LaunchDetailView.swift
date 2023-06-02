@@ -1,4 +1,5 @@
 import SwiftUI
+import ViewComponent
 
 struct LaunchDetailView: View {
     // MARK: - Properties
@@ -90,7 +91,7 @@ struct LaunchDetailView: View {
                     .font(.title)
                     .foregroundColor(ColorPallete.title.color)
                 ForEach(viewModel.crew, id: \.self) { crew in
-                    CrewCellView(crew: crew)
+                    CrewCellView(title: crew.role, text: crew.crew)
                 }
             }
         }
