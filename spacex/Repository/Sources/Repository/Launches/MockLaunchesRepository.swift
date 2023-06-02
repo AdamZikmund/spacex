@@ -52,7 +52,7 @@ extension MockLaunchesRepository {
                 )
             ),
             details: """
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
 """,
             crew: [
                 .init(

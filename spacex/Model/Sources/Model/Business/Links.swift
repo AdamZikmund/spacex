@@ -9,4 +9,3 @@ public struct Links: Decodable {
         self.patch = patch
     }
 }
-

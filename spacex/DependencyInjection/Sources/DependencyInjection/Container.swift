@@ -4,16 +4,16 @@ public class Container {
     // MARK: - Properties
     /// Map for resolving dependencies
     private var dependencies = [String: [String: Any]]()
-    
+
     /// Dependencies resolver
     public var resolver: Resolver {
         .init(container: self)
     }
-    
+
     // MARK: - Lifecycle
     /// Initializes container
     public init() {}
-    
+
     // MARK: - Public
     /// Register new dependency to container
     /// - Parameters:
@@ -31,7 +31,7 @@ public class Container {
         dependency[name] = resolve(.init(container: self))
         dependencies[typeName] = dependency
     }
-    
+
     /// Resolves contained dependency
     /// - Parameter type: Type of contained dependency
     /// - Parameter name: Optional dependency name
@@ -42,7 +42,7 @@ public class Container {
     ) -> T {
         resolver.resolve(type, name: name)
     }
-    
+
     // MARK: - Internal
     /// Finds dependency type in dependencies
     /// - Parameter type: Dependency type
