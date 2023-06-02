@@ -1,14 +1,25 @@
 import Foundation
 import SwiftUI
 
-struct ErrorView: View {
+public struct ErrorView: View {
     // MARK: - Properties
     let text: String
     let tryAgainText: String
     let tryAgain: () -> Void
 
+    // MARK: - Lifecycle
+    public init(
+        text: String,
+        tryAgainText: String,
+        tryAgain: @escaping () -> Void
+    ) {
+        self.text = text
+        self.tryAgainText = tryAgainText
+        self.tryAgain = tryAgain
+    }
+
     // MARK: - Body
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .center) {
             Text("🥺")
 
