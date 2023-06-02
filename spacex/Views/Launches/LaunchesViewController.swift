@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import Combine
+import SwiftUI
 
 class LaunchesViewController: UITableViewController {
     // MARK: - Properties
@@ -92,5 +93,22 @@ class LaunchesViewController: UITableViewController {
 
     @objc private func onLoadMore() {
         viewModel.getLaunches()
+    }
+}
+
+// MARK: - Preview
+struct LaunchesViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            LaunchesViewController(
+                viewModel: .init(
+                    service: .buildMockService(),
+                    flow: MockLaunchesFlow()
+                )
+            )
+            .preview
+            .navigationTitle("Launches")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
