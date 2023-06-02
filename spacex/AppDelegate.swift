@@ -1,7 +1,4 @@
 import UIKit
-import Networking
-import Model
-import Repository
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
