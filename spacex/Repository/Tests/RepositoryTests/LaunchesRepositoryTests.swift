@@ -20,7 +20,6 @@ final class LaunchesRepositoryTests: XCTestCase {
         return repository
     }()
 
-
     @MainActor
     func testGetLaunches() async throws {
         let query = try await repository.getLaunches(queryBody: .init())

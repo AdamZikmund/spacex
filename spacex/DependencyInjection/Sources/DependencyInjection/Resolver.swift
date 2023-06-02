@@ -14,9 +14,13 @@ public struct Resolver {
     // MARK: - Public
     /// Resolves dependecy from container
     /// - Parameter type: Dependency type
+    /// - Parameter type: Dependency name
     /// - Returns: Dependency
-    public func resolve<T>(_ type: T.Type) -> T {
-        if let dependency = container.find(type) {
+    public func resolve<T>(
+        _ type: T.Type,
+        name: String? = nil
+    ) -> T {
+        if let dependency = container.find(type, name: name) {
             return dependency
         } else {
             fatalError("Missing dependency")
