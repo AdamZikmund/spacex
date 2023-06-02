@@ -4,7 +4,7 @@ import Foundation
     // MARK: - Properties
     /// Wrapped value with dependency type
     public var wrappedValue: T
-    
+
     // MARK: - Lifecycle
     /// Initializes new property with injected dependency
     /// - Parameters:
