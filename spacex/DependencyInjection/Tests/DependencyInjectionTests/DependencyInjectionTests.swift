@@ -1,6 +1,11 @@
 import XCTest
 @testable import DependencyInjection
 
+private struct InjectTest {
+    @Inject private(set) var value: String
+    @Inject(name: "Age") private(set) var namedValue: Int
+}
+
 final class DependencyInjectionTests: XCTestCase {
     func testDependencies() {
         let container = Container()
@@ -31,5 +36,18 @@ final class DependencyInjectionTests: XCTestCase {
         XCTAssertEqual(jedi, "Jedi")
         XCTAssertEqual(sith, "Sith")
         XCTAssertEqual(hanSolo, "Han Solo")
+    }
+
+    func testInjectWrapper() {
+        let container = SharedDependencyProvider.shared.container
+        container.register(String.self) { _ in
+            "Meeeeow"
+        }
+        container.register(Int.self, name: "Age") { _ in
+            10
+        }
+        let test = InjectTest()
+        XCTAssertEqual(test.value, "Meeeeow")
+        XCTAssertEqual(test.namedValue, 10)
     }
 }
