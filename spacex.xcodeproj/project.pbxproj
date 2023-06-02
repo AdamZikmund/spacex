@@ -70,6 +70,10 @@
 		BCB787782A290FE200A4C747 /* MockLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB787772A290FE200A4C747 /* MockLaunchesService.swift */; };
 		BCB787792A290FE200A4C747 /* MockLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB787772A290FE200A4C747 /* MockLaunchesService.swift */; };
 		BCB787892A29194300A4C747 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB787882A29194300A4C747 /* FlowTests.swift */; };
+		BCC5E8A62A29EBD400079E25 /* UIViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC5E8A52A29EBD400079E25 /* UIViewControllerRepresentable.swift */; };
+		BCC5E8A72A29EBD400079E25 /* UIViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC5E8A52A29EBD400079E25 /* UIViewControllerRepresentable.swift */; };
+		BCC5E8A92A29ECF300079E25 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC5E8A82A29ECF300079E25 /* UIViewController+Preview.swift */; };
+		BCC5E8AA2A29ECF300079E25 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC5E8A82A29ECF300079E25 /* UIViewController+Preview.swift */; };
 		BCC8612A2A29346E00DB6B56 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC861292A29346E00DB6B56 /* RootFlow.swift */; };
 		BCC8612B2A29346E00DB6B56 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC861292A29346E00DB6B56 /* RootFlow.swift */; };
 		BCC8612D2A29348700DB6B56 /* LaunchesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC8612C2A29348700DB6B56 /* LaunchesFlow.swift */; };
@@ -160,6 +164,8 @@
 		BCB787772A290FE200A4C747 /* MockLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchesService.swift; sourceTree = "<group>"; };
 		BCB787842A29194300A4C747 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB787882A29194300A4C747 /* FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
+		BCC5E8A52A29EBD400079E25 /* UIViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		BCC5E8A82A29ECF300079E25 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		BCC861292A29346E00DB6B56 /* RootFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
 		BCC8612C2A29348700DB6B56 /* LaunchesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesFlow.swift; sourceTree = "<group>"; };
 		BCC8612F2A29398800DB6B56 /* MockRootFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRootFlow.swift; sourceTree = "<group>"; };
@@ -221,13 +227,13 @@
 		BC6896A72A27427600C16E52 = {
 			isa = PBXGroup;
 			children = (
-				BC7CC9E62A29E0580015E9F5 /* ViewComponent */,
 				BCE6D7B42A28FF1900399595 /* plan.xctestplan */,
 				BC19D0862A28E0A60073199B /* DependencyInjection */,
 				BC19D0832A28DC5F0073199B /* Store */,
 				BC6896E52A27981F00C16E52 /* Repository */,
 				BC6896E22A27624200C16E52 /* Networking */,
 				BC6896DF2A2757C400C16E52 /* Model */,
+				BC7CC9E62A29E0580015E9F5 /* ViewComponent */,
 				BC6896B22A27427600C16E52 /* spacex */,
 				BCE6D7C22A2901B900399595 /* Tests */,
 				BCB787852A29194300A4C747 /* UITests */,
@@ -366,6 +372,8 @@
 				BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */,
 				BC19D0782A28BCBE0073199B /* View+Extension.swift */,
 				BCE6D7B12A28EFC400399595 /* String+Localize.swift */,
+				BCC5E8A52A29EBD400079E25 /* UIViewControllerRepresentable.swift */,
+				BCC5E8A82A29ECF300079E25 /* UIViewController+Preview.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -617,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC5E8AA2A29ECF300079E25 /* UIViewController+Preview.swift in Sources */,
 				BCE6D79E2A28E9D600399595 /* MockConfiguration.swift in Sources */,
 				BC19D0912A28E6310073199B /* LiveLaunchesFlow.swift in Sources */,
 				BC19D0922A28E6310073199B /* ErrorAlert.swift in Sources */,
@@ -644,6 +653,7 @@
 				BC19D0A52A28E6310073199B /* LiveLaunchesService.swift in Sources */,
 				BCC8612E2A29348700DB6B56 /* LaunchesFlow.swift in Sources */,
 				BC19D0A62A28E6310073199B /* View+Extension.swift in Sources */,
+				BCC5E8A72A29EBD400079E25 /* UIViewControllerRepresentable.swift in Sources */,
 				BC19D0A82A28E6310073199B /* Service.swift in Sources */,
 				BCC8612B2A29346E00DB6B56 /* RootFlow.swift in Sources */,
 			);
@@ -653,6 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC5E8A92A29ECF300079E25 /* UIViewController+Preview.swift in Sources */,
 				BC6896FD2A27D75C00C16E52 /* LiveLaunchesFlow.swift in Sources */,
 				BC6897162A27EF9000C16E52 /* ErrorAlert.swift in Sources */,
 				BC6896F22A27CC3E00C16E52 /* MockConfiguration.swift in Sources */,
@@ -680,6 +691,7 @@
 				BC6896F42A27CEAD00C16E52 /* LiveLaunchesService.swift in Sources */,
 				BCC8612D2A29348700DB6B56 /* LaunchesFlow.swift in Sources */,
 				BC19D0792A28BCBE0073199B /* View+Extension.swift in Sources */,
+				BCC5E8A62A29EBD400079E25 /* UIViewControllerRepresentable.swift in Sources */,
 				BC6896EB2A27CA2600C16E52 /* Service.swift in Sources */,
 				BCC8612A2A29346E00DB6B56 /* RootFlow.swift in Sources */,
 			);
