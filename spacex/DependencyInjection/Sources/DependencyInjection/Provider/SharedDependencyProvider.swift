@@ -6,7 +6,7 @@ public struct SharedDependencyProvider: DependencyProvider {
     public static let shared = Self()
     
     /// Shared container
-    public var container = Container()
+    public let container = Container()
     
     /// Shared container resolver
     public var resolver: Resolver {
