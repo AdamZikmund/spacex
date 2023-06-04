@@ -43,6 +43,13 @@ public class Container {
         resolver.resolve(type, name: name)
     }
 
+    /// Impicitly resolves contained dependency
+    /// - Parameter name: Optional dependency name
+    /// - Returns: Resolved dependency
+    public func resolve<T>(name: String? = nil) -> T {
+        resolve(T.self, name: name)
+    }
+
     // MARK: - Internal
     /// Finds dependency type in dependencies
     /// - Parameter type: Dependency type

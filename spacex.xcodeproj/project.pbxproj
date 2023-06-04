@@ -36,6 +36,10 @@
 		BC19D0AF2A28E6310073199B /* Repository in Frameworks */ = {isa = PBXBuildFile; productRef = BC19D08D2A28E6310073199B /* Repository */; };
 		BC19D0B12A28E6310073199B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */; };
 		BC19D0B22A28E6310073199B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BC2A27427700C16E52 /* Assets.xcassets */; };
+		BC2AF3152A2C9C83007D97D2 /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3142A2C9C83007D97D2 /* LiveService.swift */; };
+		BC2AF3162A2C9C83007D97D2 /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3142A2C9C83007D97D2 /* LiveService.swift */; };
+		BC2AF3182A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
+		BC2AF3192A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
 		BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896B32A27427600C16E52 /* AppDelegate.swift */; };
 		BC6896BD2A27427700C16E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BC2A27427700C16E52 /* Assets.xcassets */; };
 		BC6896C02A27427700C16E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */; };
@@ -132,6 +136,8 @@
 		BC19D0B62A28E6310073199B /* live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = live.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC19D0B82A28E6CF0073199B /* Mock-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mock-Info.plist"; sourceTree = "<group>"; };
 		BC19D0BA2A28E6DA0073199B /* Live-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Live-Info.plist"; sourceTree = "<group>"; };
+		BC2AF3142A2C9C83007D97D2 /* LiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveService.swift; sourceTree = "<group>"; };
+		BC2AF3172A2C9C8B007D97D2 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		BC6896B02A27427600C16E52 /* mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6896B32A27427600C16E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC6896BC2A27427700C16E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -292,6 +298,8 @@
 				BCB7876D2A290E6F00A4C747 /* AppStateService */,
 				BCB7876C2A290E6600A4C747 /* LaunchesService */,
 				BC6896EA2A27CA2600C16E52 /* Service.swift */,
+				BC2AF3142A2C9C83007D97D2 /* LiveService.swift */,
+				BC2AF3172A2C9C8B007D97D2 /* MockService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -659,6 +667,7 @@
 				BC19D0962A28E6310073199B /* LaunchDetailViewController.swift in Sources */,
 				BCE6D7A22A28EA6400399595 /* LiveConfiguration+Builder.swift in Sources */,
 				BC19D0972A28E6310073199B /* LaunchCell.swift in Sources */,
+				BC2AF3162A2C9C83007D97D2 /* LiveService.swift in Sources */,
 				BC19D0982A28E6310073199B /* LiveRootFlow.swift in Sources */,
 				BC19D09A2A28E6310073199B /* Configuration.swift in Sources */,
 				BC19D09B2A28E6310073199B /* AppDelegate.swift in Sources */,
@@ -671,6 +680,7 @@
 				BC19D0A32A28E6310073199B /* LaunchesViewController.swift in Sources */,
 				BCC861342A2939C700DB6B56 /* MockLaunchesFlow.swift in Sources */,
 				BC19D0A42A28E6310073199B /* SortActionSheet.swift in Sources */,
+				BC2AF3192A2C9C8B007D97D2 /* MockService.swift in Sources */,
 				BC19D0A52A28E6310073199B /* LiveLaunchesService.swift in Sources */,
 				BCC8612E2A29348700DB6B56 /* LaunchesFlow.swift in Sources */,
 				BC19D0A62A28E6310073199B /* View+Extension.swift in Sources */,
@@ -697,6 +707,7 @@
 				BC19D0732A28A9AD0073199B /* LaunchDetailViewController.swift in Sources */,
 				BC68970B2A27DD9C00C16E52 /* LaunchCell.swift in Sources */,
 				BC6897002A27D77900C16E52 /* LiveRootFlow.swift in Sources */,
+				BC2AF3152A2C9C83007D97D2 /* LiveService.swift in Sources */,
 				BCE6D79F2A28E9D800399595 /* LiveConfiguration.swift in Sources */,
 				BC6896ED2A27CBB000C16E52 /* Configuration.swift in Sources */,
 				BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */,
@@ -709,6 +720,7 @@
 				BC6897062A27DA7000C16E52 /* LaunchesViewController.swift in Sources */,
 				BCC861332A2939C700DB6B56 /* MockLaunchesFlow.swift in Sources */,
 				BC6897132A27EBBE00C16E52 /* SortActionSheet.swift in Sources */,
+				BC2AF3182A2C9C8B007D97D2 /* MockService.swift in Sources */,
 				BC6896F42A27CEAD00C16E52 /* LiveLaunchesService.swift in Sources */,
 				BCC8612D2A29348700DB6B56 /* LaunchesFlow.swift in Sources */,
 				BC19D0792A28BCBE0073199B /* View+Extension.swift in Sources */,

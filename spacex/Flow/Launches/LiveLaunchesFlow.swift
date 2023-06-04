@@ -1,21 +1,21 @@
 import Foundation
 import UIKit
 import Model
+import DependencyInjection
 
 struct LiveLaunchesFlow: LaunchesFlow {
     // MARK: - Properties
-    private let service: Service
+    @Inject private(set) var service: Service
     private(set) var navigationController: UINavigationController
 
     // MARK: - Lifecycle
-    init(service: Service, navigationController: UINavigationController) {
-        self.service = service
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     // MARK: - Flow
     func start() {
-        let viewModel = LaunchesViewModel(service: service, flow: self)
+        let viewModel = LaunchesViewModel(flow: self)
         let controller =  LaunchesViewController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: true)
     }
@@ -30,7 +30,7 @@ extension LiveLaunchesFlow {
             options: Sort.Direction.allCases.map(\.rawValue)
         ) { option in
             guard let direction = Sort.Direction(rawValue: option) else { return }
-            service.appStateService.set(
+            service.appState.set(
                 .init(
                     sort: .init(
                         key: "date_local",
@@ -58,7 +58,6 @@ extension LiveLaunchesFlow {
 
     func showDetail(launch: Launch) {
         let controller = LaunchDetailViewController(
-            service: service,
             flow: self,
             launch: nil,
             launchId: launch.id

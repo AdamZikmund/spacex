@@ -22,7 +22,6 @@ public struct ErrorView: View {
     public var body: some View {
         VStack(alignment: .center) {
             Text("🥺")
-
                 .font(.system(size: 100))
             Text(text)
                 .font(.title)

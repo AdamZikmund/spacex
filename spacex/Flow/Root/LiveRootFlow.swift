@@ -5,16 +5,11 @@ import Model
 struct LiveRootFlow: RootFlow {
     // MARK: - Properties
     private let window: UIWindow
-    private let service: Service
     private(set) var navigationController: UINavigationController
 
     // MARK: - Lifecycle
-    init(
-        window: UIWindow,
-        service: Service
-    ) {
+    init(window: UIWindow) {
         self.window = window
-        self.service = service
         self.navigationController = UINavigationController()
     }
 
@@ -22,10 +17,7 @@ struct LiveRootFlow: RootFlow {
     func start() {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
-        LiveLaunchesFlow(
-            service: service,
-            navigationController: navigationController
-        )
-        .start()
+        LiveLaunchesFlow(navigationController: navigationController)
+            .start()
     }
 }

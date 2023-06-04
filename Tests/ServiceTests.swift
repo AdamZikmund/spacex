@@ -3,14 +3,14 @@ import XCTest
 
 final class ServiceTests: XCTestCase {
     func testService() throws {
-        let service = Service.buildLiveService()
-        XCTAssertTrue(type(of: service.appStateService) == LiveAppStateService.self)
-        XCTAssertTrue(type(of: service.launchesService) == LiveLaunchesService.self)
+        let service = LiveService.build()
+        XCTAssertTrue(type(of: service.appState) == LiveAppStateService.self)
+        XCTAssertTrue(type(of: service.launches) == LiveLaunchesService.self)
     }
 
     func testMockService() throws {
-        let service = Service.buildMockService()
-        XCTAssertTrue(type(of: service.appStateService) == MockAppStateService.self)
-        XCTAssertTrue(type(of: service.launchesService) == MockLaunchesService.self)
+        let service = MockService.build()
+        XCTAssertTrue(type(of: service.appState) == MockAppStateService.self)
+        XCTAssertTrue(type(of: service.launches) == MockLaunchesService.self)
     }
 }

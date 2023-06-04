@@ -1,11 +1,12 @@
 import Foundation
 import Model
+import DependencyInjection
 
 class LaunchDetailViewModel: ObservableObject {
     // MARK: - Properties
     @Published private(set) var launchLoadable: Loadable<Launch>
 
-    private let service: Service
+    @Inject private(set) var service: Service
     private let flow: LaunchesFlow
     private let launchId: String?
 
@@ -60,12 +61,10 @@ class LaunchDetailViewModel: ObservableObject {
 
     // MARK: - Lifecycle
     init(
-        service: Service,
         flow: LaunchesFlow,
         launch: Launch?,
         launchId: String?
     ) {
-        self.service = service
         self.flow = flow
         self.launchLoadable = .init(value: launch)
         self.launchId = launchId
@@ -77,7 +76,7 @@ class LaunchDetailViewModel: ObservableObject {
         Task {
             let loadable: Loadable<Launch>
             do {
-                let launch = try await service.launchesService.getLaunch(id: launchId)
+                let launch = try await service.launches.getLaunch(id: launchId)
                 loadable = .success(launch)
             } catch {
                 loadable = .failure(error)
