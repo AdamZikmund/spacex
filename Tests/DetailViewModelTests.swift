@@ -19,7 +19,6 @@ final class DetailViewModelTests: XCTestCase {
             details: "Details", crew: []
         )
         let viewModel = LaunchDetailViewModel(
-            service: .buildLiveService(),
             flow: MockLaunchesFlow(),
             launch: launch,
             launchId: nil

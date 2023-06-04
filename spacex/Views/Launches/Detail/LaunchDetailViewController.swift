@@ -5,19 +5,16 @@ import Model
 
 class LaunchDetailViewController: UIViewController {
     // MARK: - Properties
-    private let service: Service
     private let flow: LaunchesFlow
     private let launch: Launch?
     private let launchId: String?
 
     // MARK: - Lifecycle
     init(
-        service: Service,
         flow: LaunchesFlow,
         launch: Launch?,
         launchId: String?
     ) {
-        self.service = service
         self.flow = flow
         self.launch = launch
         self.launchId = launchId
@@ -37,7 +34,6 @@ class LaunchDetailViewController: UIViewController {
     // MARK: - Private
     private func setupHostingController() {
         let viewModel = LaunchDetailViewModel(
-            service: service,
             flow: flow,
             launch: launch,
             launchId: launchId

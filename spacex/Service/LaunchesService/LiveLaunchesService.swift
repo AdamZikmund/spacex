@@ -9,7 +9,7 @@ class LiveLaunchesService: LaunchesService {
 
     // MARK: - Lifecycle
     init(resolver: Resolver) {
-        self.repository = resolver.resolve(LaunchesRepository.self)
+        self.repository = resolver.resolve()
     }
 
     // MARK: - LaunchesService

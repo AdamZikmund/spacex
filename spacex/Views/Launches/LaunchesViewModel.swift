@@ -2,10 +2,11 @@ import Foundation
 import UIKit
 import Model
 import Combine
+import DependencyInjection
 
 class LaunchesViewModel: NSObject {
     // MARK: - Properties
-    private let service: Service
+    @Inject private(set) var service: Service
     private let flow: LaunchesFlow
     private var store = Set<AnyCancellable>()
     private let launchesSubject = PassthroughSubject<[Launch], Never>()
@@ -28,7 +29,7 @@ class LaunchesViewModel: NSObject {
     }
 
     private var sort: Sort? {
-        service.appStateService.get().sort
+        service.appState.get().sort
     }
 
     var updatePublisher: AnyPublisher<Void, Never> {
@@ -54,11 +55,7 @@ class LaunchesViewModel: NSObject {
     }
 
     // MARK: - Lifecycle
-    init(
-        service: Service,
-        flow: LaunchesFlow
-    ) {
-        self.service = service
+    init(flow: LaunchesFlow) {
         self.flow = flow
         super.init()
         self.setupBidings()
@@ -89,7 +86,7 @@ class LaunchesViewModel: NSObject {
     // MARK: - Private
     private func setupBidings() {
         service
-            .appStateService
+            .appState
             .appStatePublisher
             .receive(on: RunLoop.main)
             .dropFirst()
@@ -115,7 +112,7 @@ class LaunchesViewModel: NSObject {
         Task(priority: .userInitiated) {
             let result: Result<Query<Launch>, Error>
             do {
-                let query = try await service.launchesService.getLaunches(
+                let query = try await service.launches.getLaunches(
                     search: searchText,
                     limit: launchesPaginable.limit,
                     offset: launchesPaginable.offset,
