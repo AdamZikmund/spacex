@@ -1,5 +1,6 @@
 import SwiftUI
 import ViewComponent
+import DependencyInjection
 
 struct LaunchDetailView: View {
     // MARK: - Properties
@@ -111,10 +112,10 @@ struct LaunchDetailView: View {
 // MARK: - Preview
 struct LaunchDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            LaunchDetailView(
+        return NavigationView {
+            MockService.bootstrap()
+            return LaunchDetailView(
                 viewModel: .init(
-                    service: .buildMockService(),
                     flow: MockLaunchesFlow(),
                     launch: nil,
                     launchId: ""

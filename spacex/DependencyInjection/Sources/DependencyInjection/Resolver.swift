@@ -23,7 +23,17 @@ public struct Resolver {
         if let dependency = container.find(type, name: name) {
             return dependency
         } else {
-            fatalError("Missing dependency")
+            fatalError("Missing dependency type: \(type), name: \(String(describing: name))")
         }
+    }
+
+    /// Impicitly resolves contained dependency
+    /// - Parameter type: Dependency type
+    /// - Parameter type: Dependency name
+    /// - Returns: Dependency
+    public func resolve<T>(
+        name: String? = nil
+    ) -> T {
+        return resolve(T.self, name: name)
     }
 }

@@ -99,12 +99,10 @@ class LaunchesViewController: UITableViewController {
 // MARK: - Preview
 struct LaunchesViewController_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        MockService.bootstrap()
+        return NavigationView {
             LaunchesViewController(
-                viewModel: .init(
-                    service: .buildMockService(),
-                    flow: MockLaunchesFlow()
-                )
+                viewModel: .init(flow: MockLaunchesFlow())
             )
             .preview
             .navigationTitle("Launches")
