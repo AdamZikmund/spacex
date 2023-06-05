@@ -36,14 +36,12 @@ class LaunchesViewController: UITableViewController {
     }
 
     private func setupTableView() {
-        tableView.delegate = viewModel
-        tableView.dataSource = viewModel
         tableView.register(LaunchCell.self, forCellReuseIdentifier: LaunchCell.reuseIdentifier)
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlValueChanged), for: .valueChanged)
         tableView.refreshControl = refreshControl
         let searchBar = UISearchBar(frame: .init(x: 0, y: 0, width: 0, height: 50))
-        searchBar.delegate = viewModel
+        searchBar.delegate = self
         searchBar.placeholder = viewModel.placeholder
         tableView.tableHeaderView = searchBar
         let button = UIButton(frame: .zero)
@@ -107,6 +105,55 @@ struct LaunchesViewController_Previews: PreviewProvider {
             .preview
             .navigationTitle("Launches")
             .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
+extension LaunchesViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+
+    override func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
+        viewModel.launches.count
+    }
+
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCell.reuseIdentifier, for: indexPath)
+        if let cell = cell as? LaunchCell, let launch = viewModel.launches[safe: indexPath.row] {
+            cell.update(launch: launch)
+        }
+        return cell
+    }
+
+    override func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let launch = viewModel.launches[safe: indexPath.row] {
+            viewModel.openDetail(launch: launch)
+        }
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension LaunchesViewController: UISearchBarDelegate {
+    func searchBar(
+        _ searchBar: UISearchBar,
+        textDidChange searchText: String
+    ) {
+        if searchText.isEmpty {
+            viewModel.setSearchText(nil)
+        } else {
+            viewModel.setSearchText(searchText)
         }
     }
 }
