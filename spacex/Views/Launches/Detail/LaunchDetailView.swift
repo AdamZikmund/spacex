@@ -113,9 +113,9 @@ struct LaunchDetailView: View {
 struct LaunchDetailView_Previews: PreviewProvider {
     static var previews: some View {
         return NavigationView {
-            MockService.bootstrap()
-            return LaunchDetailView(
+            LaunchDetailView(
                 viewModel: .init(
+                    service: MockService.build(),
                     flow: MockLaunchesFlow(),
                     launch: nil,
                     launchId: ""

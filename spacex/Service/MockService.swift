@@ -51,7 +51,7 @@ struct MockService: Service {
     }
 
     // MARK: - Service
-    static func build() -> MockService {
+    static func build() -> Self {
         let container = buildContainer()
         let service = Self.init(
             appState: container.resolve(),

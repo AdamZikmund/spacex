@@ -2,8 +2,8 @@ import XCTest
 @testable import DependencyInjection
 
 private struct InjectTest {
-    @Inject private(set) var value: String
-    @Inject(name: "Age") private(set) var namedValue: Int
+    @Inject var value: String
+    @Inject(name: "Age") var namedValue: Int
 }
 
 final class DependencyInjectionTests: XCTestCase {

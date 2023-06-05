@@ -1,25 +1,10 @@
 {
   "configurations" : [
     {
-      "id" : "7A26D2A3-5880-4B40-84EC-78A8B9A86FB2",
+      "id" : "99FD8D63-5006-4BFD-B020-B37CDF0FEAFD",
       "name" : "Mock",
       "options" : {
-        "targetForVariableExpansion" : {
-          "containerPath" : "container:spacex.xcodeproj",
-          "identifier" : "BC6896AF2A27427600C16E52",
-          "name" : "mock"
-        }
-      }
-    },
-    {
-      "id" : "31995924-FBAF-4645-8118-9D6D6F0C6E34",
-      "name" : "Live",
-      "options" : {
-        "targetForVariableExpansion" : {
-          "containerPath" : "container:spacex.xcodeproj",
-          "identifier" : "BC19D0892A28E6310073199B",
-          "name" : "live"
-        }
+
       }
     }
   ],
