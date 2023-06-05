@@ -9,6 +9,6 @@ protocol Configuration {
 
 struct ConfigurationBuilder: Configuration {
     // MARK: - Properties
-    var baseURL: String { fatalError("") }
-    var headers: [String : String] { fatalError("") }
+    var baseURL: String { fatalError() }
+    var headers: [String : String] { fatalError() }
 }

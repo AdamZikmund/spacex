@@ -6,7 +6,7 @@ import DependencyInjection
 
 class LaunchesViewModel: NSObject {
     // MARK: - Properties
-    @Inject private(set) var service: Service
+    private let service: Service
     private let flow: LaunchesFlow
     private var store = Set<AnyCancellable>()
     private let launchesSubject = PassthroughSubject<[Launch], Never>()
@@ -18,10 +18,6 @@ class LaunchesViewModel: NSObject {
                 launchesSubject.send(launches)
             }
         }
-    }
-
-    private var launches: [Launch] {
-        launchesPaginable.values
     }
 
     private var searchText: String? {
@@ -36,6 +32,10 @@ class LaunchesViewModel: NSObject {
         launchesSubject
             .map { _ in }
             .eraseToAnyPublisher()
+    }
+
+    var launches: [Launch] {
+        launchesPaginable.values
     }
 
     var title: String {
@@ -55,7 +55,11 @@ class LaunchesViewModel: NSObject {
     }
 
     // MARK: - Lifecycle
-    init(flow: LaunchesFlow) {
+    init(
+        service: Service,
+        flow: LaunchesFlow
+    ) {
+        self.service = service
         self.flow = flow
         super.init()
         self.setupBidings()
@@ -65,6 +69,10 @@ class LaunchesViewModel: NSObject {
     func reload() {
         launchesPaginable.reset()
         getLaunches()
+    }
+
+    func setSearchText(_ searchText: String?) {
+        searchTextSubject.send(searchText)
     }
 
     // MARK: - Navigation
@@ -133,55 +141,6 @@ class LaunchesViewModel: NSObject {
                     }
                 }
             }
-        }
-    }
-}
-
-// MARK: - UITableViewDelegate & UITableViewDataSource
-extension LaunchesViewModel: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
-
-    func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
-    ) -> Int {
-        launches.count
-    }
-
-    func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCell.reuseIdentifier, for: indexPath)
-        if let cell = cell as? LaunchCell, let launch = launches[safe: indexPath.row] {
-            cell.update(launch: launch)
-        }
-        return cell
-    }
-
-    func tableView(
-        _ tableView: UITableView,
-        didSelectRowAt indexPath: IndexPath
-    ) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if let launch = launches[safe: indexPath.row] {
-            openDetail(launch: launch)
-        }
-    }
-}
-
-// MARK: - UISearchBarDelegate
-extension LaunchesViewModel: UISearchBarDelegate {
-    func searchBar(
-        _ searchBar: UISearchBar,
-        textDidChange searchText: String
-    ) {
-        if searchText.isEmpty {
-            searchTextSubject.send(nil)
-        } else {
-            searchTextSubject.send(searchText)
         }
     }
 }

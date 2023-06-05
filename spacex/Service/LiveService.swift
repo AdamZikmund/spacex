@@ -51,7 +51,7 @@ struct LiveService: Service {
     }
 
     // MARK: - Service
-    static func build() -> LiveService {
+    static func build() -> Self {
         let container = buildContainer()
         let service = Self.init(
             appState: container.resolve(),
