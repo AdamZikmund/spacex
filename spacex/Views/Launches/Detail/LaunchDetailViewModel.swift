@@ -6,7 +6,7 @@ class LaunchDetailViewModel: ObservableObject {
     // MARK: - Properties
     @Published private(set) var launchLoadable: Loadable<Launch>
 
-    @Inject private(set) var service: Service
+    @Inject private var service: Service
     private let flow: LaunchesFlow
     private let launchId: String?
 

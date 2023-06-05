@@ -5,7 +5,7 @@ import DependencyInjection
 
 struct LiveLaunchesFlow: LaunchesFlow {
     // MARK: - Properties
-    @Inject private(set) var service: Service
+    @Inject private var service: Service
     private(set) var navigationController: UINavigationController
 
     // MARK: - Lifecycle

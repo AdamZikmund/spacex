@@ -6,7 +6,7 @@ import DependencyInjection
 
 class LaunchesViewModel: NSObject {
     // MARK: - Properties
-    @Inject private(set) var service: Service
+    @Inject private var service: Service
     private let flow: LaunchesFlow
     private var store = Set<AnyCancellable>()
     private let launchesSubject = PassthroughSubject<[Launch], Never>()

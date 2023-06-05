@@ -23,7 +23,8 @@ let package = Package(
         .target(
             name: "ViewComponent",
             dependencies: [],
-            resources: [.process("Resources/Colors.xcassets")]),
+            resources: [.process("Resources/Colors.xcassets")]
+        ),
         .testTarget(
             name: "ViewComponentTests",
             dependencies: ["ViewComponent"]
