@@ -94,21 +94,6 @@ class LaunchesViewController: UITableViewController {
     }
 }
 
-// MARK: - Preview
-struct LaunchesViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        MockService.bootstrap()
-        return NavigationView {
-            LaunchesViewController(
-                viewModel: .init(flow: MockLaunchesFlow())
-            )
-            .preview
-            .navigationTitle("Launches")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-    }
-}
-
 // MARK: - UITableViewDelegate & UITableViewDataSource
 extension LaunchesViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -154,6 +139,23 @@ extension LaunchesViewController: UISearchBarDelegate {
             viewModel.setSearchText(nil)
         } else {
             viewModel.setSearchText(searchText)
+        }
+    }
+}
+
+// MARK: - Preview
+struct LaunchesViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            LaunchesViewController(
+                viewModel: .init(
+                    service: MockService.build(),
+                    flow: MockLaunchesFlow()
+                )
+            )
+            .preview
+            .navigationTitle("Launches")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

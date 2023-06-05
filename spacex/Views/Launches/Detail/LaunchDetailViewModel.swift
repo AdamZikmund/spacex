@@ -6,7 +6,7 @@ class LaunchDetailViewModel: ObservableObject {
     // MARK: - Properties
     @Published private(set) var launchLoadable: Loadable<Launch>
 
-    @Inject private var service: Service
+    private let service: Service
     private let flow: LaunchesFlow
     private let launchId: String?
 
@@ -15,7 +15,7 @@ class LaunchDetailViewModel: ObservableObject {
     }
 
     var isLoading: Bool {
-        launchLoadable == .loading
+        launchLoadable.isLoading
     }
 
     var name: String {
@@ -61,21 +61,23 @@ class LaunchDetailViewModel: ObservableObject {
 
     // MARK: - Lifecycle
     init(
+        service: Service,
         flow: LaunchesFlow,
         launch: Launch?,
         launchId: String?
     ) {
+        self.service = service
         self.flow = flow
         self.launchLoadable = .init(value: launch)
         self.launchId = launchId
     }
 
     // MARK: - Networking
-    func getLaunch() {
-        guard let launchId else { return }
+    @discardableResult func getLaunch() -> Task<Void, Never> {
         Task {
             let loadable: Loadable<Launch>
             do {
+                guard let launchId else { throw GeneralError.missingData }
                 let launch = try await service.launches.getLaunch(id: launchId)
                 loadable = .success(launch)
             } catch {

@@ -7,14 +7,3 @@ protocol Service {
 
     static func build() -> Self
 }
-
-extension Service {
-    static func bootstrap(
-        _ provider: DependencyProvider = SharedDependencyProvider.shared
-    ) {
-        let container = provider.container
-        container.register(Service.self) { _ in
-            build()
-        }
-    }
-}

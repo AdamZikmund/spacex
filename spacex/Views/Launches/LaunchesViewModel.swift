@@ -6,7 +6,7 @@ import DependencyInjection
 
 class LaunchesViewModel: NSObject {
     // MARK: - Properties
-    @Inject private var service: Service
+    private let service: Service
     private let flow: LaunchesFlow
     private var store = Set<AnyCancellable>()
     private let launchesSubject = PassthroughSubject<[Launch], Never>()
@@ -55,7 +55,11 @@ class LaunchesViewModel: NSObject {
     }
 
     // MARK: - Lifecycle
-    init(flow: LaunchesFlow) {
+    init(
+        service: Service,
+        flow: LaunchesFlow
+    ) {
+        self.service = service
         self.flow = flow
         super.init()
         self.setupBidings()

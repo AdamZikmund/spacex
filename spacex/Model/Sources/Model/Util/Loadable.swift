@@ -5,6 +5,27 @@ public enum Loadable<T>: Equatable {
     case success(T)
     case failure(Error)
 
+    public var isLoading: Bool {
+        if case .loading = self {
+            return true
+        }
+        return false
+    }
+
+    public var isSuccess: Bool {
+        if case .success = self {
+            return true
+        }
+        return false
+    }
+
+    public var isFailure: Bool {
+        if case .failure = self {
+            return true
+        }
+        return false
+    }
+
     // MARK: - Properties
     public var value: T? {
         if case let .success(value) = self {

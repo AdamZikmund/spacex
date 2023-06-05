@@ -5,17 +5,21 @@ import DependencyInjection
 
 struct LiveLaunchesFlow: LaunchesFlow {
     // MARK: - Properties
-    @Inject private var service: Service
+    private let service: Service
     private(set) var navigationController: UINavigationController
 
     // MARK: - Lifecycle
-    init(navigationController: UINavigationController) {
+    init(
+        service: Service,
+        navigationController: UINavigationController
+    ) {
+        self.service = service
         self.navigationController = navigationController
     }
 
     // MARK: - Flow
     func start() {
-        let viewModel = LaunchesViewModel(flow: self)
+        let viewModel = LaunchesViewModel(service: service, flow: self)
         let controller =  LaunchesViewController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: true)
     }
@@ -58,6 +62,7 @@ extension LiveLaunchesFlow {
 
     func showDetail(launch: Launch) {
         let controller = LaunchDetailViewController(
+            service: service,
             flow: self,
             launch: nil,
             launchId: launch.id

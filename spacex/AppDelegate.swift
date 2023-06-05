@@ -11,21 +11,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        setupService()
         setupAppearance()
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        rootFlow = LiveRootFlow(window: window)
+        let service = buildService()
+        rootFlow = LiveRootFlow(service: service, window: window)
         rootFlow?.start()
         return true
     }
 
     // MARK: - Private
-    private func setupService() {
+    private func buildService() -> Service {
 #if LIVE
-        LiveService.bootstrap()
+        LiveService.build()
 #else
-        MockService.bootstrap()
+        MockService.build()
 #endif
     }
 
