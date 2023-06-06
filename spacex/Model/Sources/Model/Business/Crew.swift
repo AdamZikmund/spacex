@@ -14,3 +14,13 @@ public struct Crew: Decodable, Hashable {
         self.role = role
     }
 }
+
+// MARK: - Placeholder
+public extension Crew {
+    static var placeholder: Self {
+        .init(
+            crew: "placeholder",
+            role: "placeholder"
+        )
+    }
+}
