@@ -1,21 +1,25 @@
 import Foundation
 import Model
 import DependencyInjection
+import ViewComponent
 
-class LaunchDetailViewModel: ObservableObject {
+@MainActor final class LaunchDetailViewModel: ObservableObject {
     // MARK: - Properties
-    @Published private(set) var launchLoadable: Loadable<Launch>
+    @Published private var launchLoadable: Loadable<Launch>
 
     private let service: Service
-    private let flow: LaunchesFlow
     private let launchId: String?
 
     private var launch: Launch? {
         launchLoadable.value
     }
 
+    var viewState: ViewState {
+        launchLoadable.viewState
+    }
+
     var isLoading: Bool {
-        launchLoadable.isLoading
+        launchLoadable.viewState == .loading
     }
 
     var name: String {
@@ -29,7 +33,7 @@ class LaunchDetailViewModel: ObservableObject {
     }
 
     var crew: [Crew] {
-        if isLoading { return (0..<5).map { _ in .init(crew: "placeholder", role: "placeholder") } }
+        if isLoading { return (0..<5).map { _ in .placeholder } }
         return launch?.crew ?? []
     }
 
@@ -55,36 +59,31 @@ class LaunchDetailViewModel: ObservableObject {
         "Common.SomethingWentWrong".localized()
     }
 
-    var tryAgain: String {
+    var tryAgainTitle: String {
         "Common.TryAgain".localized()
     }
 
     // MARK: - Lifecycle
     init(
         service: Service,
-        flow: LaunchesFlow,
         launch: Launch?,
         launchId: String?
     ) {
         self.service = service
-        self.flow = flow
         self.launchLoadable = .init(value: launch)
         self.launchId = launchId
     }
 
     // MARK: - Networking
     @discardableResult func getLaunch() -> Task<Void, Never> {
-        Task {
-            let loadable: Loadable<Launch>
+        Task(priority: .userInitiated) {
             do {
+                guard launch == nil else { return }
                 guard let launchId else { throw GeneralError.missingData }
                 let launch = try await service.launches.getLaunch(id: launchId)
-                loadable = .success(launch)
+                launchLoadable = .success(launch)
             } catch {
-                loadable = .failure(error)
-            }
-            await MainActor.run { [weak self] in
-                self?.launchLoadable = loadable
+                launchLoadable = .failure(error)
             }
         }
     }
