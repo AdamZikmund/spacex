@@ -7,13 +7,12 @@ final class DetailViewModelTests: XCTestCase {
     @MainActor func testGetLaunchSuccess() async throws {
         let viewModel = LaunchDetailViewModel(
             service: MockService.build(),
-            flow: MockLaunchesFlow(),
             launch: nil,
             launchId: "62dd70d5202306255024d139"
         )
         XCTAssertTrue(viewModel.isLoading)
         await viewModel.getLaunch().value
-        XCTAssertTrue(viewModel.launchLoadable.isSuccess)
+        XCTAssertTrue(viewModel.viewState == .success)
         XCTAssertEqual(viewModel.name, "Crew-5")
         XCTAssertEqual(viewModel.details, "Best flight ever")
         XCTAssertEqual(viewModel.crew.count, 4)
@@ -25,13 +24,12 @@ final class DetailViewModelTests: XCTestCase {
     @MainActor func testGetLaunchFailure() async throws {
         let viewModel = LaunchDetailViewModel(
             service: FailService.build(),
-            flow: MockLaunchesFlow(),
             launch: nil,
             launchId: "62dd70d5202306255024d139"
         )
         XCTAssertTrue(viewModel.isLoading)
         await viewModel.getLaunch().value
-        XCTAssertTrue(viewModel.launchLoadable.isFailure)
+        XCTAssertTrue(viewModel.viewState == .failure)
         XCTAssertTrue(viewModel.name.isEmpty)
         XCTAssertTrue(viewModel.details.isEmpty)
         XCTAssertTrue(viewModel.crew.isEmpty)
@@ -39,19 +37,18 @@ final class DetailViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.date.isEmpty)
         XCTAssertNil(viewModel.patchURL)
         XCTAssertFalse(viewModel.errorTitle.isEmpty)
-        XCTAssertFalse(viewModel.tryAgain.isEmpty)
+        XCTAssertFalse(viewModel.tryAgainTitle.isEmpty)
     }
 
     @MainActor func testMissingLaunchOrLaunchId() async throws {
         let viewModel = LaunchDetailViewModel(
             service: FailService.build(),
-            flow: MockLaunchesFlow(),
             launch: nil,
             launchId: nil
         )
         XCTAssertTrue(viewModel.isLoading)
         await viewModel.getLaunch().value
-        XCTAssertTrue(viewModel.launchLoadable.isFailure)
+        XCTAssertTrue(viewModel.viewState == .failure)
         XCTAssertTrue(viewModel.name.isEmpty)
         XCTAssertTrue(viewModel.details.isEmpty)
         XCTAssertTrue(viewModel.crew.isEmpty)
@@ -59,10 +56,10 @@ final class DetailViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.date.isEmpty)
         XCTAssertNil(viewModel.patchURL)
         XCTAssertFalse(viewModel.errorTitle.isEmpty)
-        XCTAssertFalse(viewModel.tryAgain.isEmpty)
+        XCTAssertFalse(viewModel.tryAgainTitle.isEmpty)
     }
 
-    func testInjectingModel() throws {
+    @MainActor func testInjectingModel() async throws {
         let date = Date()
         let launch = Launch(
             id: "62dd70d5202306255024d139",
@@ -77,11 +74,11 @@ final class DetailViewModelTests: XCTestCase {
         )
         let viewModel = LaunchDetailViewModel(
             service: MockService.build(),
-            flow: MockLaunchesFlow(),
             launch: launch,
             launchId: nil
         )
-        XCTAssertTrue(viewModel.launchLoadable.isSuccess)
+        await viewModel.getLaunch().value
+        XCTAssertTrue(viewModel.viewState == .success)
         XCTAssertEqual(viewModel.name, "Launch")
         XCTAssertEqual(viewModel.details, "Rocket launch")
         XCTAssertEqual(viewModel.crew.count, 1)
@@ -92,10 +89,9 @@ final class DetailViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.date, ISO8601DateFormatter().string(from: date))
     }
 
-    func testPlacholders() throws {
+    @MainActor func testPlacholders() throws {
         let viewModel = LaunchDetailViewModel(
             service: MockService.build(),
-            flow: MockLaunchesFlow(),
             launch: nil,
             launchId: nil
         )
