@@ -40,7 +40,7 @@ final class ModelTests: XCTestCase {
         XCTAssertTrue(paginable.canStart)
         XCTAssertEqual(paginable.offset, 0)
         XCTAssertEqual(paginable.limit, 20)
-        paginable.failed(CodableError.decodingFailed)
+        paginable.failure(CodableError.decodingFailed)
         XCTAssertTrue(paginable.canStart)
         XCTAssertEqual(paginable.offset, 0)
         XCTAssertEqual(paginable.limit, 20)

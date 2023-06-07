@@ -5,3 +5,9 @@
 "Common.SomethingWentWrong" = "Something went wrong!";
 "Common.LoadMore" = "Load more";
 "Common.Search" = "Search";
+"Common.ASC" = "Ascending";
+"Common.DESC" = "Descending";
+"SortView.Key" = "Key";
+"SortView.Direction" = "Direction";
+"SortView.Apply" = "Apply";
+

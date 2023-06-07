@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Launch: Decodable {
+public struct Launch: Decodable, Hashable {
     // MARK: - Properties
     public let id: String
     public let name: String
@@ -40,5 +40,20 @@ private extension Launch {
         case links
         case details
         case crew
+    }
+}
+
+// MARK: - Placeholder
+public extension Launch {
+    static var placeholder: Self {
+        .init(
+            id: UUID().uuidString,
+            name: "placeholder",
+            date: .now,
+            success: true,
+            links: .placeholder,
+            details: "placeholder",
+            crew: (0..<5).map { _ in .placeholder }
+        )
     }
 }

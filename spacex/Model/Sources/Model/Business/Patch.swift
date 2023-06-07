@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Patch: Decodable {
+public struct Patch: Decodable, Hashable {
     // MARK: - Properties
     public let small: String?
     public let large: String?
@@ -22,5 +22,15 @@ public struct Patch: Decodable {
     ) {
         self.small = small
         self.large = large
+    }
+}
+
+// MARK: - Placeholder
+public extension Patch {
+    static var placeholder: Self {
+        .init(
+            small: "placeholder",
+            large: "placeholder"
+        )
     }
 }

@@ -19,6 +19,22 @@ public struct Paginable<T> {
         }
     }
 
+    public var isLoading: Bool {
+        if case .loading = state {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    public var error: Error? {
+        if case let .failure(error) = state {
+            return error
+        } else {
+            return nil
+        }
+    }
+
     // MARK: - Lifecycle
     public init(
         limit: Int = 20,
@@ -44,8 +60,8 @@ public struct Paginable<T> {
         state = .ready
     }
 
-    public mutating func failed(_ error: Error) {
-        state = .failed(error)
+    public mutating func failure(_ error: Error) {
+        state = .failure(error)
     }
 
     public mutating func reset() {
@@ -60,6 +76,6 @@ public extension Paginable {
     enum State {
         case loading
         case ready
-        case failed(Error)
+        case failure(Error)
     }
 }

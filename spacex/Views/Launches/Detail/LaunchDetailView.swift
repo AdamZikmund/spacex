@@ -14,7 +14,7 @@ struct LaunchDetailView: View {
     // MARK: - Body
     var body: some View {
         ScrollView {
-            switch viewModel.launchLoadable {
+            switch viewModel.viewState {
             case .loading, .success:
                 content
             case .failure:
@@ -22,7 +22,7 @@ struct LaunchDetailView: View {
             }
         }
         .redacted(if: viewModel.isLoading)
-        .animation(.default, value: viewModel.launchLoadable)
+        .animation(.default, value: viewModel.viewState)
         .background(ColorPallete.background.color)
         .onAppear {
             viewModel.getLaunch()
@@ -52,7 +52,7 @@ struct LaunchDetailView: View {
     private var error: some View {
         ErrorView(
             text: viewModel.errorTitle,
-            tryAgainText: viewModel.tryAgain
+            tryAgainText: viewModel.tryAgainTitle
         ) {
             viewModel.getLaunch()
         }
@@ -116,7 +116,6 @@ struct LaunchDetailView_Previews: PreviewProvider {
             LaunchDetailView(
                 viewModel: .init(
                     service: MockService.build(),
-                    flow: MockLaunchesFlow(),
                     launch: nil,
                     launchId: ""
                 )
