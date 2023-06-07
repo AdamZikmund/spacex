@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Sort: Codable {
+public struct Sort: Codable, Hashable {
     // MARK: - Properties
     public let key: String
     public let direction: Direction
@@ -35,7 +35,7 @@ public struct Sort: Codable {
 
 // MARK: - Direction
 public extension Sort {
-    enum Direction: String, Codable, CaseIterable {
+    enum Direction: String, Codable, CaseIterable, Hashable {
         case asc
         case desc
     }

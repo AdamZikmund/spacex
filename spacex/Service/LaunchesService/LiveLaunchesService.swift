@@ -20,7 +20,7 @@ class LiveLaunchesService: LaunchesService {
         sort: Sort? = nil
     ) async throws -> Query<Launch> {
         let query: QueryBody.Query
-        if let search {
+        if let search, !search.isEmpty {
             query = .init(text: .init(search: search))
         } else {
             query = .init()

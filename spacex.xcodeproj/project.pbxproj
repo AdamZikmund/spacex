@@ -44,6 +44,30 @@
 		BC2AF3162A2C9C83007D97D2 /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3142A2C9C83007D97D2 /* LiveService.swift */; };
 		BC2AF3182A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
 		BC2AF3192A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
+		BC4328592A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */; };
+		BC43285A2A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */; };
+		BC43285C2A2E2CF400F73C62 /* _LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */; };
+		BC43285D2A2E2CF400F73C62 /* _LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */; };
+		BC43285F2A2E3E4800F73C62 /* Loadable+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */; };
+		BC4328602A2E3E4800F73C62 /* Loadable+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */; };
+		BC4328622A2E3E5500F73C62 /* Paginable+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4328612A2E3E5500F73C62 /* Paginable+ViewState.swift */; };
+		BC4328632A2E3E5500F73C62 /* Paginable+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4328612A2E3E5500F73C62 /* Paginable+ViewState.swift */; };
+		BC645ACC2A2F92B100918A92 /* MainFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645ACB2A2F92B100918A92 /* MainFlowView.swift */; };
+		BC645ACD2A2F92B100918A92 /* MainFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645ACB2A2F92B100918A92 /* MainFlowView.swift */; };
+		BC645ACF2A2F92C800918A92 /* MainFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645ACE2A2F92C800918A92 /* MainFlowViewModel.swift */; };
+		BC645AD02A2F92C800918A92 /* MainFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645ACE2A2F92C800918A92 /* MainFlowViewModel.swift */; };
+		BC645AD22A2FE28500918A92 /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD12A2FE28500918A92 /* SortView.swift */; };
+		BC645AD32A2FE28500918A92 /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD12A2FE28500918A92 /* SortView.swift */; };
+		BC645AD52A2FE28A00918A92 /* SortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD42A2FE28A00918A92 /* SortViewModel.swift */; };
+		BC645AD62A2FE28A00918A92 /* SortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD42A2FE28A00918A92 /* SortViewModel.swift */; };
+		BC645AD82A3071EA00918A92 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD72A3071EA00918A92 /* Presentable.swift */; };
+		BC645AD92A3071EA00918A92 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD72A3071EA00918A92 /* Presentable.swift */; };
+		BC645ADB2A308FDC00918A92 /* MainFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645ADA2A308FDC00918A92 /* MainFlowTests.swift */; };
+		BC645ADD2A30980C00918A92 /* Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645ADC2A30980C00918A92 /* Navigable.swift */; };
+		BC645ADE2A30980C00918A92 /* Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645ADC2A30980C00918A92 /* Navigable.swift */; };
+		BC645AE02A309B5000918A92 /* PresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645ADF2A309B5000918A92 /* PresentableTests.swift */; };
+		BC645AE82A30A64700918A92 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AE72A30A64700918A92 /* MainApp.swift */; };
+		BC645AE92A30A64700918A92 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AE72A30A64700918A92 /* MainApp.swift */; };
 		BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896B32A27427600C16E52 /* AppDelegate.swift */; };
 		BC6896BD2A27427700C16E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BC2A27427700C16E52 /* Assets.xcassets */; };
 		BC6896C02A27427700C16E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */; };
@@ -144,6 +168,19 @@
 		BC26A8E12A2E16BF0092A7D3 /* FailLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailLaunchesService.swift; sourceTree = "<group>"; };
 		BC2AF3142A2C9C83007D97D2 /* LiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveService.swift; sourceTree = "<group>"; };
 		BC2AF3172A2C9C8B007D97D2 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LaunchesView.swift; sourceTree = "<group>"; };
+		BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LaunchesViewModel.swift; sourceTree = "<group>"; };
+		BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loadable+ViewState.swift"; sourceTree = "<group>"; };
+		BC4328612A2E3E5500F73C62 /* Paginable+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Paginable+ViewState.swift"; sourceTree = "<group>"; };
+		BC645ACB2A2F92B100918A92 /* MainFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowView.swift; sourceTree = "<group>"; };
+		BC645ACE2A2F92C800918A92 /* MainFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowViewModel.swift; sourceTree = "<group>"; };
+		BC645AD12A2FE28500918A92 /* SortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
+		BC645AD42A2FE28A00918A92 /* SortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewModel.swift; sourceTree = "<group>"; };
+		BC645AD72A3071EA00918A92 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		BC645ADA2A308FDC00918A92 /* MainFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowTests.swift; sourceTree = "<group>"; };
+		BC645ADC2A30980C00918A92 /* Navigable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigable.swift; sourceTree = "<group>"; };
+		BC645ADF2A309B5000918A92 /* PresentableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableTests.swift; sourceTree = "<group>"; };
+		BC645AE72A30A64700918A92 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		BC6896B02A27427600C16E52 /* mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6896B32A27427600C16E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC6896BC2A27427700C16E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -236,6 +273,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC645ACA2A2F92A400918A92 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BC645ACB2A2F92B100918A92 /* MainFlowView.swift */,
+				BC645ACE2A2F92C800918A92 /* MainFlowViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		BC6896A72A27427600C16E52 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +321,7 @@
 				BC6896E92A27CA1700C16E52 /* Service */,
 				BC6896CD2A27450700C16E52 /* Resources */,
 				BC6896B32A27427600C16E52 /* AppDelegate.swift */,
+				BC645AE72A30A64700918A92 /* MainApp.swift */,
 			);
 			path = spacex;
 			sourceTree = "<group>";
@@ -326,6 +373,7 @@
 		BC6896FA2A27D74300C16E52 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				BC645ACA2A2F92A400918A92 /* Main */,
 				BC6896FE2A27D76F00C16E52 /* Root */,
 				BC6896FB2A27D74A00C16E52 /* Launches */,
 			);
@@ -369,6 +417,8 @@
 				BC6897092A27DD8A00C16E52 /* LaunchCell */,
 				BC6897052A27DA7000C16E52 /* LaunchesViewController.swift */,
 				BC6897072A27DA9600C16E52 /* LaunchesViewModel.swift */,
+				BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */,
+				BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */,
 			);
 			path = Launches;
 			sourceTree = "<group>";
@@ -389,6 +439,10 @@
 				BCE6D7B12A28EFC400399595 /* String+Localize.swift */,
 				BCC5E8A52A29EBD400079E25 /* UIViewControllerRepresentable.swift */,
 				BCC5E8A82A29ECF300079E25 /* UIViewController+Preview.swift */,
+				BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */,
+				BC4328612A2E3E5500F73C62 /* Paginable+ViewState.swift */,
+				BC645AD72A3071EA00918A92 /* Presentable.swift */,
+				BC645ADC2A30980C00918A92 /* Navigable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -397,6 +451,8 @@
 			isa = PBXGroup;
 			children = (
 				BC6897122A27EBBE00C16E52 /* SortActionSheet.swift */,
+				BC645AD12A2FE28500918A92 /* SortView.swift */,
+				BC645AD42A2FE28A00918A92 /* SortViewModel.swift */,
 			);
 			path = Sort;
 			sourceTree = "<group>";
@@ -454,6 +510,8 @@
 				BCE6D7C32A2901B900399595 /* DetailViewModelTests.swift */,
 				BCB787642A290B2A00A4C747 /* ConfigurationTests.swift */,
 				BCB7876A2A290D0300A4C747 /* ServiceTests.swift */,
+				BC645ADA2A308FDC00918A92 /* MainFlowTests.swift */,
+				BC645ADF2A309B5000918A92 /* PresentableTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -468,6 +526,7 @@
 				BC19D0902A28E6310073199B /* Sources */,
 				BC19D0AA2A28E6310073199B /* Frameworks */,
 				BC19D0B02A28E6310073199B /* Resources */,
+				BC645AE12A30A2B900918A92 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -637,6 +696,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BC645AE12A30A2B900918A92 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		BCC5E8AB2A2A1D3B00079E25 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -662,13 +739,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC645AD32A2FE28500918A92 /* SortView.swift in Sources */,
 				BCC5E8AA2A29ECF300079E25 /* UIViewController+Preview.swift in Sources */,
 				BCE6D79E2A28E9D600399595 /* MockConfiguration.swift in Sources */,
 				BC19D0912A28E6310073199B /* LiveLaunchesFlow.swift in Sources */,
+				BC43285A2A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */,
 				BC19D0922A28E6310073199B /* ErrorAlert.swift in Sources */,
 				BCC861312A29398800DB6B56 /* MockRootFlow.swift in Sources */,
 				BC26A8E02A2E141C0092A7D3 /* FailService.swift in Sources */,
 				BCB787732A290EFE00A4C747 /* MockAppStateService.swift in Sources */,
+				BC645AD92A3071EA00918A92 /* Presentable.swift in Sources */,
 				BCB787762A290FDC00A4C747 /* LaunchesService.swift in Sources */,
 				BCB787702A290E8600A4C747 /* AppStateService.swift in Sources */,
 				BC19D0942A28E6310073199B /* Collection+Safe.swift in Sources */,
@@ -676,12 +756,15 @@
 				BC19D0962A28E6310073199B /* LaunchDetailViewController.swift in Sources */,
 				BCE6D7A22A28EA6400399595 /* LiveConfiguration+Builder.swift in Sources */,
 				BC19D0972A28E6310073199B /* LaunchCell.swift in Sources */,
+				BC645ADE2A30980C00918A92 /* Navigable.swift in Sources */,
+				BC43285D2A2E2CF400F73C62 /* _LaunchesViewModel.swift in Sources */,
 				BC2AF3162A2C9C83007D97D2 /* LiveService.swift in Sources */,
 				BC19D0982A28E6310073199B /* LiveRootFlow.swift in Sources */,
 				BC19D09A2A28E6310073199B /* Configuration.swift in Sources */,
 				BC19D09B2A28E6310073199B /* AppDelegate.swift in Sources */,
 				BC19D09C2A28E6310073199B /* LaunchDetailViewModel.swift in Sources */,
 				BCB787792A290FE200A4C747 /* MockLaunchesService.swift in Sources */,
+				BC645ACD2A2F92B100918A92 /* MainFlowView.swift in Sources */,
 				BC19D09D2A28E6310073199B /* LiveAppStateService.swift in Sources */,
 				BC19D0A02A28E6310073199B /* LiveConfiguration.swift in Sources */,
 				BC19D0A12A28E6310073199B /* LaunchDetailView.swift in Sources */,
@@ -693,9 +776,14 @@
 				BC19D0A52A28E6310073199B /* LiveLaunchesService.swift in Sources */,
 				BCC8612E2A29348700DB6B56 /* LaunchesFlow.swift in Sources */,
 				BC19D0A62A28E6310073199B /* View+Extension.swift in Sources */,
+				BC4328632A2E3E5500F73C62 /* Paginable+ViewState.swift in Sources */,
 				BCC5E8A72A29EBD400079E25 /* UIViewControllerRepresentable.swift in Sources */,
+				BC4328602A2E3E4800F73C62 /* Loadable+ViewState.swift in Sources */,
 				BC19D0A82A28E6310073199B /* Service.swift in Sources */,
+				BC645AD02A2F92C800918A92 /* MainFlowViewModel.swift in Sources */,
+				BC645AD62A2FE28A00918A92 /* SortViewModel.swift in Sources */,
 				BCC8612B2A29346E00DB6B56 /* RootFlow.swift in Sources */,
+				BC645AE92A30A64700918A92 /* MainApp.swift in Sources */,
 				BC26A8E32A2E16BF0092A7D3 /* FailLaunchesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,13 +792,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC645AD22A2FE28500918A92 /* SortView.swift in Sources */,
 				BCC5E8A92A29ECF300079E25 /* UIViewController+Preview.swift in Sources */,
 				BC6896FD2A27D75C00C16E52 /* LiveLaunchesFlow.swift in Sources */,
 				BC6897162A27EF9000C16E52 /* ErrorAlert.swift in Sources */,
+				BC4328592A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */,
 				BC6896F22A27CC3E00C16E52 /* MockConfiguration.swift in Sources */,
 				BCC861302A29398800DB6B56 /* MockRootFlow.swift in Sources */,
 				BC26A8DF2A2E141C0092A7D3 /* FailService.swift in Sources */,
 				BCB787722A290EFE00A4C747 /* MockAppStateService.swift in Sources */,
+				BC645AD82A3071EA00918A92 /* Presentable.swift in Sources */,
 				BCB787752A290FDC00A4C747 /* LaunchesService.swift in Sources */,
 				BCB7876F2A290E8600A4C747 /* AppStateService.swift in Sources */,
 				BC68970E2A27DF7500C16E52 /* Collection+Safe.swift in Sources */,
@@ -718,12 +809,15 @@
 				BC19D0732A28A9AD0073199B /* LaunchDetailViewController.swift in Sources */,
 				BC68970B2A27DD9C00C16E52 /* LaunchCell.swift in Sources */,
 				BC6897002A27D77900C16E52 /* LiveRootFlow.swift in Sources */,
+				BC645ADD2A30980C00918A92 /* Navigable.swift in Sources */,
+				BC43285C2A2E2CF400F73C62 /* _LaunchesViewModel.swift in Sources */,
 				BC2AF3152A2C9C83007D97D2 /* LiveService.swift in Sources */,
 				BCE6D79F2A28E9D800399595 /* LiveConfiguration.swift in Sources */,
 				BC6896ED2A27CBB000C16E52 /* Configuration.swift in Sources */,
 				BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */,
 				BC68971B2A28930500C16E52 /* LaunchDetailViewModel.swift in Sources */,
 				BCB787782A290FE200A4C747 /* MockLaunchesService.swift in Sources */,
+				BC645ACC2A2F92B100918A92 /* MainFlowView.swift in Sources */,
 				BCE6D7A42A28EA7200399595 /* MockConfiguration+Builder.swift in Sources */,
 				BC6896F62A27CEBF00C16E52 /* LiveAppStateService.swift in Sources */,
 				BC6897192A2892F900C16E52 /* LaunchDetailView.swift in Sources */,
@@ -735,9 +829,14 @@
 				BC6896F42A27CEAD00C16E52 /* LiveLaunchesService.swift in Sources */,
 				BCC8612D2A29348700DB6B56 /* LaunchesFlow.swift in Sources */,
 				BC19D0792A28BCBE0073199B /* View+Extension.swift in Sources */,
+				BC4328622A2E3E5500F73C62 /* Paginable+ViewState.swift in Sources */,
 				BCC5E8A62A29EBD400079E25 /* UIViewControllerRepresentable.swift in Sources */,
+				BC43285F2A2E3E4800F73C62 /* Loadable+ViewState.swift in Sources */,
 				BC6896EB2A27CA2600C16E52 /* Service.swift in Sources */,
+				BC645ACF2A2F92C800918A92 /* MainFlowViewModel.swift in Sources */,
+				BC645AD52A2FE28A00918A92 /* SortViewModel.swift in Sources */,
 				BCC8612A2A29346E00DB6B56 /* RootFlow.swift in Sources */,
+				BC645AE82A30A64700918A92 /* MainApp.swift in Sources */,
 				BC26A8E22A2E16BF0092A7D3 /* FailLaunchesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -756,6 +855,8 @@
 			files = (
 				BCB787652A290B2A00A4C747 /* ConfigurationTests.swift in Sources */,
 				BCB7876B2A290D0300A4C747 /* ServiceTests.swift in Sources */,
+				BC645ADB2A308FDC00918A92 /* MainFlowTests.swift in Sources */,
+				BC645AE02A309B5000918A92 /* PresentableTests.swift in Sources */,
 				BCE6D7C42A2901B900399595 /* DetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

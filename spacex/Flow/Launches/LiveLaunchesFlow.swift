@@ -63,7 +63,6 @@ extension LiveLaunchesFlow {
     func showDetail(launch: Launch) {
         let controller = LaunchDetailViewController(
             service: service,
-            flow: self,
             launch: nil,
             launchId: launch.id
         )

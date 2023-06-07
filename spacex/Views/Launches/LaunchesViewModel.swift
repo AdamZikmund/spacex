@@ -135,7 +135,7 @@ class LaunchesViewModel: NSObject {
                 case .success(let query):
                     self?.launchesPaginable.loaded(query.docs, hasNext: query.hasNextPage)
                 case .failure(let error):
-                    self?.launchesPaginable.failed(error)
+                    self?.launchesPaginable.failure(error)
                     self?.openError(error: error) {
                         self?.getLaunches()
                     }
