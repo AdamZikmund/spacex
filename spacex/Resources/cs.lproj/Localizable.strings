@@ -5,3 +5,8 @@
 "Common.SomethingWentWrong" = "Neco se pokazilo!";
 "Common.LoadMore" = "Nacist dalsi";
 "Common.Search" = "Vyhledavejte";
+"Common.ASC" = "Vzestupne";
+"Common.DESC" = "Sestupne";
+"SortView.Key" = "Klic";
+"SortView.Direction" = "Smer";
+"SortView.Apply" = "Potvrdit";

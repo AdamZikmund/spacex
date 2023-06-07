@@ -44,6 +44,10 @@
 		BC2AF3162A2C9C83007D97D2 /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3142A2C9C83007D97D2 /* LiveService.swift */; };
 		BC2AF3182A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
 		BC2AF3192A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
+		BC645AD22A2FE28500918A92 /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD12A2FE28500918A92 /* SortView.swift */; };
+		BC645AD32A2FE28500918A92 /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD12A2FE28500918A92 /* SortView.swift */; };
+		BC645AD52A2FE28A00918A92 /* SortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD42A2FE28A00918A92 /* SortViewModel.swift */; };
+		BC645AD62A2FE28A00918A92 /* SortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC645AD42A2FE28A00918A92 /* SortViewModel.swift */; };
 		BC6896B42A27427600C16E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6896B32A27427600C16E52 /* AppDelegate.swift */; };
 		BC6896BD2A27427700C16E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BC2A27427700C16E52 /* Assets.xcassets */; };
 		BC6896C02A27427700C16E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */; };
@@ -144,6 +148,8 @@
 		BC26A8E12A2E16BF0092A7D3 /* FailLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailLaunchesService.swift; sourceTree = "<group>"; };
 		BC2AF3142A2C9C83007D97D2 /* LiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveService.swift; sourceTree = "<group>"; };
 		BC2AF3172A2C9C8B007D97D2 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		BC645AD12A2FE28500918A92 /* SortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
+		BC645AD42A2FE28A00918A92 /* SortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewModel.swift; sourceTree = "<group>"; };
 		BC6896B02A27427600C16E52 /* mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6896B32A27427600C16E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC6896BC2A27427700C16E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -397,6 +403,8 @@
 			isa = PBXGroup;
 			children = (
 				BC6897122A27EBBE00C16E52 /* SortActionSheet.swift */,
+				BC645AD12A2FE28500918A92 /* SortView.swift */,
+				BC645AD42A2FE28A00918A92 /* SortViewModel.swift */,
 			);
 			path = Sort;
 			sourceTree = "<group>";
@@ -662,6 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC645AD32A2FE28500918A92 /* SortView.swift in Sources */,
 				BCC5E8AA2A29ECF300079E25 /* UIViewController+Preview.swift in Sources */,
 				BCE6D79E2A28E9D600399595 /* MockConfiguration.swift in Sources */,
 				BC19D0912A28E6310073199B /* LiveLaunchesFlow.swift in Sources */,
@@ -695,6 +704,7 @@
 				BC19D0A62A28E6310073199B /* View+Extension.swift in Sources */,
 				BCC5E8A72A29EBD400079E25 /* UIViewControllerRepresentable.swift in Sources */,
 				BC19D0A82A28E6310073199B /* Service.swift in Sources */,
+				BC645AD62A2FE28A00918A92 /* SortViewModel.swift in Sources */,
 				BCC8612B2A29346E00DB6B56 /* RootFlow.swift in Sources */,
 				BC26A8E32A2E16BF0092A7D3 /* FailLaunchesService.swift in Sources */,
 			);
@@ -704,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC645AD22A2FE28500918A92 /* SortView.swift in Sources */,
 				BCC5E8A92A29ECF300079E25 /* UIViewController+Preview.swift in Sources */,
 				BC6896FD2A27D75C00C16E52 /* LiveLaunchesFlow.swift in Sources */,
 				BC6897162A27EF9000C16E52 /* ErrorAlert.swift in Sources */,
@@ -737,6 +748,7 @@
 				BC19D0792A28BCBE0073199B /* View+Extension.swift in Sources */,
 				BCC5E8A62A29EBD400079E25 /* UIViewControllerRepresentable.swift in Sources */,
 				BC6896EB2A27CA2600C16E52 /* Service.swift in Sources */,
+				BC645AD52A2FE28A00918A92 /* SortViewModel.swift in Sources */,
 				BCC8612A2A29346E00DB6B56 /* RootFlow.swift in Sources */,
 				BC26A8E22A2E16BF0092A7D3 /* FailLaunchesService.swift in Sources */,
 			);
