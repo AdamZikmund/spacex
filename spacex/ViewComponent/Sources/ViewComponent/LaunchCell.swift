@@ -43,6 +43,7 @@ public struct LaunchCell: View {
                 Divider()
             }
         }
+        .contentShape(Rectangle())
     }
 }
 

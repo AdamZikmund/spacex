@@ -59,7 +59,6 @@
       }
     },
     {
-      "enabled" : false,
       "target" : {
         "containerPath" : "container:spacex.xcodeproj",
         "identifier" : "BCB787832A29194300A4C747",
