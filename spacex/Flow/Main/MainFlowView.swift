@@ -16,7 +16,7 @@ struct MainFlowView: View {
     // MARK: - Body
     var body: some View {
         NavigationStack(path: $viewModel.navigationPath) {
-            LaunchesV2View(
+            _LaunchesView(
                 viewModel: viewModel.buildLaunchesViewModel()
             )
             .navigationDestination(for: Navigation.self) { navigation in

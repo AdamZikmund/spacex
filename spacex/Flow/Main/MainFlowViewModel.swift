@@ -25,8 +25,8 @@ import Model
     }
 
     // MARK: - Internal
-    func buildLaunchesViewModel() -> LaunchesV2ViewModel {
-        let viewModel = LaunchesV2ViewModel(service: service)
+    func buildLaunchesViewModel() -> _LaunchesViewModel {
+        let viewModel = _LaunchesViewModel(service: service)
         viewModel
             .navigateToDetail
             .sink { [weak self] launch in

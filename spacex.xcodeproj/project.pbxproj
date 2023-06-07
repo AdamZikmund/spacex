@@ -44,6 +44,10 @@
 		BC2AF3162A2C9C83007D97D2 /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3142A2C9C83007D97D2 /* LiveService.swift */; };
 		BC2AF3182A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
 		BC2AF3192A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
+		BC4328592A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */; };
+		BC43285A2A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */; };
+		BC43285C2A2E2CF400F73C62 /* _LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */; };
+		BC43285D2A2E2CF400F73C62 /* _LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */; };
 		BC43285F2A2E3E4800F73C62 /* Loadable+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */; };
 		BC4328602A2E3E4800F73C62 /* Loadable+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */; };
 		BC4328622A2E3E5500F73C62 /* Paginable+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4328612A2E3E5500F73C62 /* Paginable+ViewState.swift */; };
@@ -162,6 +166,8 @@
 		BC26A8E12A2E16BF0092A7D3 /* FailLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailLaunchesService.swift; sourceTree = "<group>"; };
 		BC2AF3142A2C9C83007D97D2 /* LiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveService.swift; sourceTree = "<group>"; };
 		BC2AF3172A2C9C8B007D97D2 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LaunchesView.swift; sourceTree = "<group>"; };
+		BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LaunchesViewModel.swift; sourceTree = "<group>"; };
 		BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loadable+ViewState.swift"; sourceTree = "<group>"; };
 		BC4328612A2E3E5500F73C62 /* Paginable+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Paginable+ViewState.swift"; sourceTree = "<group>"; };
 		BC645ACB2A2F92B100918A92 /* MainFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowView.swift; sourceTree = "<group>"; };
@@ -407,6 +413,8 @@
 				BC6897092A27DD8A00C16E52 /* LaunchCell */,
 				BC6897052A27DA7000C16E52 /* LaunchesViewController.swift */,
 				BC6897072A27DA9600C16E52 /* LaunchesViewModel.swift */,
+				BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */,
+				BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */,
 			);
 			path = Launches;
 			sourceTree = "<group>";
@@ -514,6 +522,7 @@
 				BC19D0902A28E6310073199B /* Sources */,
 				BC19D0AA2A28E6310073199B /* Frameworks */,
 				BC19D0B02A28E6310073199B /* Resources */,
+				BC645AE12A30A2B900918A92 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -683,6 +692,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BC645AE12A30A2B900918A92 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		BCC5E8AB2A2A1D3B00079E25 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -712,6 +739,7 @@
 				BCC5E8AA2A29ECF300079E25 /* UIViewController+Preview.swift in Sources */,
 				BCE6D79E2A28E9D600399595 /* MockConfiguration.swift in Sources */,
 				BC19D0912A28E6310073199B /* LiveLaunchesFlow.swift in Sources */,
+				BC43285A2A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */,
 				BC19D0922A28E6310073199B /* ErrorAlert.swift in Sources */,
 				BCC861312A29398800DB6B56 /* MockRootFlow.swift in Sources */,
 				BC26A8E02A2E141C0092A7D3 /* FailService.swift in Sources */,
@@ -725,6 +753,7 @@
 				BCE6D7A22A28EA6400399595 /* LiveConfiguration+Builder.swift in Sources */,
 				BC19D0972A28E6310073199B /* LaunchCell.swift in Sources */,
 				BC645ADE2A30980C00918A92 /* Navigable.swift in Sources */,
+				BC43285D2A2E2CF400F73C62 /* _LaunchesViewModel.swift in Sources */,
 				BC2AF3162A2C9C83007D97D2 /* LiveService.swift in Sources */,
 				BC19D0982A28E6310073199B /* LiveRootFlow.swift in Sources */,
 				BC19D09A2A28E6310073199B /* Configuration.swift in Sources */,
@@ -762,6 +791,7 @@
 				BCC5E8A92A29ECF300079E25 /* UIViewController+Preview.swift in Sources */,
 				BC6896FD2A27D75C00C16E52 /* LiveLaunchesFlow.swift in Sources */,
 				BC6897162A27EF9000C16E52 /* ErrorAlert.swift in Sources */,
+				BC4328592A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */,
 				BC6896F22A27CC3E00C16E52 /* MockConfiguration.swift in Sources */,
 				BCC861302A29398800DB6B56 /* MockRootFlow.swift in Sources */,
 				BC26A8DF2A2E141C0092A7D3 /* FailService.swift in Sources */,
@@ -775,6 +805,7 @@
 				BC68970B2A27DD9C00C16E52 /* LaunchCell.swift in Sources */,
 				BC6897002A27D77900C16E52 /* LiveRootFlow.swift in Sources */,
 				BC645ADD2A30980C00918A92 /* Navigable.swift in Sources */,
+				BC43285C2A2E2CF400F73C62 /* _LaunchesViewModel.swift in Sources */,
 				BC2AF3152A2C9C83007D97D2 /* LiveService.swift in Sources */,
 				BCE6D79F2A28E9D800399595 /* LiveConfiguration.swift in Sources */,
 				BC6896ED2A27CBB000C16E52 /* Configuration.swift in Sources */,
