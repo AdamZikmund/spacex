@@ -3,7 +3,7 @@ import Model
 import DependencyInjection
 import ViewComponent
 
-@MainActor final class LaunchDetailViewModel: ObservableObject {
+@MainActor final class LaunchDetailViewModel: ObservableObject, Navigable {
     // MARK: - Properties
     @Published private var launchLoadable: Loadable<Launch>
 
