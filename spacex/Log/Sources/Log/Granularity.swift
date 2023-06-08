@@ -13,7 +13,7 @@ public enum Granularity: Hashable {
     }
 
     public static func without(
-        granularities: Set<Granularity>
+        _ granularities: Set<Granularity>
     ) -> Set<Granularity> {
         all.subtracting(granularities)
     }

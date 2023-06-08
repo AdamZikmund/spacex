@@ -10,6 +10,6 @@ extension Set where Element == Granularity {
     }
 
     public static func without(_ granularities: Set<Granularity>) -> Self {
-        Element.without(granularities: granularities)
+        Element.without(granularities)
     }
 }
