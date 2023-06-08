@@ -73,4 +73,33 @@ final class LogTests: XCTestCase {
         let message = Log.error("error")
         XCTAssertNil(message)
     }
+
+    func testMemoryWarning() throws {
+        Log.shared.level = .debug
+        Log.debug("Memory warning")
+        XCTAssertFalse(Log.shared.messages.isEmpty)
+        NotificationCenter
+            .default
+            .post(
+                name: UIApplication.didReceiveMemoryWarningNotification,
+                object: nil
+            )
+        XCTAssertTrue(Log.shared.messages.isEmpty)
+    }
+
+    func testMessagesBuffer() throws {
+        Log.shared.level = .debug
+        Log.debug("First message")
+        Log.debug("Second message")
+        Log.debug("Third message")
+        XCTAssertEqual(Log.shared.messages.count, 3)
+    }
+
+    func testNoneGranularity() throws {
+        Log.shared.level = .debug
+        let firstMessage = Log.debug("First message", granularity: .none)
+        let secondMessage = Log.debug("Second message", granularity: .without(.all))
+        XCTAssertEqual(firstMessage, "First message")
+        XCTAssertEqual(secondMessage, "Second message")
+    }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-public enum LogLevel: Int {
+public enum Level: Int {
     case debug
     case info
     case verbose
