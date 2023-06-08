@@ -9,15 +9,23 @@ struct LiveService: Service {
     let appState: AppStateService
     let launches: LaunchesService
 
+    private static let networkingDelegate = LiveNetworkingDelegate()
+
     // MARK: - Private
     private static func buildContainer() -> Container {
         let container = Container()
         container.register(Configuration.self) { _ in
             ConfigurationBuilder.build()
         }
-        container.register(Networking.self) { _ in
+        container.register(NetworkingDelegate.self) { _ in
+            networkingDelegate
+        }
+        container.register(Networking.self) { resolver in
             let session = URLSession(configuration: .default)
-            return URLSessionNetworking(session: session)
+            return URLSessionNetworking(
+                session: session,
+                delegate: resolver.resolve(NetworkingDelegate.self)
+            )
         }
         container.register(NetworkingProvider.self) { resolver in
             let decoder = JSONDecoder()

@@ -44,6 +44,12 @@
 		BC2AF3162A2C9C83007D97D2 /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3142A2C9C83007D97D2 /* LiveService.swift */; };
 		BC2AF3182A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
 		BC2AF3192A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
+		BC42DBED2A310A3B00634B00 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BC42DBEC2A310A3B00634B00 /* Log */; };
+		BC42DBEF2A310A4100634B00 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BC42DBEE2A310A4100634B00 /* Log */; };
+		BC42DBF12A31E19800634B00 /* InputStream+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42DBF02A31E19800634B00 /* InputStream+String.swift */; };
+		BC42DBF22A31E19800634B00 /* InputStream+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42DBF02A31E19800634B00 /* InputStream+String.swift */; };
+		BC42DBF92A322A8E00634B00 /* LiveNetworkingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42DBF82A322A8E00634B00 /* LiveNetworkingDelegate.swift */; };
+		BC42DBFA2A322A8E00634B00 /* LiveNetworkingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC42DBF82A322A8E00634B00 /* LiveNetworkingDelegate.swift */; };
 		BC4328592A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */; };
 		BC43285A2A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */; };
 		BC43285C2A2E2CF400F73C62 /* _LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */; };
@@ -168,6 +174,9 @@
 		BC26A8E12A2E16BF0092A7D3 /* FailLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailLaunchesService.swift; sourceTree = "<group>"; };
 		BC2AF3142A2C9C83007D97D2 /* LiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveService.swift; sourceTree = "<group>"; };
 		BC2AF3172A2C9C8B007D97D2 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		BC42DBEB2A30D23600634B00 /* Log */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Log; path = spacex/Log; sourceTree = "<group>"; };
+		BC42DBF02A31E19800634B00 /* InputStream+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStream+String.swift"; sourceTree = "<group>"; };
+		BC42DBF82A322A8E00634B00 /* LiveNetworkingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveNetworkingDelegate.swift; sourceTree = "<group>"; };
 		BC4328582A2E2CCC00F73C62 /* _LaunchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LaunchesView.swift; sourceTree = "<group>"; };
 		BC43285B2A2E2CF400F73C62 /* _LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LaunchesViewModel.swift; sourceTree = "<group>"; };
 		BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loadable+ViewState.swift"; sourceTree = "<group>"; };
@@ -234,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC42DBEF2A310A4100634B00 /* Log in Frameworks */,
 				BC19D0AB2A28E6310073199B /* Networking in Frameworks */,
 				BC19D0AC2A28E6310073199B /* Model in Frameworks */,
 				BC19D0AD2A28E6310073199B /* Store in Frameworks */,
@@ -247,6 +257,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC42DBED2A310A3B00634B00 /* Log in Frameworks */,
 				BC6896E42A278E6E00C16E52 /* Networking in Frameworks */,
 				BC6896E12A2757D000C16E52 /* Model in Frameworks */,
 				BC19D0852A28DCD70073199B /* Store in Frameworks */,
@@ -273,6 +284,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC42DBF32A31E19E00634B00 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */,
+				BC19D0782A28BCBE0073199B /* View+Extension.swift */,
+				BCE6D7B12A28EFC400399595 /* String+Localize.swift */,
+				BCC5E8A82A29ECF300079E25 /* UIViewController+Preview.swift */,
+				BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */,
+				BC4328612A2E3E5500F73C62 /* Paginable+ViewState.swift */,
+				BC42DBF02A31E19800634B00 /* InputStream+String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BC42DBF72A322A8000634B00 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BC42DBF82A322A8E00634B00 /* LiveNetworkingDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		BC645ACA2A2F92A400918A92 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +325,7 @@
 				BC6896E22A27624200C16E52 /* Networking */,
 				BC6896DF2A2757C400C16E52 /* Model */,
 				BC7CC9E62A29E0580015E9F5 /* ViewComponent */,
+				BC42DBEB2A30D23600634B00 /* Log */,
 				BC6896B22A27427600C16E52 /* spacex */,
 				BCE6D7C22A2901B900399595 /* Tests */,
 				BCB787852A29194300A4C747 /* UITests */,
@@ -434,13 +468,9 @@
 		BC68970C2A27DF6600C16E52 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				BC68970D2A27DF7500C16E52 /* Collection+Safe.swift */,
-				BC19D0782A28BCBE0073199B /* View+Extension.swift */,
-				BCE6D7B12A28EFC400399595 /* String+Localize.swift */,
+				BC42DBF72A322A8000634B00 /* Delegate */,
+				BC42DBF32A31E19E00634B00 /* Extension */,
 				BCC5E8A52A29EBD400079E25 /* UIViewControllerRepresentable.swift */,
-				BCC5E8A82A29ECF300079E25 /* UIViewController+Preview.swift */,
-				BC43285E2A2E3E4800F73C62 /* Loadable+ViewState.swift */,
-				BC4328612A2E3E5500F73C62 /* Paginable+ViewState.swift */,
 				BC645AD72A3071EA00918A92 /* Presentable.swift */,
 				BC645ADC2A30980C00918A92 /* Navigable.swift */,
 			);
@@ -541,6 +571,7 @@
 				BC19D08E2A28E6310073199B /* Store */,
 				BC19D08F2A28E6310073199B /* DependencyInjection */,
 				BC7CC9E92A29E19D0015E9F5 /* ViewComponent */,
+				BC42DBEE2A310A4100634B00 /* Log */,
 			);
 			productName = spacex;
 			productReference = BC19D0B62A28E6310073199B /* live.app */;
@@ -568,6 +599,7 @@
 				BC19D0842A28DCD70073199B /* Store */,
 				BC19D0872A28E47F0073199B /* DependencyInjection */,
 				BC7CC9E72A29E1950015E9F5 /* ViewComponent */,
+				BC42DBEC2A310A3B00634B00 /* Log */,
 			);
 			productName = spacex;
 			productReference = BC6896B02A27427600C16E52 /* mock.app */;
@@ -749,6 +781,7 @@
 				BC26A8E02A2E141C0092A7D3 /* FailService.swift in Sources */,
 				BCB787732A290EFE00A4C747 /* MockAppStateService.swift in Sources */,
 				BC645AD92A3071EA00918A92 /* Presentable.swift in Sources */,
+				BC42DBFA2A322A8E00634B00 /* LiveNetworkingDelegate.swift in Sources */,
 				BCB787762A290FDC00A4C747 /* LaunchesService.swift in Sources */,
 				BCB787702A290E8600A4C747 /* AppStateService.swift in Sources */,
 				BC19D0942A28E6310073199B /* Collection+Safe.swift in Sources */,
@@ -772,6 +805,7 @@
 				BC19D0A32A28E6310073199B /* LaunchesViewController.swift in Sources */,
 				BCC861342A2939C700DB6B56 /* MockLaunchesFlow.swift in Sources */,
 				BC19D0A42A28E6310073199B /* SortActionSheet.swift in Sources */,
+				BC42DBF22A31E19800634B00 /* InputStream+String.swift in Sources */,
 				BC2AF3192A2C9C8B007D97D2 /* MockService.swift in Sources */,
 				BC19D0A52A28E6310073199B /* LiveLaunchesService.swift in Sources */,
 				BCC8612E2A29348700DB6B56 /* LaunchesFlow.swift in Sources */,
@@ -802,6 +836,7 @@
 				BC26A8DF2A2E141C0092A7D3 /* FailService.swift in Sources */,
 				BCB787722A290EFE00A4C747 /* MockAppStateService.swift in Sources */,
 				BC645AD82A3071EA00918A92 /* Presentable.swift in Sources */,
+				BC42DBF92A322A8E00634B00 /* LiveNetworkingDelegate.swift in Sources */,
 				BCB787752A290FDC00A4C747 /* LaunchesService.swift in Sources */,
 				BCB7876F2A290E8600A4C747 /* AppStateService.swift in Sources */,
 				BC68970E2A27DF7500C16E52 /* Collection+Safe.swift in Sources */,
@@ -825,6 +860,7 @@
 				BC6897062A27DA7000C16E52 /* LaunchesViewController.swift in Sources */,
 				BCC861332A2939C700DB6B56 /* MockLaunchesFlow.swift in Sources */,
 				BC6897132A27EBBE00C16E52 /* SortActionSheet.swift in Sources */,
+				BC42DBF12A31E19800634B00 /* InputStream+String.swift in Sources */,
 				BC2AF3182A2C9C8B007D97D2 /* MockService.swift in Sources */,
 				BC6896F42A27CEAD00C16E52 /* LiveLaunchesService.swift in Sources */,
 				BCC8612D2A29348700DB6B56 /* LaunchesFlow.swift in Sources */,
@@ -1339,6 +1375,14 @@
 		BC19D08F2A28E6310073199B /* DependencyInjection */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DependencyInjection;
+		};
+		BC42DBEC2A310A3B00634B00 /* Log */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Log;
+		};
+		BC42DBEE2A310A4100634B00 /* Log */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Log;
 		};
 		BC6896DD2A274B0400C16E52 /* SwiftLintPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
