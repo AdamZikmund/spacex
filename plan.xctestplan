@@ -64,6 +64,20 @@
         "identifier" : "BCB787832A29194300A4C747",
         "name" : "UITests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:spacex\/Log",
+        "identifier" : "LogTests",
+        "name" : "LogTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:spacex\/ViewComponent",
+        "identifier" : "ViewComponentTests",
+        "name" : "ViewComponentTests"
+      }
     }
   ],
   "version" : 1
