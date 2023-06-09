@@ -12,10 +12,10 @@ import Model
 
     private var sort: Sort {
         get {
-            service.appState.get().sort ?? .init(key: "date_local", direction: .desc)
+            service.appState.sort ?? .init(key: "date_local", direction: .desc)
         }
         set {
-            service.appState.set(.init(sort: newValue))
+            service.appState.sort = newValue
         }
     }
 

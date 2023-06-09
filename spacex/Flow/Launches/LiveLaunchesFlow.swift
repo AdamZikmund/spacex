@@ -34,14 +34,7 @@ extension LiveLaunchesFlow {
             options: Sort.Direction.allCases.map(\.rawValue)
         ) { option in
             guard let direction = Sort.Direction(rawValue: option) else { return }
-            service.appState.set(
-                .init(
-                    sort: .init(
-                        key: "date_local",
-                        direction: direction
-                    )
-                )
-            )
+            service.appState.sort = .init(key: "date_local", direction: direction)
             navigationController.dismiss(animated: true)
         }
         navigationController.present(controller, animated: true)

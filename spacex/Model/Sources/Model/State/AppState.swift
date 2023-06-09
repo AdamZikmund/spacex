@@ -1,8 +1,8 @@
 import Foundation
 
-public struct AppState: Codable {
+public struct AppState: Equatable, Codable {
     // MARK: - Properties
-    public let sort: Sort?
+    public var sort: Sort?
 
     // MARK: - Lifecycle
     public init(sort: Sort? = nil) {

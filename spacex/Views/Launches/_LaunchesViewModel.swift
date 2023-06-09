@@ -23,7 +23,7 @@ import Combine
     }
 
     private var sort: Sort? {
-        service.appState.get().sort
+        service.appState.sort
     }
 
     var isLoading: Bool {
@@ -80,7 +80,7 @@ import Combine
 
         service
             .appState
-            .appStatePublisher
+            .publisher
             .dropFirst()
             .map { _ in }
             .sink { [weak self] in

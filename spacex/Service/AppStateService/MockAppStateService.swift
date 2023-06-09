@@ -4,14 +4,17 @@ import Combine
 
 class MockAppStateService: AppStateService {
     // MARK: - Properties
-    var appStatePublisher: AnyPublisher<AppState, Never> {
+    private var appState = AppState()
+
+    var publisher: AnyPublisher<AppState, Never> {
         Just(.init()).eraseToAnyPublisher()
     }
 
     // MARK: - AppStateService
-    func get() -> AppState {
-        .init()
-    }
+    func transaction(_ transaction: @escaping (inout AppState) -> Void) {}
 
-    func set(_ state: AppState) {}
+    subscript<Value>(dynamicMember keyPath: WritableKeyPath<AppState, Value>) -> Value {
+        get { appState[keyPath: keyPath] }
+        set { appState[keyPath: keyPath] = newValue }
+    }
 }
