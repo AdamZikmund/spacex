@@ -25,7 +25,7 @@ class LaunchesViewModel: NSObject {
     }
 
     private var sort: Sort? {
-        service.appState.get().sort
+        service.appState.sort
     }
 
     var updatePublisher: AnyPublisher<Void, Never> {
@@ -95,7 +95,7 @@ class LaunchesViewModel: NSObject {
     private func setupBidings() {
         service
             .appState
-            .appStatePublisher
+            .publisher
             .receive(on: RunLoop.main)
             .dropFirst()
             .sink { [weak self] _ in
