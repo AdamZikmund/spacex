@@ -1,6 +1,6 @@
 import UIKit
 
-@main
+// @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Properties
     var window: UIWindow?

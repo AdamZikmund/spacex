@@ -80,7 +80,14 @@ struct _LaunchesView: View {
         }
     }
 
-    private var toolbar: some ToolbarContent {
+    @ToolbarContentBuilder private var toolbar: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            Button {
+                viewModel.toggleLanguage()
+            } label: {
+                Text(viewModel.languageEmoji)
+            }
+        }
         ToolbarItem(placement: .navigationBarTrailing) {
             Button {
                 viewModel.openSort()

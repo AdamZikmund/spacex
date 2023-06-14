@@ -53,6 +53,7 @@ import Model
 
     func buildSortViewModel(sort: Sort) -> SortViewModel {
         let viewModel = SortViewModel(
+            service: service,
             sort: sort
         ) { [weak self] sort in
             self?.sort = sort

@@ -97,6 +97,8 @@
 		BC68971B2A28930500C16E52 /* LaunchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68971A2A28930500C16E52 /* LaunchDetailViewModel.swift */; };
 		BC7CC9E82A29E1950015E9F5 /* ViewComponent in Frameworks */ = {isa = PBXBuildFile; productRef = BC7CC9E72A29E1950015E9F5 /* ViewComponent */; };
 		BC7CC9EA2A29E19D0015E9F5 /* ViewComponent in Frameworks */ = {isa = PBXBuildFile; productRef = BC7CC9E92A29E19D0015E9F5 /* ViewComponent */; };
+		BC845F5F2A3900EB003EC00C /* L.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC845F5E2A3900EB003EC00C /* L.swift */; };
+		BC845F602A3900EB003EC00C /* L.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC845F5E2A3900EB003EC00C /* L.swift */; };
 		BCB787652A290B2A00A4C747 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB787642A290B2A00A4C747 /* ConfigurationTests.swift */; };
 		BCB7876B2A290D0300A4C747 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB7876A2A290D0300A4C747 /* ServiceTests.swift */; };
 		BCB7876F2A290E8600A4C747 /* AppStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB7876E2A290E8600A4C747 /* AppStateService.swift */; };
@@ -214,6 +216,7 @@
 		BC6897182A2892F900C16E52 /* LaunchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailView.swift; sourceTree = "<group>"; };
 		BC68971A2A28930500C16E52 /* LaunchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewModel.swift; sourceTree = "<group>"; };
 		BC7CC9E62A29E0580015E9F5 /* ViewComponent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ViewComponent; path = spacex/ViewComponent; sourceTree = "<group>"; };
+		BC845F5E2A3900EB003EC00C /* L.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L.swift; sourceTree = "<group>"; };
 		BCB787642A290B2A00A4C747 /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 		BCB7876A2A290D0300A4C747 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		BCB7876E2A290E8600A4C747 /* AppStateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateService.swift; sourceTree = "<group>"; };
@@ -363,6 +366,7 @@
 		BC6896CD2A27450700C16E52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC845F5E2A3900EB003EC00C /* L.swift */,
 				BC19D0BA2A28E6DA0073199B /* Live-Info.plist */,
 				BC19D0B82A28E6CF0073199B /* Mock-Info.plist */,
 				BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */,
@@ -553,6 +557,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC19D0B32A28E6310073199B /* Build configuration list for PBXNativeTarget "live" */;
 			buildPhases = (
+				BC845F5D2A38FFDB003EC00C /* Run Script */,
 				BC19D0902A28E6310073199B /* Sources */,
 				BC19D0AA2A28E6310073199B /* Frameworks */,
 				BC19D0B02A28E6310073199B /* Resources */,
@@ -581,6 +586,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC6896C42A27427700C16E52 /* Build configuration list for PBXNativeTarget "mock" */;
 			buildPhases = (
+				BC6B9DCF2A39DB4E0035895E /* ShellScript */,
 				BC6896AC2A27427600C16E52 /* Sources */,
 				BC6896AD2A27427600C16E52 /* Frameworks */,
 				BC6896AE2A27427600C16E52 /* Resources */,
@@ -746,6 +752,45 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		BC6B9DCF2A39DB4E0035895E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/xcrun --sdk macosx swift Scripts/localization.swift /spacex/Resources /spacex/Resources\n";
+			showEnvVarsInLog = 0;
+		};
+		BC845F5D2A38FFDB003EC00C /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/xcrun --sdk macosx swift Scripts/localization.swift /spacex/Resources /spacex/Resources\n";
+			showEnvVarsInLog = 0;
+		};
 		BCC5E8AB2A2A1D3B00079E25 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -803,6 +848,7 @@
 				BC19D0A12A28E6310073199B /* LaunchDetailView.swift in Sources */,
 				BC19D0A22A28E6310073199B /* LaunchesViewModel.swift in Sources */,
 				BC19D0A32A28E6310073199B /* LaunchesViewController.swift in Sources */,
+				BC845F602A3900EB003EC00C /* L.swift in Sources */,
 				BCC861342A2939C700DB6B56 /* MockLaunchesFlow.swift in Sources */,
 				BC19D0A42A28E6310073199B /* SortActionSheet.swift in Sources */,
 				BC42DBF22A31E19800634B00 /* InputStream+String.swift in Sources */,
@@ -858,6 +904,7 @@
 				BC6897192A2892F900C16E52 /* LaunchDetailView.swift in Sources */,
 				BC6897082A27DA9600C16E52 /* LaunchesViewModel.swift in Sources */,
 				BC6897062A27DA7000C16E52 /* LaunchesViewController.swift in Sources */,
+				BC845F5F2A3900EB003EC00C /* L.swift in Sources */,
 				BCC861332A2939C700DB6B56 /* MockLaunchesFlow.swift in Sources */,
 				BC6897132A27EBBE00C16E52 /* SortActionSheet.swift in Sources */,
 				BC42DBF12A31E19800634B00 /* InputStream+String.swift in Sources */,
