@@ -8,6 +8,10 @@ struct LiveLaunchesFlow: LaunchesFlow {
     private let service: Service
     private(set) var navigationController: UINavigationController
 
+    private var language: Language {
+        service.appState.language
+    }
+
     // MARK: - Lifecycle
     init(
         service: Service,
@@ -29,19 +33,12 @@ struct LiveLaunchesFlow: LaunchesFlow {
 extension LiveLaunchesFlow {
     func showSortSheet() {
         let controller = SortActionSheet.build(
-            title: "LaunchesViewController.Sort.Title".localized(),
-            message: "LaunchesViewController.Sort.Message".localized(),
+            title: L.LaunchesViewController.Sort.title(language),
+            message: L.LaunchesViewController.Sort.message(language),
             options: Sort.Direction.allCases.map(\.rawValue)
         ) { option in
             guard let direction = Sort.Direction(rawValue: option) else { return }
-            service.appState.set(
-                .init(
-                    sort: .init(
-                        key: "date_local",
-                        direction: direction
-                    )
-                )
-            )
+            service.appState.sort = .init(key: "date_local", direction: direction)
             navigationController.dismiss(animated: true)
         }
         navigationController.present(controller, animated: true)

@@ -25,7 +25,11 @@ class LaunchesViewModel: NSObject {
     }
 
     private var sort: Sort? {
-        service.appState.get().sort
+        service.appState.sort
+    }
+
+    private var language: Language {
+        service.appState.language
     }
 
     var updatePublisher: AnyPublisher<Void, Never> {
@@ -39,15 +43,15 @@ class LaunchesViewModel: NSObject {
     }
 
     var title: String {
-        "LaunchesViewController.Title".localized()
+        L.LaunchesViewController.title(language)
     }
 
     var placeholder: String {
-        "Common.Search".localized()
+        L.Common.search(language)
     }
 
     var loadMore: String {
-        "Common.LoadMore".localized()
+        L.Common.loadMore(language)
     }
 
     var isLoadMoreButtonHidden: Bool {
@@ -95,7 +99,7 @@ class LaunchesViewModel: NSObject {
     private func setupBidings() {
         service
             .appState
-            .appStatePublisher
+            .publisher
             .receive(on: RunLoop.main)
             .dropFirst()
             .sink { [weak self] _ in

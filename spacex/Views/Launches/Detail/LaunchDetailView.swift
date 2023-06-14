@@ -88,7 +88,7 @@ struct LaunchDetailView: View {
     @ViewBuilder private var crew: some View {
         if !viewModel.crew.isEmpty {
             VStack(alignment: .leading) {
-                Text("Crew")
+                Text(viewModel.crewTitle)
                     .font(.title)
                     .foregroundColor(ColorPallete.title.color)
                 ForEach(viewModel.crew, id: \.self) { crew in

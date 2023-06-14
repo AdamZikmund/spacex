@@ -2,9 +2,12 @@ import Foundation
 import Model
 import Combine
 
-protocol AppStateService {
-    var appStatePublisher: AnyPublisher<AppState, Never> { get }
+@dynamicMemberLookup protocol AppStateService: AnyObject {
+    var publisher: AnyPublisher<AppState, Never> { get }
 
-    func get() -> AppState
-    func set(_ state: AppState)
+    func transaction(_ transaction: @escaping (inout AppState) -> Void)
+
+    subscript<Value>(
+        dynamicMember keyPath: WritableKeyPath<AppState, Value>
+    ) -> Value { get set }
 }

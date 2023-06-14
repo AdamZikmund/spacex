@@ -5,7 +5,8 @@ import ViewComponent
 
 @MainActor final class LaunchDetailViewModel: ObservableObject, Navigable {
     // MARK: - Properties
-    @Published private var launchLoadable: Loadable<Launch>
+    @Published var launchLoadable: Loadable<Launch>
+    @Published var language: Language
 
     private let service: Service
     private let launchId: String?
@@ -55,12 +56,16 @@ import ViewComponent
         launch?.links.patch.smallURL
     }
 
+    var crewTitle: String {
+        L.LaunchDetailView.crew(language)
+    }
+
     var errorTitle: String {
-        "Common.SomethingWentWrong".localized()
+        L.Common.somethingWentWrong(language)
     }
 
     var tryAgainTitle: String {
-        "Common.TryAgain".localized()
+        L.Common.tryAgain(language)
     }
 
     // MARK: - Lifecycle
@@ -72,6 +77,19 @@ import ViewComponent
         self.service = service
         self.launchLoadable = .init(value: launch)
         self.launchId = launchId
+        self.language = service.appState.language
+        self.setupBindings()
+    }
+
+    // MARK: - Private
+    private func setupBindings() {
+        service
+            .appState
+            .publisher
+            .dropFirst()
+            .map(\.language)
+            .removeDuplicates()
+            .assign(to: &$language)
     }
 
     // MARK: - Networking
