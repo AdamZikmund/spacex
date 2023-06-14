@@ -23,6 +23,7 @@ class LiveAppStateService: AppStateService {
         let repository = resolver.resolve(AppStateRepository.self)
         self.repository = repository
         self.appState = .init(repository.getState())
+        self.setupBindings()
     }
 
     // MARK: - Private

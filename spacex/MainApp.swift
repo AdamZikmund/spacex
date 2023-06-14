@@ -1,6 +1,6 @@
 import SwiftUI
 
-// @main
+@main
 struct MainApp: App {
     // MARK: - Properties
     private let service: Service

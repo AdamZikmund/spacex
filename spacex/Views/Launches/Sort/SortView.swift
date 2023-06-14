@@ -60,6 +60,7 @@ struct SortView_Previews: PreviewProvider {
     static var previews: some View {
         SortView(
             viewModel: .init(
+                service: MockService.build(),
                 sort: .init(key: "date_local", direction: .asc),
                 onApply: { _ in }
             )

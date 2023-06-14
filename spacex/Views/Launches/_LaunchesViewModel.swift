@@ -7,6 +7,7 @@ import Combine
     // MARK: - Properties
     @Published var paginable: Paginable<Launch>
     @Published var searchText = ""
+    @Published var language: Language
 
     private let service: Service
     private var bag = Set<AnyCancellable>()
@@ -35,7 +36,7 @@ import Combine
     }
 
     var title: String {
-        "LaunchesViewController.Title".localized()
+        L.LaunchesViewController.title(language)
     }
 
     var viewState: ViewState {
@@ -48,21 +49,31 @@ import Combine
     }
 
     var loadMoreTitle: String {
-        "Common.LoadMore".localized()
+        L.Common.loadMore(language)
     }
 
     var errorTitle: String {
-        "Common.SomethingWentWrong".localized()
+        L.Common.somethingWentWrong(language)
     }
 
     var tryAgainTitle: String {
-        "Common.TryAgain".localized()
+        L.Common.tryAgain(language)
+    }
+
+    var languageEmoji: String {
+        switch language {
+        case .en:
+            return "🇨🇿"
+        case .cs:
+            return "🇺🇸"
+        }
     }
 
     // MARK: - Lifecycle
     init(service: Service) {
         self.service = service
         self.paginable = .init(limit: 20, state: .ready)
+        self.language = service.appState.language
         self.setupBindings()
     }
 
@@ -87,6 +98,14 @@ import Combine
                 self?.reloadLaunches()
             }
             .store(in: &bag)
+
+        service
+            .appState
+            .publisher
+            .dropFirst()
+            .map(\.language)
+            .removeDuplicates()
+            .assign(to: &$language)
     }
 
     // MARK: - Internal
@@ -96,6 +115,10 @@ import Combine
 
     func openSort() {
         _navigateToSort.send()
+    }
+
+    func toggleLanguage() {
+        service.appState.language = language == .cs ? .en : .cs
     }
 
     // MARK: - Networking

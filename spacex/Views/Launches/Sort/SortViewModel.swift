@@ -7,15 +7,17 @@ import Model
     // MARK: - Properties
     @Published var key: String
     @Published var direction: Sort.Direction
+    @Published var language: Language
 
+    private let service: Service
     private let onApply: OnApply
 
     var keyTitle: String {
-        "SortView.Key".localized()
+        L.SortView.key(language)
     }
 
     var directionTitle: String {
-        "SortView.Direction".localized()
+        L.SortView.direction(language)
     }
 
     var directions: [Sort.Direction] {
@@ -23,14 +25,32 @@ import Model
     }
 
     var applyTitle: String {
-        "SortView.Apply".localized()
+        L.SortView.apply(language)
     }
 
     // MARK: - Lifecycle
-    init(sort: Sort, onApply: @escaping OnApply) {
+    init(
+        service: Service,
+        sort: Sort,
+        onApply: @escaping OnApply
+    ) {
+        self.service = service
         self.key = sort.key
         self.direction = sort.direction
+        self.language = service.appState.language
         self.onApply = onApply
+        self.setupBindings()
+    }
+
+    // MARK: - Private
+    private func setupBindings() {
+        service
+            .appState
+            .publisher
+            .dropFirst()
+            .map(\.language)
+            .removeDuplicates()
+            .assign(to: &$language)
     }
 
     // MARK: - Internal
@@ -41,9 +61,9 @@ import Model
     func directionTitle(for direction: Sort.Direction) -> String {
         switch direction {
         case .asc:
-            return "Common.ASC".localized()
+            return L.Common.aSC(language)
         case .desc:
-            return "Common.DESC".localized()
+            return L.Common.dESC(language)
         }
     }
 }

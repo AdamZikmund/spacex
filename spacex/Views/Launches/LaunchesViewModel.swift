@@ -28,6 +28,10 @@ class LaunchesViewModel: NSObject {
         service.appState.sort
     }
 
+    private var language: Language {
+        service.appState.language
+    }
+
     var updatePublisher: AnyPublisher<Void, Never> {
         launchesSubject
             .map { _ in }
@@ -39,15 +43,15 @@ class LaunchesViewModel: NSObject {
     }
 
     var title: String {
-        "LaunchesViewController.Title".localized()
+        L.LaunchesViewController.title(language)
     }
 
     var placeholder: String {
-        "Common.Search".localized()
+        L.Common.search(language)
     }
 
     var loadMore: String {
-        "Common.LoadMore".localized()
+        L.Common.loadMore(language)
     }
 
     var isLoadMoreButtonHidden: Bool {

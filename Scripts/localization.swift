@@ -300,4 +300,6 @@ let localizables = loadLocalizables(path: readPath)
 for localizable in localizables {
     tree.parseValues(values: localizable.strings)
 }
-write(string: tree.generate(), path: writePath)
+let generated = tree.generate()
+let final = "import Model\n\n" + generated
+write(string: final, path: writePath)

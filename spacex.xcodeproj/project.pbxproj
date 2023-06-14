@@ -99,8 +99,6 @@
 		BC7CC9EA2A29E19D0015E9F5 /* ViewComponent in Frameworks */ = {isa = PBXBuildFile; productRef = BC7CC9E92A29E19D0015E9F5 /* ViewComponent */; };
 		BC845F5F2A3900EB003EC00C /* L.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC845F5E2A3900EB003EC00C /* L.swift */; };
 		BC845F602A3900EB003EC00C /* L.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC845F5E2A3900EB003EC00C /* L.swift */; };
-		BC845F622A390114003EC00C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC845F612A390114003EC00C /* Language.swift */; };
-		BC845F632A390114003EC00C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC845F612A390114003EC00C /* Language.swift */; };
 		BCB787652A290B2A00A4C747 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB787642A290B2A00A4C747 /* ConfigurationTests.swift */; };
 		BCB7876B2A290D0300A4C747 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB7876A2A290D0300A4C747 /* ServiceTests.swift */; };
 		BCB7876F2A290E8600A4C747 /* AppStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB7876E2A290E8600A4C747 /* AppStateService.swift */; };
@@ -219,7 +217,6 @@
 		BC68971A2A28930500C16E52 /* LaunchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewModel.swift; sourceTree = "<group>"; };
 		BC7CC9E62A29E0580015E9F5 /* ViewComponent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ViewComponent; path = spacex/ViewComponent; sourceTree = "<group>"; };
 		BC845F5E2A3900EB003EC00C /* L.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L.swift; sourceTree = "<group>"; };
-		BC845F612A390114003EC00C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		BCB787642A290B2A00A4C747 /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 		BCB7876A2A290D0300A4C747 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		BCB7876E2A290E8600A4C747 /* AppStateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateService.swift; sourceTree = "<group>"; };
@@ -370,7 +367,6 @@
 			isa = PBXGroup;
 			children = (
 				BC845F5E2A3900EB003EC00C /* L.swift */,
-				BC845F612A390114003EC00C /* Language.swift */,
 				BC19D0BA2A28E6DA0073199B /* Live-Info.plist */,
 				BC19D0B82A28E6CF0073199B /* Mock-Info.plist */,
 				BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */,
@@ -831,7 +827,6 @@
 				BCB787732A290EFE00A4C747 /* MockAppStateService.swift in Sources */,
 				BC645AD92A3071EA00918A92 /* Presentable.swift in Sources */,
 				BC42DBFA2A322A8E00634B00 /* LiveNetworkingDelegate.swift in Sources */,
-				BC845F632A390114003EC00C /* Language.swift in Sources */,
 				BCB787762A290FDC00A4C747 /* LaunchesService.swift in Sources */,
 				BCB787702A290E8600A4C747 /* AppStateService.swift in Sources */,
 				BC19D0942A28E6310073199B /* Collection+Safe.swift in Sources */,
@@ -888,7 +883,6 @@
 				BCB787722A290EFE00A4C747 /* MockAppStateService.swift in Sources */,
 				BC645AD82A3071EA00918A92 /* Presentable.swift in Sources */,
 				BC42DBF92A322A8E00634B00 /* LiveNetworkingDelegate.swift in Sources */,
-				BC845F622A390114003EC00C /* Language.swift in Sources */,
 				BCB787752A290FDC00A4C747 /* LaunchesService.swift in Sources */,
 				BCB7876F2A290E8600A4C747 /* AppStateService.swift in Sources */,
 				BC68970E2A27DF7500C16E52 /* Collection+Safe.swift in Sources */,

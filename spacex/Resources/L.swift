@@ -1,3 +1,5 @@
+import Model
+
 struct L {
 	private init() {}
 	struct SortView {
@@ -54,6 +56,17 @@ struct L {
 				case .cs:
 					return String(format: "Trizeni startu podle data")
 				}
+			}
+		}
+	}
+	struct LaunchDetailView {
+		private init() {}
+		static func crew(_ language: Language) -> String {
+			switch language {
+			case .en:
+				return String(format: "Crew")
+			case .cs:
+				return String(format: "Posadka")
 			}
 		}
 	}
