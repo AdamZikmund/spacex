@@ -33,10 +33,6 @@
 		BC19D0AF2A28E6310073199B /* Repository in Frameworks */ = {isa = PBXBuildFile; productRef = BC19D08D2A28E6310073199B /* Repository */; };
 		BC19D0B12A28E6310073199B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BE2A27427700C16E52 /* LaunchScreen.storyboard */; };
 		BC19D0B22A28E6310073199B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6896BC2A27427700C16E52 /* Assets.xcassets */; };
-		BC26A8DF2A2E141C0092A7D3 /* FailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26A8DE2A2E141C0092A7D3 /* FailService.swift */; };
-		BC26A8E02A2E141C0092A7D3 /* FailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26A8DE2A2E141C0092A7D3 /* FailService.swift */; };
-		BC26A8E22A2E16BF0092A7D3 /* FailLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26A8E12A2E16BF0092A7D3 /* FailLaunchesService.swift */; };
-		BC26A8E32A2E16BF0092A7D3 /* FailLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26A8E12A2E16BF0092A7D3 /* FailLaunchesService.swift */; };
 		BC2AF3152A2C9C83007D97D2 /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3142A2C9C83007D97D2 /* LiveService.swift */; };
 		BC2AF3162A2C9C83007D97D2 /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3142A2C9C83007D97D2 /* LiveService.swift */; };
 		BC2AF3182A2C9C8B007D97D2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2AF3172A2C9C8B007D97D2 /* MockService.swift */; };
@@ -129,6 +125,12 @@
 		BCE6D7B22A28EFC400399595 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE6D7B12A28EFC400399595 /* String+Localize.swift */; };
 		BCE6D7B32A28EFC400399595 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE6D7B12A28EFC400399595 /* String+Localize.swift */; };
 		BCE6D7C42A2901B900399595 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE6D7C32A2901B900399595 /* DetailViewModelTests.swift */; };
+		BCF366612A421E5E00018E42 /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = BCF366602A421E5E00018E42 /* DependencyInjection */; };
+		BCF366642A421E6700018E42 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BCF366632A421E6700018E42 /* Log */; };
+		BCF366662A421E7500018E42 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BCF366652A421E7500018E42 /* Log */; };
+		BCF366682A421E7A00018E42 /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = BCF366672A421E7A00018E42 /* DependencyInjection */; };
+		BCF3666A2A421FC700018E42 /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF366692A421FC700018E42 /* ErrorService.swift */; };
+		BCF3666B2A421FC700018E42 /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF366692A421FC700018E42 /* ErrorService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,8 +171,6 @@
 		BC19D0B62A28E6310073199B /* live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = live.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC19D0B82A28E6CF0073199B /* Mock-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mock-Info.plist"; sourceTree = "<group>"; };
 		BC19D0BA2A28E6DA0073199B /* Live-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Live-Info.plist"; sourceTree = "<group>"; };
-		BC26A8DE2A2E141C0092A7D3 /* FailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailService.swift; sourceTree = "<group>"; };
-		BC26A8E12A2E16BF0092A7D3 /* FailLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailLaunchesService.swift; sourceTree = "<group>"; };
 		BC2AF3142A2C9C83007D97D2 /* LiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveService.swift; sourceTree = "<group>"; };
 		BC2AF3172A2C9C8B007D97D2 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		BC42DBF02A31E19800634B00 /* InputStream+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputStream+String.swift"; sourceTree = "<group>"; };
@@ -234,6 +234,7 @@
 		BCE6D7B42A28FF1900399595 /* plan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = plan.xctestplan; sourceTree = "<group>"; };
 		BCE6D7C12A2901B900399595 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE6D7C32A2901B900399595 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		BCF366692A421FC700018E42 /* ErrorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,7 +382,7 @@
 				BC6896EA2A27CA2600C16E52 /* Service.swift */,
 				BC2AF3142A2C9C83007D97D2 /* LiveService.swift */,
 				BC2AF3172A2C9C8B007D97D2 /* MockService.swift */,
-				BC26A8DE2A2E141C0092A7D3 /* FailService.swift */,
+				BCF366692A421FC700018E42 /* ErrorService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -505,7 +506,6 @@
 				BCB787742A290FDC00A4C747 /* LaunchesService.swift */,
 				BC6896F32A27CEAD00C16E52 /* LiveLaunchesService.swift */,
 				BCB787772A290FE200A4C747 /* MockLaunchesService.swift */,
-				BC26A8E12A2E16BF0092A7D3 /* FailLaunchesService.swift */,
 			);
 			path = LaunchesService;
 			sourceTree = "<group>";
@@ -813,8 +813,8 @@
 				BC43285A2A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */,
 				BC19D0922A28E6310073199B /* ErrorAlert.swift in Sources */,
 				BCC861312A29398800DB6B56 /* MockRootFlow.swift in Sources */,
-				BC26A8E02A2E141C0092A7D3 /* FailService.swift in Sources */,
 				BCB787732A290EFE00A4C747 /* MockAppStateService.swift in Sources */,
+				BCF3666B2A421FC700018E42 /* ErrorService.swift in Sources */,
 				BC645AD92A3071EA00918A92 /* Presentable.swift in Sources */,
 				BC42DBFA2A322A8E00634B00 /* LiveNetworkingDelegate.swift in Sources */,
 				BCB787762A290FDC00A4C747 /* LaunchesService.swift in Sources */,
@@ -854,7 +854,6 @@
 				BC645AD62A2FE28A00918A92 /* SortViewModel.swift in Sources */,
 				BCC8612B2A29346E00DB6B56 /* RootFlow.swift in Sources */,
 				BC645AE92A30A64700918A92 /* MainApp.swift in Sources */,
-				BC26A8E32A2E16BF0092A7D3 /* FailLaunchesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,8 +868,8 @@
 				BC4328592A2E2CCC00F73C62 /* _LaunchesView.swift in Sources */,
 				BC6896F22A27CC3E00C16E52 /* MockConfiguration.swift in Sources */,
 				BCC861302A29398800DB6B56 /* MockRootFlow.swift in Sources */,
-				BC26A8DF2A2E141C0092A7D3 /* FailService.swift in Sources */,
 				BCB787722A290EFE00A4C747 /* MockAppStateService.swift in Sources */,
+				BCF3666A2A421FC700018E42 /* ErrorService.swift in Sources */,
 				BC645AD82A3071EA00918A92 /* Presentable.swift in Sources */,
 				BC42DBF92A322A8E00634B00 /* LiveNetworkingDelegate.swift in Sources */,
 				BCB787752A290FDC00A4C747 /* LaunchesService.swift in Sources */,
@@ -910,7 +909,6 @@
 				BC645AD52A2FE28A00918A92 /* SortViewModel.swift in Sources */,
 				BCC8612A2A29346E00DB6B56 /* RootFlow.swift in Sources */,
 				BC645AE82A30A64700918A92 /* MainApp.swift in Sources */,
-				BC26A8E22A2E16BF0092A7D3 /* FailLaunchesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1398,6 +1396,22 @@
 				version = 0.52.2;
 			};
 		};
+		BCF3665F2A421E5E00018E42 /* XCRemoteSwiftPackageReference "DependencyInjection" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AdamZikmund/DependencyInjection";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		BCF366622A421E6700018E42 /* XCRemoteSwiftPackageReference "Log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AdamZikmund/Log.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1457,6 +1471,26 @@
 		BC7CC9E92A29E19D0015E9F5 /* ViewComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ViewComponent;
+		};
+		BCF366602A421E5E00018E42 /* DependencyInjection */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF3665F2A421E5E00018E42 /* XCRemoteSwiftPackageReference "DependencyInjection" */;
+			productName = DependencyInjection;
+		};
+		BCF366632A421E6700018E42 /* Log */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF366622A421E6700018E42 /* XCRemoteSwiftPackageReference "Log" */;
+			productName = Log;
+		};
+		BCF366652A421E7500018E42 /* Log */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF366622A421E6700018E42 /* XCRemoteSwiftPackageReference "Log" */;
+			productName = Log;
+		};
+		BCF366672A421E7A00018E42 /* DependencyInjection */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF3665F2A421E5E00018E42 /* XCRemoteSwiftPackageReference "DependencyInjection" */;
+			productName = DependencyInjection;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

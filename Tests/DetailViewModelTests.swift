@@ -23,7 +23,7 @@ final class DetailViewModelTests: XCTestCase {
 
     @MainActor func testGetLaunchFailure() async throws {
         let viewModel = LaunchDetailViewModel(
-            service: FailService.build(),
+            service: ErrorService.build(),
             launch: nil,
             launchId: "62dd70d5202306255024d139"
         )
@@ -42,7 +42,7 @@ final class DetailViewModelTests: XCTestCase {
 
     @MainActor func testMissingLaunchOrLaunchId() async throws {
         let viewModel = LaunchDetailViewModel(
-            service: FailService.build(),
+            service: ErrorService.build(),
             launch: nil,
             launchId: nil
         )
