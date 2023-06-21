@@ -1,15 +1,14 @@
 import Foundation
 import DependencyInjection
 import Networking
-import Repository
 import Store
+import Repository
+import Model
 
-struct LiveService: Service {
+struct ErrorService: Service {
     // MARK: - Properties
     let appState: AppStateService
     let launches: LaunchesService
-
-    private static let networkingDelegate = LiveNetworkingDelegate()
 
     // MARK: - Private
     private static func buildContainer() -> Container {
@@ -17,15 +16,11 @@ struct LiveService: Service {
         container.register(Configuration.self) { _ in
             ConfigurationBuilder.build()
         }
-        container.register(URLSessionNetworkingDelegate.self) { _ in
-            networkingDelegate
+        container.register(Error.self) { _ in
+            GeneralError.failure
         }
         container.register(Networking.self) { resolver in
-            let session = URLSession(configuration: .default)
-            return URLSessionNetworking(
-                session: session,
-                delegate: resolver.resolve(URLSessionNetworkingDelegate.self)
-            )
+            ErrorNetworking(error: resolver.resolve())
         }
         container.register(NetworkingProvider.self) { resolver in
             let decoder = JSONDecoder()
