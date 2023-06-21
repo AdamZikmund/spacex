@@ -30,7 +30,7 @@ let package = Package(
         ),
         .testTarget(
             name: "RepositoryTests",
-            dependencies: ["Repository", "Model", "Networking"]
+            dependencies: ["Repository"]
         )
     ]
 )
