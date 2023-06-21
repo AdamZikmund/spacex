@@ -17,14 +17,14 @@ struct LiveService: Service {
         container.register(Configuration.self) { _ in
             ConfigurationBuilder.build()
         }
-        container.register(NetworkingDelegate.self) { _ in
+        container.register(URLSessionNetworkingDelegate.self) { _ in
             networkingDelegate
         }
         container.register(Networking.self) { resolver in
             let session = URLSession(configuration: .default)
             return URLSessionNetworking(
                 session: session,
-                delegate: resolver.resolve(NetworkingDelegate.self)
+                delegate: resolver.resolve(URLSessionNetworkingDelegate.self)
             )
         }
         container.register(NetworkingProvider.self) { resolver in

@@ -16,7 +16,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(name: "Networking", path: "Networking"),
+        .package(url: "https://github.com/AdamZikmund/Networking.git", .upToNextMajor(from: "1.0.0")),
         .package(name: "Store", path: "Store")
     ],
     targets: [
