@@ -1,8 +1,8 @@
 {
   "configurations" : [
     {
-      "id" : "99FD8D63-5006-4BFD-B020-B37CDF0FEAFD",
-      "name" : "Mock",
+      "id" : "1FF95DA7-327E-4DE2-993C-EF6DB1CABF47",
+      "name" : "configuration",
       "options" : {
 
       }
@@ -13,16 +13,10 @@
       "containerPath" : "container:spacex.xcodeproj",
       "identifier" : "BC6896AF2A27427600C16E52",
       "name" : "mock"
-    }
+    },
+    "testTimeoutsEnabled" : true
   },
   "testTargets" : [
-    {
-      "target" : {
-        "containerPath" : "container:spacex\/DependencyInjection",
-        "identifier" : "DependencyInjectionTests",
-        "name" : "DependencyInjectionTests"
-      }
-    },
     {
       "target" : {
         "containerPath" : "container:spacex\/Model",
@@ -32,23 +26,9 @@
     },
     {
       "target" : {
-        "containerPath" : "container:spacex\/Networking",
-        "identifier" : "NetworkingTests",
-        "name" : "NetworkingTests"
-      }
-    },
-    {
-      "target" : {
         "containerPath" : "container:spacex\/Repository",
         "identifier" : "RepositoryTests",
         "name" : "RepositoryTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:spacex\/Store",
-        "identifier" : "StoreTests",
-        "name" : "StoreTests"
       }
     },
     {
@@ -67,9 +47,9 @@
     },
     {
       "target" : {
-        "containerPath" : "container:spacex\/Log",
-        "identifier" : "LogTests",
-        "name" : "LogTests"
+        "containerPath" : "container:spacex\/Store",
+        "identifier" : "StoreTests",
+        "name" : "StoreTests"
       }
     },
     {

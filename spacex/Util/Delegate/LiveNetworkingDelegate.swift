@@ -2,7 +2,7 @@ import Foundation
 import Networking
 import Log
 
-class LiveNetworkingDelegate: NetworkingDelegate {
+class LiveNetworkingDelegate: URLSessionNetworkingDelegate {
     func networking(
         _ networking: Networking,
         didSendRequest request: URLRequest,
