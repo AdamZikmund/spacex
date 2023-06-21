@@ -125,10 +125,6 @@
 		BCE6D7B22A28EFC400399595 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE6D7B12A28EFC400399595 /* String+Localize.swift */; };
 		BCE6D7B32A28EFC400399595 /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE6D7B12A28EFC400399595 /* String+Localize.swift */; };
 		BCE6D7C42A2901B900399595 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE6D7C32A2901B900399595 /* DetailViewModelTests.swift */; };
-		BCF366612A421E5E00018E42 /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = BCF366602A421E5E00018E42 /* DependencyInjection */; };
-		BCF366642A421E6700018E42 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BCF366632A421E6700018E42 /* Log */; };
-		BCF366662A421E7500018E42 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BCF366652A421E7500018E42 /* Log */; };
-		BCF366682A421E7A00018E42 /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = BCF366672A421E7A00018E42 /* DependencyInjection */; };
 		BCF3666A2A421FC700018E42 /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF366692A421FC700018E42 /* ErrorService.swift */; };
 		BCF3666B2A421FC700018E42 /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF366692A421FC700018E42 /* ErrorService.swift */; };
 /* End PBXBuildFile section */
@@ -165,6 +161,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC03F9942A43370000E227B4 /* plan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = plan.xctestplan; sourceTree = "<group>"; };
 		BC19D0722A28A9AD0073199B /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		BC19D0782A28BCBE0073199B /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		BC19D0832A28DC5F0073199B /* Store */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Store; path = spacex/Store; sourceTree = "<group>"; };
@@ -231,7 +228,6 @@
 		BCE6D7AB2A28ED8200399595 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BCE6D7AD2A28EDD200399595 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BCE6D7B12A28EFC400399595 /* String+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
-		BCE6D7B42A28FF1900399595 /* plan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = plan.xctestplan; sourceTree = "<group>"; };
 		BCE6D7C12A2901B900399595 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE6D7C32A2901B900399595 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
 		BCF366692A421FC700018E42 /* ErrorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
@@ -315,7 +311,7 @@
 		BC6896A72A27427600C16E52 = {
 			isa = PBXGroup;
 			children = (
-				BCE6D7B42A28FF1900399595 /* plan.xctestplan */,
+				BC03F9942A43370000E227B4 /* plan.xctestplan */,
 				BC19D0832A28DC5F0073199B /* Store */,
 				BC6896E52A27981F00C16E52 /* Repository */,
 				BC6896DF2A2757C400C16E52 /* Model */,
@@ -1396,22 +1392,6 @@
 				version = 0.52.2;
 			};
 		};
-		BCF3665F2A421E5E00018E42 /* XCRemoteSwiftPackageReference "DependencyInjection" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AdamZikmund/DependencyInjection";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		BCF366622A421E6700018E42 /* XCRemoteSwiftPackageReference "Log" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AdamZikmund/Log.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1471,26 +1451,6 @@
 		BC7CC9E92A29E19D0015E9F5 /* ViewComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ViewComponent;
-		};
-		BCF366602A421E5E00018E42 /* DependencyInjection */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BCF3665F2A421E5E00018E42 /* XCRemoteSwiftPackageReference "DependencyInjection" */;
-			productName = DependencyInjection;
-		};
-		BCF366632A421E6700018E42 /* Log */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BCF366622A421E6700018E42 /* XCRemoteSwiftPackageReference "Log" */;
-			productName = Log;
-		};
-		BCF366652A421E7500018E42 /* Log */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BCF366622A421E6700018E42 /* XCRemoteSwiftPackageReference "Log" */;
-			productName = Log;
-		};
-		BCF366672A421E7A00018E42 /* DependencyInjection */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BCF3665F2A421E5E00018E42 /* XCRemoteSwiftPackageReference "DependencyInjection" */;
-			productName = DependencyInjection;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
